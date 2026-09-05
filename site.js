@@ -467,6 +467,12 @@
     if (!state.activeModalObra && !state.activeModalPagina) {
       state.lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
     }
+    if (dom.obraModal) {
+      dom.obraModal.scrollTop = 0;
+      if (typeof dom.obraModal.scrollTo === 'function') {
+        dom.obraModal.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+    }
 
     state.activeModalObra = obra;
     state.activeModalPagina = null;
@@ -500,9 +506,9 @@
     // Ficha técnica
     dom.modalMetaObra.textContent = obra.titulo;
     if (obra.es_titulo_original) {
-      dom.modalMetaTitulo.innerHTML = `Obra ${obra.numero_str} · ${obra.categoria_nombre} <br><span class="curatorial-badge-orig">Título original documentado</span>`;
+      dom.modalMetaTitulo.innerHTML = `Obra ${obra.numero_str} · ${obra.categoria_nombre} <br><span class="curatorial-badge-orig">Título original de autor</span>`;
     } else {
-      dom.modalMetaTitulo.innerHTML = `Obra ${obra.numero_str} · ${obra.categoria_nombre} <br><span class="curatorial-badge-attr">* Título atribuido para catalogación</span>`;
+      dom.modalMetaTitulo.innerHTML = `Obra ${obra.numero_str} · ${obra.categoria_nombre}`;
     }
 
     dom.modalMetaDims.textContent = obra.dimensiones || 'Consultar lámina';
@@ -527,6 +533,12 @@
   function openFichaModal(pagina, pushHistory = true) {
     if (!state.activeModalObra && !state.activeModalPagina) {
       state.lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    }
+    if (dom.obraModal) {
+      dom.obraModal.scrollTop = 0;
+      if (typeof dom.obraModal.scrollTo === 'function') {
+        dom.obraModal.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
     }
 
     state.activeModalPagina = pagina;
@@ -606,6 +618,9 @@
     state.activeModalObra = null;
     state.activeModalPagina = null;
     dom.obraModal.classList.remove('is-active');
+    if (dom.obraModal) {
+      dom.obraModal.scrollTop = 0;
+    }
     unlockBodyScroll();
 
     if (updateHistory && window.location.hash) {
@@ -616,6 +631,9 @@
   }
 
   function navigateModal(direction) {
+    if (dom.obraModal) {
+      dom.obraModal.scrollTop = 0;
+    }
     if (state.activeModalObra) {
       const currentIndex = state.obras.findIndex((o) => o.id === state.activeModalObra.id);
       let newIndex = currentIndex + direction;
