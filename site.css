@@ -156,39 +156,47 @@ button {
 
 @media (max-width: 860px) {
   .c-header {
-    padding: 0 var(--space-2);
+    padding: 0 var(--space-3);
     height: 68px;
   }
   .c-header__nav-quick {
     display: flex;
-    gap: var(--space-1);
+    gap: var(--space-2);
   }
   .c-header__link {
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    padding: 2px 4px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    padding: 4px;
   }
 }
 
 @media (max-width: 580px) {
   .c-header {
-    height: auto;
-    min-height: 60px;
-    padding: 8px 12px;
-    flex-wrap: wrap;
-    gap: 6px;
+    height: 64px;
+    min-height: 64px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
   .c-header__subtitle {
     display: none;
   }
   .c-header__title {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.05;
   }
   .c-header__nav-quick {
-    width: 100%;
-    justify-content: space-between;
-    padding-top: 4px;
-    border-top: 1px solid rgba(12, 12, 12, 0.06);
+    width: auto;
+    display: flex;
+    gap: 12px;
+    padding-top: 0;
+    border-top: none;
+  }
+  .c-header__link {
+    font-size: 12px;
+    padding: 4px 2px;
   }
 }
 
