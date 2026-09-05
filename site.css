@@ -656,20 +656,31 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   font-weight: 500;
 }
 
-/* ==========================================================================
-   FILTROS DE CATEGORÍAS CURATORIALES (Overview y Works)
-   ========================================================================== */
-.overview-categories,
-.works-categories {
+.overview-categories {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   align-items: center;
   gap: 8px;
+  padding: 6px 16px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;
 }
 
-.overview-categories {
-  justify-content: center;
-  margin-top: var(--space-1);
+.overview-categories::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .overview-categories {
+    justify-content: center;
+    padding: 6px 0;
+  }
 }
 
 .cat-pill {
@@ -688,6 +699,8 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .cat-pill:hover {
