@@ -663,89 +663,177 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   font-weight: 500;
 }
 
-/* Dropdown minimalista para colecciones */
+/* ==========================================================================
+   DROPDOWN PERSONALIZADO EDITORIAL DE COLECCIONES
+   ========================================================================== */
 .overview-intro {
   text-align: center;
-  padding: var(--space-2) var(--space-4) var(--space-3);
+  padding: var(--space-2) var(--space-4) var(--space-4);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 80;
 }
 
-.overview-filter-dropdown-wrap {
+.c-custom-dropdown {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: transparent;
+  gap: 12px;
 }
 
-.overview-filter-label {
+.c-custom-dropdown__label {
   font-family: var(--font-family-heading);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--color-muted);
-  cursor: pointer;
   user-select: none;
 }
 
-.overview-select-custom {
-  position: relative;
+.c-custom-dropdown__trigger {
   display: inline-flex;
   align-items: center;
-}
-
-.overview-filter-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  gap: 12px;
+  padding: 8px 18px;
   background: rgba(245, 243, 240, 0.95);
   border: 1px solid rgba(12, 12, 12, 0.22);
-  border-radius: 20px;
-  padding: 6px 32px 6px 14px;
-  font-family: var(--font-family-heading);
-  font-size: var(--fs-micro);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-dark);
+  border-radius: 24px;
   cursor: pointer;
   outline: none;
   transition: all 0.25s var(--cubic);
-  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.overview-filter-select:hover,
-.overview-filter-select:focus {
-  border-color: var(--color-dark);
+.c-custom-dropdown__trigger:hover {
   background: var(--color-light);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: var(--color-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.overview-filter-select option {
-  background: #F5F3F0;
-  color: #0C0C0C;
-  font-family: sans-serif;
-  font-size: 13px;
-  padding: 8px;
+.c-custom-dropdown.is-open .c-custom-dropdown__trigger {
+  background: var(--color-light);
+  border-color: var(--color-dark);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-.overview-select-arrow {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
+.c-custom-dropdown__selected {
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.c-custom-dropdown__arrow {
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-dark);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.overview-select-custom:focus-within .overview-select-arrow {
-  transform: translateY(-50%) rotate(180deg);
+.c-custom-dropdown.is-open .c-custom-dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/* Panel Desplegable Flotante con Estética de Museo */
+.c-custom-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 290px;
+  background: rgba(245, 243, 240, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(12, 12, 12, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.c-custom-dropdown.is-open .c-custom-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Opciones del menú */
+.c-custom-dropdown__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.c-custom-dropdown__option:hover {
+  background: rgba(12, 12, 12, 0.06);
+}
+
+.c-custom-dropdown__option.is-selected {
+  background: var(--color-dark);
+  color: var(--color-light);
+}
+
+.c-custom-dropdown__option-text {
+  font-family: var(--font-family-heading);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: inherit;
+}
+
+.c-custom-dropdown__option-count {
+  font-family: var(--font-family-body);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: rgba(12, 12, 12, 0.08);
+  color: var(--color-dark);
+  transition: all 0.18s ease;
+}
+
+.c-custom-dropdown__option.is-selected .c-custom-dropdown__option-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-light);
+}
+
+@media (max-width: 680px) {
+  .c-custom-dropdown {
+    gap: 8px;
+  }
+
+  .c-custom-dropdown__menu {
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    width: calc(100vw - 32px);
+    max-width: 320px;
+  }
+
+  .c-custom-dropdown.is-open .c-custom-dropdown__menu {
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Compatibilidad cat-pill en caso de reutilización */

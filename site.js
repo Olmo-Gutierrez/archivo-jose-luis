@@ -155,53 +155,95 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // 5. Filtros por Categoría Curatorial
+  // 5. Filtros por Categoría Curatorial (Dropdown Personalizado Editorial)
   function setupCategoryFilters() {
-    const select = document.getElementById('categorySelect');
-    if (select) {
-      select.addEventListener('change', (e) => {
-        state.activeCategory = e.target.value;
-        renderOverview();
+    const dropdown = document.getElementById('collectionDropdown');
+    const trigger = document.getElementById('dropdownTrigger');
+    const menu = document.getElementById('dropdownMenu');
+    const selectedText = document.getElementById('dropdownSelectedText');
+    const options = document.querySelectorAll('.c-custom-dropdown__option');
+
+    if (trigger && dropdown) {
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Cerrar al hacer clic fuera
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Cerrar con Escape
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dropdown.classList.contains('is-open')) {
+          dropdown.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      options.forEach((opt) => {
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const cat = opt.getAttribute('data-value');
+          state.activeCategory = cat;
+
+          options.forEach((o) => {
+            const isMatch = o.getAttribute('data-value') === cat;
+            o.classList.toggle('is-selected', isMatch);
+            o.setAttribute('aria-selected', isMatch);
+          });
+
+          const optText = opt.querySelector('.c-custom-dropdown__option-text')?.textContent || '';
+          const optCount = opt.querySelector('.c-custom-dropdown__option-count')?.textContent || '';
+          if (selectedText) {
+            selectedText.textContent = `${optText} (${optCount})`;
+          }
+
+          dropdown.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          renderOverview();
+        });
       });
     }
 
+    // Compatibilidad auxiliar con pills
     const pills = document.querySelectorAll('.cat-pill');
     pills.forEach((pill) => {
       pill.addEventListener('click', () => {
         const cat = pill.getAttribute('data-cat');
         state.activeCategory = cat;
-        if (select) select.value = cat;
-
-        pills.forEach((p) => {
-          if (p.getAttribute('data-cat') === cat) {
-            p.classList.add('is-active');
-          } else {
-            p.classList.remove('is-active');
-          }
-        });
-
+        pills.forEach((p) => p.classList.toggle('is-active', p.getAttribute('data-cat') === cat));
         renderOverview();
       });
     });
   }
 
   function updateCategorySelectCounts() {
-    const select = document.getElementById('categorySelect');
-    if (!select || !state.obras.length) return;
+    if (!state.obras.length) return;
     const total = state.obras.length;
-    const esculturas = state.obras.filter(o => o.categoria === 'esculturas').length;
-    const mascaras = state.obras.filter(o => o.categoria === 'mascaras').length;
-    const volumetricas = state.obras.filter(o => o.categoria === 'volumetricas').length;
+    const esculturas = state.obras.filter((o) => o.categoria === 'esculturas').length;
+    const mascaras = state.obras.filter((o) => o.categoria === 'mascaras').length;
+    const volumetricas = state.obras.filter((o) => o.categoria === 'volumetricas').length;
 
-    const optTodas = select.querySelector('option[value="todas"]');
-    const optEsc = select.querySelector('option[value="esculturas"]');
-    const optMasc = select.querySelector('option[value="mascaras"]');
-    const optVol = select.querySelector('option[value="volumetricas"]');
+    const countTodas = document.getElementById('count-todas');
+    const countEsc = document.getElementById('count-esculturas');
+    const countMasc = document.getElementById('count-mascaras');
+    const countVol = document.getElementById('count-volumetricas');
 
-    if (optTodas) optTodas.textContent = `Todas las obras (${total})`;
-    if (optEsc) optEsc.textContent = `Esculturas en madera (${esculturas})`;
-    if (optMasc) optMasc.textContent = `Colección de Máscaras (${mascaras})`;
-    if (optVol) optVol.textContent = `Figuras Volumétricas (${volumetricas})`;
+    if (countTodas) countTodas.textContent = total;
+    if (countEsc) countEsc.textContent = esculturas;
+    if (countMasc) countMasc.textContent = mascaras;
+    if (countVol) countVol.textContent = volumetricas;
+
+    const selectedText = document.getElementById('dropdownSelectedText');
+    if (selectedText && state.activeCategory === 'todas') {
+      selectedText.textContent = `Todas las obras (${total})`;
+    }
   }
 
   // 6. Obtener obras filtradas por la categoría activa

@@ -55,21 +55,35 @@
     <!-- SECCIÓN 1: OVERVIEW (Muro Escalonado 5 Columnas — Gregor Collienne Style) -->
     <section id="view-obras" class="view-section is-active">
       <div class="overview-intro">
-        <!-- Selector desplegable minimalista de colección -->
-        <div class="overview-filter-dropdown-wrap">
-          <label for="categorySelect" class="overview-filter-label">Colección</label>
-          <div class="overview-select-custom">
-            <select id="categorySelect" class="overview-filter-select" aria-label="Filtrar colección de obras">
-              <option value="todas">Todas las obras (57)</option>
-              <option value="esculturas">Esculturas en madera (21)</option>
-              <option value="mascaras">Colección de Máscaras (34)</option>
-              <option value="volumetricas">Figuras Volumétricas (2)</option>
-            </select>
-            <span class="overview-select-arrow" aria-hidden="true">
+        <!-- Selector desplegable editorial personalizado -->
+        <div class="c-custom-dropdown" id="collectionDropdown">
+          <span class="c-custom-dropdown__label">Colección</span>
+          <button type="button" class="c-custom-dropdown__trigger" id="dropdownTrigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="c-custom-dropdown__selected" id="dropdownSelectedText">Todas las obras (57)</span>
+            <span class="c-custom-dropdown__arrow" aria-hidden="true">
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
+          </button>
+          
+          <div class="c-custom-dropdown__menu" id="dropdownMenu" role="listbox" tabindex="-1">
+            <div class="c-custom-dropdown__option is-selected" role="option" data-value="todas" aria-selected="true">
+              <span class="c-custom-dropdown__option-text">Todas las obras</span>
+              <span class="c-custom-dropdown__option-count" id="count-todas">57</span>
+            </div>
+            <div class="c-custom-dropdown__option" role="option" data-value="esculturas" aria-selected="false">
+              <span class="c-custom-dropdown__option-text">Esculturas en madera</span>
+              <span class="c-custom-dropdown__option-count" id="count-esculturas">21</span>
+            </div>
+            <div class="c-custom-dropdown__option" role="option" data-value="mascaras" aria-selected="false">
+              <span class="c-custom-dropdown__option-text">Colección de Máscaras</span>
+              <span class="c-custom-dropdown__option-count" id="count-mascaras">34</span>
+            </div>
+            <div class="c-custom-dropdown__option" role="option" data-value="volumetricas" aria-selected="false">
+              <span class="c-custom-dropdown__option-text">Figuras Volumétricas</span>
+              <span class="c-custom-dropdown__option-count" id="count-volumetricas">2</span>
+            </div>
           </div>
         </div>
       </div>
