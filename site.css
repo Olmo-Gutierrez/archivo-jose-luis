@@ -487,6 +487,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   column-gap: var(--col-gap);
   row-gap: var(--row-gap);
   overflow-x: clip;
+  align-items: start;
 }
 
 @media (max-width: 1360px) {
@@ -549,8 +550,10 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
+  align-self: start;
 }
 
+/* En la sección de obras, el div adapta su altura según la escultura sin ocupar espacio vertical innecesario */
 .overview-item__figure {
   width: 100%;
   height: auto;
@@ -560,7 +563,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   align-items: center;
   justify-content: center;
   background: transparent;
-  padding: var(--space-2);
+  padding: 0;
 }
 
 .overview-item__img {
@@ -576,7 +579,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 
 @media (max-width: 660px) {
   .overview-item__img {
-    max-height: 260px;
+    max-height: 250px;
   }
 }
 
@@ -1731,40 +1734,37 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   top: 88px;
 }
 
-/* Div de imagen que adapta su altura según la imagen sin ocupar espacio vertical innecesario */
+/* En el modal de obra se mantiene el mismo contenedor estable (4:3) para que al conmutar lámina no salte el botón */
 .c-modal-figure {
   width: 100%;
-  height: auto;
-  min-height: 0;
-  max-height: 72vh;
+  aspect-ratio: 4 / 3;
   background: transparent;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
   border-radius: 4px;
 }
 
 .c-modal-img {
-  max-width: 100%;
-  max-height: 72vh;
-  width: auto;
-  height: auto;
+  max-width: 92%;
+  max-height: 92%;
   object-fit: contain;
   filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.12));
   transition: transform 0.4s ease;
-  display: block;
 }
 
 @media (max-width: 768px) {
   .c-modal-figure {
-    max-height: 52vh;
-    padding: 4px 0;
+    aspect-ratio: 4 / 3;
+    padding: 0;
   }
 
   .c-modal-img {
-    max-height: 52vh;
+    max-width: 90%;
+    max-height: 90%;
   }
 }
 
