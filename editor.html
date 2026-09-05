@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Recortes — Archivo José Luis</title>
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="header-left">
+      <h1 class="logo-title">Archivo José Luis</h1>
+      <span class="badge">Recorte Manual & Deskew</span>
+    </div>
+
+    <div class="nav-controls">
+      <button id="btnPrev" class="btn btn-nav" title="Flecha izquierda (<-)">◀ Anterior</button>
+      <div class="sheet-selector-wrap">
+        <select id="sheetSelect"></select>
+        <span id="sheetProgress" class="progress-pill">1 / 38</span>
+      </div>
+      <button id="btnNext" class="btn btn-nav btn-primary" title="Flecha derecha (->)">Siguiente ▶</button>
+    </div>
+
+    <div class="header-right">
+      <button id="btnRunDeblur" class="btn btn-outline" style="border-color: #38bdf8; color: #38bdf8;" title="Aplicar deblur inteligente con IA a todas las fotos marcadas">🪄 Deblur</button>
+      <button id="btnOpenDeblur" class="btn btn-outline" title="Abrir carpeta con las fotos enfocadas">📂 Ver Deblur</button>
+      <button id="btnRenderSingleHeader" class="btn btn-nav" title="Re-renderizar solo la lámina activa a 600 DPI">⚡ Renderizar esta Obra</button>
+      <button id="btnRenderAll" class="btn btn-success">⚡ Renderizar Todo (PNG 600 DPI)</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Canvas Area -->
+    <div class="canvas-viewport" id="canvasViewport">
+      <!-- Floating Zoom & Pan Toolbar -->
+      <div class="zoom-toolbar">
+        <button id="btnZoomOut" class="btn btn-xs" title="Reducir (Rueda abajo)">−</button>
+        <span id="zoomLabel" class="zoom-label">100%</span>
+        <button id="btnZoomIn" class="btn btn-xs" title="Aumentar (Rueda arriba)">+</button>
+        <button id="btnZoomFit" class="btn btn-xs btn-outline" title="Ajustar a pantalla">⛶ Ajustar</button>
+        <button id="btnZoom100" class="btn btn-xs btn-outline" title="Tamaño real (100%)">1:1</button>
+      </div>
+
+      <div class="canvas-wrapper" id="canvasWrapper">
+        <canvas id="cropCanvas"></canvas>
+      </div>
+
+      <!-- Magnifying Loupe (Lupa de Esquina) -->
+      <canvas id="loupeCanvas" width="160" height="160" class="loupe-canvas hidden"></canvas>
+
+      <div class="canvas-hint">
+        <span>🖱 <strong>Rueda del ratón:</strong> Zoom | <strong>Espacio + Arrastre:</strong> Mover lienzo | <strong>Flecha Derecha [ → ]:</strong> Siguiente lámina</span>
+      </div>
+    </div>
+
+    <!-- Sidebar Controls & Live Preview -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="section-header">
+          <h2 id="sidebarTitle">Obra 001</h2>
+          <button id="btnAddBox" class="btn btn-sm btn-outline">+ Añadir Foto</button>
+        </div>
+
+        <div class="field-group checkbox-group" style="margin-bottom: 12px;">
+          <label class="checkbox-label" for="checkSheetNeedsReview">
+            <input type="checkbox" id="checkSheetNeedsReview">
+            <span class="checkbox-text">⚠️ <strong>Repetir lámina completa</strong> (fotos solapadas)</span>
+          </label>
+        </div>
+
+        <div class="photo-tabs" id="photoTabs"></div>
+      </div>
+
+      <!-- Datos de la Fotografía Seleccionada (Solo de una foto) -->
+      <div class="sidebar-section metadata-section">
+        <div class="section-header">
+          <h3 id="photoMetaTitle">Datos de Foto 1</h3>
+        </div>
+        <p class="section-help">Título y medidas (solo si esta foto los tiene anotados):</p>
+        <div class="field-group">
+          <label for="inputTitle">Título de la obra:</label>
+          <input type="text" id="inputTitle" class="text-input" placeholder="Ej: Águila Imperial, Cristo...">
+        </div>
+        <div class="field-group">
+          <label for="inputDimensions">Dimensiones anotadas:</label>
+          <input type="text" id="inputDimensions" class="text-input" placeholder="Ej: 1'20 x 0'80, 0'47 x 0'39 Base...">
+        </div>
+
+        <div class="field-group checkbox-group" style="margin-top: 12px; margin-bottom: 4px;">
+          <label class="checkbox-label" for="checkPhotoNeedsDeblur">
+            <input type="checkbox" id="checkPhotoNeedsDeblur">
+            <span class="checkbox-text">🔍 <strong>Foto borrosa</strong> (necesita deblur posterior)</span>
+          </label>
+        </div>
+
+        <div class="sharpness-indicator" id="sharpnessIndicator">
+          <span>Nitidez estimada:</span>
+          <span id="sharpnessScore" class="sharpness-score sharpness-mid">Calculando...</span>
+        </div>
+      </div>
+
+      <!-- Corner / Shape Controls -->
+      <div class="sidebar-section">
+        <div class="section-header">
+          <h3>Forma y Esquinas Libres</h3>
+          <span id="cornerCountBadge" class="badge">4 esquinas</span>
+        </div>
+        <p class="section-help">Arrastra cada esquina individualmente con máxima precisión:</p>
+        <div class="corner-actions">
+          <button id="btnAddCorner" class="btn btn-sm btn-nav">+ Añadir Esquina</button>
+          <button id="btnRemoveCorner" class="btn btn-sm btn-nav">− Quitar Esquina</button>
+          <button id="btnResetCorners" class="btn btn-sm btn-outline" title="Volver a rectángulo inicial">⟲ Rectángulo</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section preview-section">
+        <div class="section-header">
+          <h3>Previsualización</h3>
+          <button id="btnExpandPreview" class="btn btn-sm btn-outline" title="Ver en alta resolución a pantalla completa">⛶ Ampliar</button>
+        </div>
+        <p class="section-help">Comprueba bordes y nivelación (clic para ampliar):</p>
+        <div class="preview-box" id="previewBox" title="Clic para ampliar vista previa">
+          <canvas id="previewCanvas"></canvas>
+        </div>
+        <div class="level-indicator" id="levelIndicator">
+          <span class="level-icon">⚖️</span>
+          <span id="levelAngleText">Base: 0.00° → Nivelada a 0.0°</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section actions-section">
+        <button id="btnRenderSingleSidebar" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); margin-bottom: 8px;">
+          ⚡ Renderizar esta Obra (Alta Res)
+        </button>
+        <button id="btnDeleteBox" class="btn btn-danger btn-block">🗑 Eliminar esta Foto</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <h4>Atajos Rápidos:</h4>
+        <ul>
+          <li><kbd>→</kbd> Guardar y Siguiente Obra</li>
+          <li><kbd>←</kbd> Obra Anterior</li>
+          <li><kbd>Tab</kbd> Alternar entre fotos de la lámina</li>
+          <li><kbd>Supr</kbd> Eliminar foto seleccionada</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal de Renderizado -->
+  <div id="renderModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h2 id="modalTitle">Renderizando Archivo a Máxima Resolución</h2>
+      <p id="modalDesc">Procesando las 38 fichas originales a ~600 DPI con interpolación Lanczos4...</p>
+      
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar-fill"></div>
+      </div>
+      <div class="progress-stats">
+        <span id="progressText">0 / 38</span>
+        <span id="progressPercent">0%</span>
+      </div>
+
+      <div id="renderLog" class="render-log"></div>
+
+      <div class="modal-actions hidden" id="modalActions">
+        <button id="btnOpenFolder" class="btn btn-nav" style="margin-right: auto;">📁 Abrir Carpeta en el Explorador</button>
+        <button id="btnCloseModal" class="btn btn-primary">¡Listo! Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Previsualización Ampliada HD -->
+  <div id="largePreviewModal" class="modal-overlay hidden">
+    <div class="large-preview-modal-card">
+      <div class="large-preview-header">
+        <div class="preview-info">
+          <h2 id="largePreviewTitle">Vista Previa Ampliada — Obra 001 (Foto 1)</h2>
+          <span id="largePreviewSubtitle" class="badge">Alta Resolución</span>
+        </div>
+        <div class="large-preview-controls">
+          <label class="checkbox-label" style="margin-right: 8px; font-size: 12px; cursor: pointer;">
+            <input type="checkbox" id="largePhotoNeedsDeblur">
+            <span class="checkbox-text">🔍 <strong>Borrosa (Deblur)</strong></span>
+          </label>
+          <button id="btnLargeRenderSingle" class="btn btn-sm btn-success" title="Renderizar y guardar esta lámina ahora en alta resolución">⚡ Guardar en Alta Res</button>
+          <button id="btnLargeZoomOut" class="btn btn-sm btn-nav" title="Alejar zoom">− Zoom</button>
+          <span id="largeZoomLabel" class="zoom-pill">100%</span>
+          <button id="btnLargeZoomIn" class="btn btn-sm btn-nav" title="Acercar zoom">+ Zoom</button>
+          <button id="btnLargeZoomReset" class="btn btn-sm btn-outline" title="Ajustar a ventana">⟲ Ajustar</button>
+          <button id="btnCloseLargePreview" class="btn btn-sm btn-primary">✕ Cerrar [Esc]</button>
+        </div>
+      </div>
+      <div class="large-preview-viewport" id="largePreviewViewport">
+        <div class="checkerboard-backdrop" id="largePreviewCanvasWrapper">
+          <canvas id="largePreviewCanvas"></canvas>
+        </div>
+      </div>
+      <div class="large-preview-footer">
+        <span>🔍 <strong>Rueda del ratón:</strong> Zoom | <strong>Arrastrar:</strong> Mover | El fondo damero permite comprobar que ningún borde corte la obra ni deje cartulina.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Flotante -->
+  <div id="toastNotification" class="toast-notification hidden">
+    <span id="toastMessage"></span>
+    <button id="btnToastOpenFolder" class="btn btn-xs btn-outline">📁 Abrir Carpeta</button>
+    <button id="btnToastClose" class="toast-close">✕</button>
+  </div>
+
+  <script src="/web/app.js"></script>
+</body>
+</html>

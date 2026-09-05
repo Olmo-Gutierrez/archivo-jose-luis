@@ -1,0 +1,3152 @@
+{
+  "obras": [
+    {
+      "id": 1,
+      "codigo": "obra_001",
+      "numero_str": "001",
+      "titulo": "Vuelo en Tensión*",
+      "titulo_base": "Vuelo en Tensión",
+      "es_titulo_original": false,
+      "nombre_completo": "Vuelo en Tensión* (Obra 001)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Composición escultórica horizontal en madera curvada y ensamblada bajo tensión.",
+      "dimensiones": "0'43 x 0'91 m",
+      "paginas_referencia": [
+        1
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 1,
+          "preview": "assets/fichas/ficha_obra_001.jpg",
+          "label": "Lámina de Archivo 001"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_001.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 1,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_001_foto_01.png",
+          "web_image": "assets/obras/obra_001_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3793,
+          "alto_original": 1795,
+          "ratio": 2.113
+        },
+        {
+          "indice": 2,
+          "de_pagina": 1,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_001_foto_02.png",
+          "web_image": "assets/obras/obra_001_foto_02.png",
+          "deblur_image": null,
+          "ancho_original": 4695,
+          "alto_original": 3294,
+          "ratio": 1.425
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 2,
+      "codigo": "obra_002",
+      "numero_str": "002",
+      "titulo": "Equilibrio Esférico*",
+      "titulo_base": "Equilibrio Esférico",
+      "es_titulo_original": false,
+      "nombre_completo": "Equilibrio Esférico* (Obra 002)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Escultura cinética en madera: cilindro central en rojo carmín y aros concéntricos de madera curvada.",
+      "dimensiones": "0'80 x 0'50 m",
+      "paginas_referencia": [
+        2,
+        3
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 2,
+          "preview": "assets/fichas/ficha_obra_002.jpg",
+          "label": "Lámina de Archivo 002"
+        },
+        {
+          "pagina": 3,
+          "preview": "assets/fichas/ficha_obra_003.jpg",
+          "label": "Lámina de Archivo 003"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_002.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 2,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_002_foto_01.png",
+          "web_image": "assets/obras/obra_002_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3325,
+          "alto_original": 2103,
+          "ratio": 1.581
+        },
+        {
+          "indice": 2,
+          "de_pagina": 2,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_002_foto_02.png",
+          "web_image": "assets/obras/obra_002_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 4032,
+          "alto_original": 3568,
+          "ratio": 1.13
+        },
+        {
+          "indice": 3,
+          "de_pagina": 3,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_003_foto_01.png",
+          "web_image": "assets/obras/obra_003_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3565,
+          "alto_original": 4895,
+          "ratio": 0.728
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 3,
+      "codigo": "obra_003",
+      "numero_str": "003",
+      "titulo": "Ondulación Verde*",
+      "titulo_base": "Ondulación Verde",
+      "es_titulo_original": false,
+      "nombre_completo": "Ondulación Verde* (Obra 003)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve mural ondulado en listones de madera lacada verde (firmado 'JL 97 Gtlez').",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        4,
+        5
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 4,
+          "preview": "assets/fichas/ficha_obra_004.jpg",
+          "label": "Lámina de Archivo 004"
+        },
+        {
+          "pagina": 5,
+          "preview": "assets/fichas/ficha_obra_005.jpg",
+          "label": "Lámina de Archivo 005"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_004.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 4,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_004_foto_01.png",
+          "web_image": "assets/obras/obra_004_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3561,
+          "alto_original": 4640,
+          "ratio": 0.767
+        },
+        {
+          "indice": 2,
+          "de_pagina": 5,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_005_foto_01.png",
+          "web_image": "assets/obras/obra_005_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2171,
+          "alto_original": 2390,
+          "ratio": 0.908
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 4,
+      "codigo": "obra_004",
+      "numero_str": "004",
+      "titulo": "Planos Cruzados*",
+      "titulo_base": "Planos Cruzados",
+      "es_titulo_original": false,
+      "nombre_completo": "Planos Cruzados* (Obra 004)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Composición geométrica en planos facetados de madera ensamblada.",
+      "dimensiones": "0'64 x 0'53 m",
+      "paginas_referencia": [
+        6
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 6,
+          "preview": "assets/fichas/ficha_obra_006.jpg",
+          "label": "Lámina de Archivo 006"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_006.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 6,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_006_foto_01.png",
+          "web_image": "assets/obras/obra_006_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2656,
+          "alto_original": 2228,
+          "ratio": 1.192
+        },
+        {
+          "indice": 2,
+          "de_pagina": 6,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_006_foto_02.png",
+          "web_image": "assets/obras/obra_006_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 4288,
+          "alto_original": 3565,
+          "ratio": 1.203
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 5,
+      "codigo": "obra_005",
+      "numero_str": "005",
+      "titulo": "Águila Imperial",
+      "titulo_base": "Águila Imperial",
+      "es_titulo_original": true,
+      "nombre_completo": "Águila Imperial (Obra 005)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Escultura figurativa de águila tallada y ensamblada en madera sobre peana.",
+      "dimensiones": "1'20 x 0'80 m",
+      "paginas_referencia": [
+        7
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 7,
+          "preview": "assets/fichas/ficha_obra_007.jpg",
+          "label": "Lámina de Archivo 007"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_007.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 7,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_007_foto_01_aguila_imperial.png",
+          "web_image": "assets/obras/obra_007_foto_01_aguila_imperial.jpg",
+          "deblur_image": null,
+          "ancho_original": 3904,
+          "alto_original": 2612,
+          "ratio": 1.495
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 6,
+      "codigo": "obra_006",
+      "numero_str": "006",
+      "titulo": "Ala Metálica*",
+      "titulo_base": "Ala Metálica",
+      "es_titulo_original": false,
+      "nombre_completo": "Ala Metálica* (Obra 006)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Composición escultórica alada en láminas superpuestas de madera lacada.",
+      "dimensiones": "1'12 x 0'62 m",
+      "paginas_referencia": [
+        8
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 8,
+          "preview": "assets/fichas/ficha_obra_008.jpg",
+          "label": "Lámina de Archivo 008"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_008.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 8,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_008_foto_01.png",
+          "web_image": "assets/obras/obra_008_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4108,
+          "alto_original": 2235,
+          "ratio": 1.838
+        },
+        {
+          "indice": 2,
+          "de_pagina": 8,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_008_foto_02.png",
+          "web_image": "assets/obras/obra_008_foto_02.png",
+          "deblur_image": null,
+          "ancho_original": 4722,
+          "alto_original": 3431,
+          "ratio": 1.376
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 7,
+      "codigo": "obra_007",
+      "numero_str": "007",
+      "titulo": "Relieve Cósmico Policromado*",
+      "titulo_base": "Relieve Cósmico Policromado",
+      "es_titulo_original": false,
+      "nombre_completo": "Relieve Cósmico Policromado* (Obra 007)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve geométrico en madera tallada y policromada con bloques modulares y disco solar.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        9
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 9,
+          "preview": "assets/fichas/ficha_obra_009.jpg",
+          "label": "Lámina de Archivo 009"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_009.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 9,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_009_foto_01.png",
+          "web_image": "assets/obras/obra_009_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2565,
+          "alto_original": 1711,
+          "ratio": 1.499
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 8,
+      "codigo": "obra_008",
+      "numero_str": "008",
+      "titulo": "Oriente",
+      "titulo_base": "Oriente",
+      "es_titulo_original": true,
+      "nombre_completo": "Oriente (Obra 008)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Composición circular con tres barras horizontales en madera lacada.",
+      "dimensiones": "1'09 x 0'70 m",
+      "paginas_referencia": [
+        9
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 9,
+          "preview": "assets/fichas/ficha_obra_009.jpg",
+          "label": "Lámina de Archivo 009"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_009.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 9,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_009_foto_02_oriente.png",
+          "web_image": "assets/obras/obra_009_foto_02_oriente.jpg",
+          "deblur_image": null,
+          "ancho_original": 3480,
+          "alto_original": 2395,
+          "ratio": 1.453
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 9,
+      "codigo": "obra_009",
+      "numero_str": "009",
+      "titulo": "Envolvente Espacial*",
+      "titulo_base": "Envolvente Espacial",
+      "es_titulo_original": false,
+      "nombre_completo": "Envolvente Espacial* (Obra 009)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Escultura de volumen envolvente en madera curvada.",
+      "dimensiones": "0'71 x 0'60 m",
+      "paginas_referencia": [
+        10
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 10,
+          "preview": "assets/fichas/ficha_obra_010.jpg",
+          "label": "Lámina de Archivo 010"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_010.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 10,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_010_foto_01.png",
+          "web_image": "assets/obras/obra_010_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2882,
+          "alto_original": 3427,
+          "ratio": 0.841
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 10,
+      "codigo": "obra_010",
+      "numero_str": "010",
+      "titulo": "El Torero",
+      "titulo_base": "El Torero",
+      "es_titulo_original": true,
+      "nombre_completo": "El Torero (Obra 010)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Escultura figurativa en alambre forrado y tela representando la faena del torero.",
+      "dimensiones": "1'12 x 0'92 m",
+      "paginas_referencia": [
+        11,
+        14
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 11,
+          "preview": "assets/fichas/ficha_obra_011.jpg",
+          "label": "Lámina de Archivo 011"
+        },
+        {
+          "pagina": 14,
+          "preview": "assets/fichas/ficha_obra_014.jpg",
+          "label": "Lámina de Archivo 014"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_011.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 11,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_011_foto_01.png",
+          "web_image": "assets/obras/obra_011_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3082,
+          "alto_original": 3770,
+          "ratio": 0.818
+        },
+        {
+          "indice": 2,
+          "de_pagina": 14,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_014_foto_01.png",
+          "web_image": "assets/obras/obra_014_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2785,
+          "alto_original": 2780,
+          "ratio": 1.002
+        },
+        {
+          "indice": 3,
+          "de_pagina": 14,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_014_foto_02.png",
+          "web_image": "assets/obras/obra_014_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 3334,
+          "alto_original": 4645,
+          "ratio": 0.718
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 11,
+      "codigo": "obra_011",
+      "numero_str": "011",
+      "titulo": "Ritmo Orgánico*",
+      "titulo_base": "Ritmo Orgánico",
+      "es_titulo_original": false,
+      "nombre_completo": "Ritmo Orgánico* (Obra 011)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Escultura aérea en alambre forrado y entrelazado.",
+      "dimensiones": "0'48 x 0'61 m",
+      "paginas_referencia": [
+        12
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 12,
+          "preview": "assets/fichas/ficha_obra_012.jpg",
+          "label": "Lámina de Archivo 012"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_012.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 12,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_012_foto_01.png",
+          "web_image": "assets/obras/obra_012_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2475,
+          "alto_original": 3525,
+          "ratio": 0.702
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 12,
+      "codigo": "obra_012",
+      "numero_str": "012",
+      "titulo": "Nudo Cósmico*",
+      "titulo_base": "Nudo Cósmico",
+      "es_titulo_original": false,
+      "nombre_completo": "Nudo Cósmico* (Obra 012)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Composición espacial continua en alambre forrado.",
+      "dimensiones": "0'67 x 0'62 m",
+      "paginas_referencia": [
+        13
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 13,
+          "preview": "assets/fichas/ficha_obra_013.jpg",
+          "label": "Lámina de Archivo 013"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_013.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 13,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_013_foto_01.png",
+          "web_image": "assets/obras/obra_013_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2178,
+          "alto_original": 2346,
+          "ratio": 0.928
+        },
+        {
+          "indice": 2,
+          "de_pagina": 13,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_013_foto_02.png",
+          "web_image": "assets/obras/obra_013_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 4653,
+          "alto_original": 3566,
+          "ratio": 1.305
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 13,
+      "codigo": "obra_013",
+      "numero_str": "013",
+      "titulo": "Listones Rojos",
+      "titulo_base": "Listones Rojos",
+      "es_titulo_original": true,
+      "nombre_completo": "Listones Rojos (Obra 013)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Escultura de gran formato en listones de madera lacada en rojo carmín.",
+      "dimensiones": "1'50 x 0'65 m",
+      "paginas_referencia": [
+        15
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 15,
+          "preview": "assets/fichas/ficha_obra_015.jpg",
+          "label": "Lámina de Archivo 015"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_015.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 15,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_015_foto_01.png",
+          "web_image": "assets/obras/obra_015_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4076,
+          "alto_original": 1872,
+          "ratio": 2.177
+        },
+        {
+          "indice": 2,
+          "de_pagina": 15,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_015_foto_02.png",
+          "web_image": "assets/obras/obra_015_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 3132,
+          "alto_original": 4449,
+          "ratio": 0.704
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 14,
+      "codigo": "obra_014",
+      "numero_str": "014",
+      "titulo": "Relieve en Almagre*",
+      "titulo_base": "Relieve en Almagre",
+      "es_titulo_original": false,
+      "nombre_completo": "Relieve en Almagre* (Obra 014)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve mural en madera modelada y pigmentos minerales sobre fondo almagre.",
+      "dimensiones": "0'90 x 0'60 m",
+      "paginas_referencia": [
+        16
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 16,
+          "preview": "assets/fichas/ficha_obra_016.jpg",
+          "label": "Lámina de Archivo 016"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_016.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 16,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_016_foto_01.png",
+          "web_image": "assets/obras/obra_016_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4364,
+          "alto_original": 3081,
+          "ratio": 1.416
+        },
+        {
+          "indice": 2,
+          "de_pagina": 16,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_016_foto_02.png",
+          "web_image": "assets/obras/obra_016_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 3530,
+          "alto_original": 2334,
+          "ratio": 1.512
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 15,
+      "codigo": "obra_015",
+      "numero_str": "015",
+      "titulo": "Órbita y Ritmo*",
+      "titulo_base": "Órbita y Ritmo",
+      "es_titulo_original": false,
+      "nombre_completo": "Órbita y Ritmo* (Obra 015)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve constructivista horizontal en madera policromada con círculo central y listones cálidos.",
+      "dimensiones": "0'65 x 0'45 m",
+      "paginas_referencia": [
+        17
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 17,
+          "preview": "assets/fichas/ficha_obra_017.jpg",
+          "label": "Lámina de Archivo 017"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_017.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 17,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_017_foto_01.png",
+          "web_image": "assets/obras/obra_017_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2221,
+          "alto_original": 1530,
+          "ratio": 1.452
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 16,
+      "codigo": "obra_016",
+      "numero_str": "016",
+      "titulo": "Composición Modular Semáforo*",
+      "titulo_base": "Composición Modular Semáforo",
+      "es_titulo_original": false,
+      "nombre_completo": "Composición Modular Semáforo* (Obra 016)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve vertical en madera policromada con piezas amarillas, rojas y anillo verde.",
+      "dimensiones": "0'65 x 0'45 m",
+      "paginas_referencia": [
+        17
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 17,
+          "preview": "assets/fichas/ficha_obra_017.jpg",
+          "label": "Lámina de Archivo 017"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_017.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 17,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_017_foto_02.png",
+          "web_image": "assets/obras/obra_017_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2178,
+          "alto_original": 1464,
+          "ratio": 1.488
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 17,
+      "codigo": "obra_017",
+      "numero_str": "017",
+      "titulo": "Cuadrante de Cuerdas y Anillo*",
+      "titulo_base": "Cuadrante de Cuerdas y Anillo",
+      "es_titulo_original": false,
+      "nombre_completo": "Cuadrante de Cuerdas y Anillo* (Obra 017)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Composición geométrica cuadrada con urdimbre de hilos tensados sobre fondo rojo y anillo central.",
+      "dimensiones": "0'90 x 0'80 m",
+      "paginas_referencia": [
+        17
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 17,
+          "preview": "assets/fichas/ficha_obra_017.jpg",
+          "label": "Lámina de Archivo 017"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_017.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 17,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_017_foto_03.png",
+          "web_image": "assets/obras/obra_017_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2602,
+          "alto_original": 3052,
+          "ratio": 0.853
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 18,
+      "codigo": "obra_018",
+      "numero_str": "018",
+      "titulo": "Retablo de Arcos*",
+      "titulo_base": "Retablo de Arcos",
+      "es_titulo_original": false,
+      "nombre_completo": "Retablo de Arcos* (Obra 018)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve arquitectónico de arcos superpuestos en madera policromada en gradiente cromático.",
+      "dimensiones": "0'90 x 0'80 m",
+      "paginas_referencia": [
+        18
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 18,
+          "preview": "assets/fichas/ficha_obra_018.jpg",
+          "label": "Lámina de Archivo 018"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_018.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 18,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_018_foto_01.png",
+          "web_image": "assets/obras/obra_018_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2553,
+          "alto_original": 2881,
+          "ratio": 0.886
+        },
+        {
+          "indice": 2,
+          "de_pagina": 18,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_018_foto_02.png",
+          "web_image": "assets/obras/obra_018_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 3099,
+          "alto_original": 4420,
+          "ratio": 0.701
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 19,
+      "codigo": "obra_019",
+      "numero_str": "019",
+      "titulo": "Geometría en Carmín*",
+      "titulo_base": "Geometría en Carmín",
+      "es_titulo_original": false,
+      "nombre_completo": "Geometría en Carmín* (Obra 019)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Relieve vertical de prismas tallados en madera lacada carmesí (firmado 'JL 98 J.Gtiez').",
+      "dimensiones": "0'80 x 0'70 m",
+      "paginas_referencia": [
+        19
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 19,
+          "preview": "assets/fichas/ficha_obra_019.jpg",
+          "label": "Lámina de Archivo 019"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_019.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 19,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_019_foto_01.png",
+          "web_image": "assets/obras/obra_019_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2084,
+          "alto_original": 2441,
+          "ratio": 0.854
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 20,
+      "codigo": "obra_020",
+      "numero_str": "020",
+      "titulo": "Trazado Cósmico en Alambre*",
+      "titulo_base": "Trazado Cósmico en Alambre",
+      "es_titulo_original": false,
+      "nombre_completo": "Trazado Cósmico en Alambre* (Obra 020)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Dibujo escultórico espacial en alambre forrado y madera lacada sobre tabla.",
+      "dimensiones": "0'90 x 0'91 m",
+      "paginas_referencia": [
+        19
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 19,
+          "preview": "assets/fichas/ficha_obra_019.jpg",
+          "label": "Lámina de Archivo 019"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_019.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 19,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_019_foto_02.png",
+          "web_image": "assets/obras/obra_019_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2545,
+          "alto_original": 2505,
+          "ratio": 1.016
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 21,
+      "codigo": "obra_021",
+      "numero_str": "021",
+      "titulo": "Neptuno con Tridente*",
+      "titulo_base": "Neptuno con Tridente",
+      "es_titulo_original": false,
+      "nombre_completo": "Neptuno con Tridente* (Obra 021)",
+      "categoria": "esculturas",
+      "categoria_nombre": "Esculturas",
+      "materiales": "Mural escultórico exterior en relieve: figura mitológica con tridente y fauna marina.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        33,
+        34
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 33,
+          "preview": "assets/fichas/ficha_obra_033.jpg",
+          "label": "Lámina de Archivo 033"
+        },
+        {
+          "pagina": 34,
+          "preview": "assets/fichas/ficha_obra_034.jpg",
+          "label": "Lámina de Archivo 034"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_033.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 33,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_033_foto_01.png",
+          "web_image": "assets/obras/obra_033_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3490,
+          "alto_original": 2361,
+          "ratio": 1.478
+        },
+        {
+          "indice": 2,
+          "de_pagina": 33,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_033_foto_02.png",
+          "web_image": "assets/obras/obra_033_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2351,
+          "alto_original": 3493,
+          "ratio": 0.673
+        },
+        {
+          "indice": 3,
+          "de_pagina": 34,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_034_foto_01.png",
+          "web_image": "assets/obras/obra_034_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2363,
+          "alto_original": 3505,
+          "ratio": 0.674
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 22,
+      "codigo": "obra_022",
+      "numero_str": "022",
+      "titulo": "Máscara Industrial*",
+      "titulo_base": "Máscara Industrial",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Industrial* (Obra 022)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara escultórica ensamblada sobre tabla de madera rústica.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        20
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 20,
+          "preview": "assets/fichas/ficha_obra_020.jpg",
+          "label": "Lámina de Archivo 020"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_020.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 20,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_020_foto_01.png",
+          "web_image": "assets/obras/obra_020_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2936,
+          "alto_original": 3447,
+          "ratio": 0.852
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 23,
+      "codigo": "obra_023",
+      "numero_str": "023",
+      "titulo": "Máscara de la Sorpresa*",
+      "titulo_base": "Máscara de la Sorpresa",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de la Sorpresa* (Obra 023)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica modelada con boca abierta sobre madera.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        20
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 20,
+          "preview": "assets/fichas/ficha_obra_020.jpg",
+          "label": "Lámina de Archivo 020"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_020.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 20,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_020_foto_02.png",
+          "web_image": "assets/obras/obra_020_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2323,
+          "alto_original": 2812,
+          "ratio": 0.826
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 24,
+      "codigo": "obra_024",
+      "numero_str": "024",
+      "titulo": "Máscara del Grito*",
+      "titulo_base": "Máscara del Grito",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara del Grito* (Obra 024)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara expresionista tallada y modelada sobre soporte de madera.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        21
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 21,
+          "preview": "assets/fichas/ficha_obra_021.jpg",
+          "label": "Lámina de Archivo 021"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_021.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 21,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_021_foto_01.png",
+          "web_image": "assets/obras/obra_021_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2453,
+          "alto_original": 2850,
+          "ratio": 0.861
+        },
+        {
+          "indice": 2,
+          "de_pagina": 21,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_021_foto_02.png",
+          "web_image": "assets/obras/obra_021_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2452,
+          "alto_original": 2970,
+          "ratio": 0.826
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 25,
+      "codigo": "obra_025",
+      "numero_str": "025",
+      "titulo": "Máscara Espectral*",
+      "titulo_base": "Máscara Espectral",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Espectral* (Obra 025)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara de calavera modelada en cerámica sobre tablón de madera rústica.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        22
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 22,
+          "preview": "assets/fichas/ficha_obra_022.jpg",
+          "label": "Lámina de Archivo 022"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_022.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 22,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_022_foto_01.png",
+          "web_image": "assets/obras/obra_022_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2700,
+          "alto_original": 2768,
+          "ratio": 0.975
+        },
+        {
+          "indice": 2,
+          "de_pagina": 22,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_022_foto_02.png",
+          "web_image": "assets/obras/obra_022_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 3505,
+          "alto_original": 2592,
+          "ratio": 1.352
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 26,
+      "codigo": "obra_026",
+      "numero_str": "026",
+      "titulo": "Rostro en Roble*",
+      "titulo_base": "Rostro en Roble",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro en Roble* (Obra 026)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara con rostro tallado directamente en viga de madera de roble.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        23
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 23,
+          "preview": "assets/fichas/ficha_obra_023.jpg",
+          "label": "Lámina de Archivo 023"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_023.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 23,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_023_foto_01.png",
+          "web_image": "assets/obras/obra_023_foto_01.jpg",
+          "deblur_image": "assets/obras/obra_023_foto_01_restaurada_ia.jpg",
+          "ancho_original": 2646,
+          "alto_original": 3779,
+          "ratio": 0.7
+        }
+      ],
+      "tiene_deblur": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 27,
+      "codigo": "obra_027",
+      "numero_str": "027",
+      "titulo": "Máscara de Facciones Hendidas*",
+      "titulo_base": "Máscara de Facciones Hendidas",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de Facciones Hendidas* (Obra 027)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara de facciones estilizadas tallada en madera hendida con pátina natural.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        23
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 23,
+          "preview": "assets/fichas/ficha_obra_023.jpg",
+          "label": "Lámina de Archivo 023"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_023.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 23,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_023_foto_02.png",
+          "web_image": "assets/obras/obra_023_foto_02.jpg",
+          "deblur_image": "assets/obras/obra_023_foto_02_restaurada_ia.jpg",
+          "ancho_original": 2614,
+          "alto_original": 2594,
+          "ratio": 1.008
+        }
+      ],
+      "tiene_deblur": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 28,
+      "codigo": "obra_028",
+      "numero_str": "028",
+      "titulo": "Máscara de la Memoria*",
+      "titulo_base": "Máscara de la Memoria",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de la Memoria* (Obra 028)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en madera hendida y policromada con relieves profundos.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        24
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 24,
+          "preview": "assets/fichas/ficha_obra_024.jpg",
+          "label": "Lámina de Archivo 024"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_024.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 24,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_024_foto_01.png",
+          "web_image": "assets/obras/obra_024_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2188,
+          "alto_original": 3466,
+          "ratio": 0.631
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 29,
+      "codigo": "obra_029",
+      "numero_str": "029",
+      "titulo": "Rostro Primitivo*",
+      "titulo_base": "Rostro Primitivo",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro Primitivo* (Obra 029)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica modelada con relieve facial marcado.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        24
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 24,
+          "preview": "assets/fichas/ficha_obra_024.jpg",
+          "label": "Lámina de Archivo 024"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_024.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 24,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_024_foto_02.png",
+          "web_image": "assets/obras/obra_024_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 1839,
+          "alto_original": 3237,
+          "ratio": 0.568
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 30,
+      "codigo": "obra_030",
+      "numero_str": "030",
+      "titulo": "Máscara Sagrada*",
+      "titulo_base": "Máscara Sagrada",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Sagrada* (Obra 030)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en relieve sobre madera y cerámica combinada.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        24
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 24,
+          "preview": "assets/fichas/ficha_obra_024.jpg",
+          "label": "Lámina de Archivo 024"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_024.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 24,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_024_foto_03.png",
+          "web_image": "assets/obras/obra_024_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2451,
+          "alto_original": 3261,
+          "ratio": 0.752
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 31,
+      "codigo": "obra_031",
+      "numero_str": "031",
+      "titulo": "Mirada Primitiva*",
+      "titulo_base": "Mirada Primitiva",
+      "es_titulo_original": false,
+      "nombre_completo": "Mirada Primitiva* (Obra 031)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica esmaltada con ojos incrustados sobre soporte de madera.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        25
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 25,
+          "preview": "assets/fichas/ficha_obra_025.jpg",
+          "label": "Lámina de Archivo 025"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_025.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 25,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_025_foto_01.png",
+          "web_image": "assets/obras/obra_025_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2570,
+          "alto_original": 3475,
+          "ratio": 0.74
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 32,
+      "codigo": "obra_032",
+      "numero_str": "032",
+      "titulo": "Máscara del Silencio*",
+      "titulo_base": "Máscara del Silencio",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara del Silencio* (Obra 032)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica modelada en tonos ocres y tierra.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        25
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 25,
+          "preview": "assets/fichas/ficha_obra_025.jpg",
+          "label": "Lámina de Archivo 025"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_025.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 25,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_025_foto_02.png",
+          "web_image": "assets/obras/obra_025_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2351,
+          "alto_original": 3635,
+          "ratio": 0.647
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 33,
+      "codigo": "obra_033",
+      "numero_str": "033",
+      "titulo": "Cabeza Zoomorfa*",
+      "titulo_base": "Cabeza Zoomorfa",
+      "es_titulo_original": false,
+      "nombre_completo": "Cabeza Zoomorfa* (Obra 033)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Cabeza escultórica zoomorfa tallada en madera sobre peana.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        26
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 26,
+          "preview": "assets/fichas/ficha_obra_026.jpg",
+          "label": "Lámina de Archivo 026"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_026.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 26,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_026_foto_01.png",
+          "web_image": "assets/obras/obra_026_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2386,
+          "alto_original": 3118,
+          "ratio": 0.765
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 34,
+      "codigo": "obra_034",
+      "numero_str": "034",
+      "titulo": "Rostro Alado*",
+      "titulo_base": "Rostro Alado",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro Alado* (Obra 034)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Relieve facial en madera modelada con proyecciones aladas.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        26
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 26,
+          "preview": "assets/fichas/ficha_obra_026.jpg",
+          "label": "Lámina de Archivo 026"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_026.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 26,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_026_foto_02.png",
+          "web_image": "assets/obras/obra_026_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2147,
+          "alto_original": 3060,
+          "ratio": 0.702
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 35,
+      "codigo": "obra_035",
+      "numero_str": "035",
+      "titulo": "Corona de Espinas*",
+      "titulo_base": "Corona de Espinas",
+      "es_titulo_original": false,
+      "nombre_completo": "Corona de Espinas* (Obra 035)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Relieve de Cristo con corona de espinas modelado sobre soporte de madera.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        27
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 27,
+          "preview": "assets/fichas/ficha_obra_027.jpg",
+          "label": "Lámina de Archivo 027"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_027.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 27,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_027_foto_01.png",
+          "web_image": "assets/obras/obra_027_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2621,
+          "alto_original": 3880,
+          "ratio": 0.676
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 36,
+      "codigo": "obra_036",
+      "numero_str": "036",
+      "titulo": "Máscara de la Serenidad*",
+      "titulo_base": "Máscara de la Serenidad",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de la Serenidad* (Obra 036)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica modelada en tonos naturales y arcilla cocida.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        27
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 27,
+          "preview": "assets/fichas/ficha_obra_027.jpg",
+          "label": "Lámina de Archivo 027"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_027.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 27,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_027_foto_02.png",
+          "web_image": "assets/obras/obra_027_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 3145,
+          "alto_original": 1918,
+          "ratio": 1.64
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 37,
+      "codigo": "obra_037",
+      "numero_str": "037",
+      "titulo": "Máscara Barbada*",
+      "titulo_base": "Máscara Barbada",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Barbada* (Obra 037)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara con barba estilizada en terracota cerámica policromada.",
+      "dimensiones": "0'24 x 0'24 m",
+      "paginas_referencia": [
+        28
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 28,
+          "preview": "assets/fichas/ficha_obra_028.jpg",
+          "label": "Lámina de Archivo 028"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_028.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 28,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_028_foto_01.png",
+          "web_image": "assets/obras/obra_028_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3068,
+          "alto_original": 3381,
+          "ratio": 0.907
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 38,
+      "codigo": "obra_038",
+      "numero_str": "038",
+      "titulo": "Rostro Espiritual*",
+      "titulo_base": "Rostro Espiritual",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro Espiritual* (Obra 038)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara de facciones espirituales en cerámica modelada sobre soporte de madera.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        28
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 28,
+          "preview": "assets/fichas/ficha_obra_028.jpg",
+          "label": "Lámina de Archivo 028"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_028.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 28,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_028_foto_02.png",
+          "web_image": "assets/obras/obra_028_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2299,
+          "alto_original": 2369,
+          "ratio": 0.97
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 39,
+      "codigo": "obra_039",
+      "numero_str": "039",
+      "titulo": "Rostro Arcaico*",
+      "titulo_base": "Rostro Arcaico",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro Arcaico* (Obra 039)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Placa de relieve cerámico con facciones arcaicas.",
+      "dimensiones": "0'26 x 0'185 m",
+      "paginas_referencia": [
+        29
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 29,
+          "preview": "assets/fichas/ficha_obra_029.jpg",
+          "label": "Lámina de Archivo 029"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_029.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 29,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_029_foto_01.png",
+          "web_image": "assets/obras/obra_029_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2881,
+          "alto_original": 1963,
+          "ratio": 1.468
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 40,
+      "codigo": "obra_040",
+      "numero_str": "040",
+      "titulo": "Máscara de la Meditación*",
+      "titulo_base": "Máscara de la Meditación",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de la Meditación* (Obra 040)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara de rasgos sobrios en terracota cerámica modelada.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        29
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 29,
+          "preview": "assets/fichas/ficha_obra_029.jpg",
+          "label": "Lámina de Archivo 029"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_029.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 29,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_029_foto_02.png",
+          "web_image": "assets/obras/obra_029_foto_02.png",
+          "deblur_image": null,
+          "ancho_original": 1987,
+          "alto_original": 2804,
+          "ratio": 0.709
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 41,
+      "codigo": "obra_041",
+      "numero_str": "041",
+      "titulo": "Máscara Mística*",
+      "titulo_base": "Máscara Mística",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Mística* (Obra 041)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en relieve de cerámica cocida.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        29
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 29,
+          "preview": "assets/fichas/ficha_obra_029.jpg",
+          "label": "Lámina de Archivo 029"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_029.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 29,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_029_foto_03.png",
+          "web_image": "assets/obras/obra_029_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2471,
+          "alto_original": 2811,
+          "ratio": 0.879
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 42,
+      "codigo": "obra_042",
+      "numero_str": "042",
+      "titulo": "Pequeña Máscara Ocre*",
+      "titulo_base": "Pequeña Máscara Ocre",
+      "es_titulo_original": false,
+      "nombre_completo": "Pequeña Máscara Ocre* (Obra 042)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Estudio escultórico de máscara en terracota cocida.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        30
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 30,
+          "preview": "assets/fichas/ficha_obra_030.jpg",
+          "label": "Lámina de Archivo 030"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_030.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 30,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_030_foto_01.png",
+          "web_image": "assets/obras/obra_030_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 1878,
+          "alto_original": 3090,
+          "ratio": 0.608
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 43,
+      "codigo": "obra_043",
+      "numero_str": "043",
+      "titulo": "Máscara Terracota en Relieve*",
+      "titulo_base": "Máscara Terracota en Relieve",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Terracota en Relieve* (Obra 043)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en relieve de terracota cerámica modelada.",
+      "dimensiones": "0'195 x 0'145 m",
+      "paginas_referencia": [
+        30
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 30,
+          "preview": "assets/fichas/ficha_obra_030.jpg",
+          "label": "Lámina de Archivo 030"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_030.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 30,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_030_foto_02.png",
+          "web_image": "assets/obras/obra_030_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2338,
+          "alto_original": 2842,
+          "ratio": 0.823
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 44,
+      "codigo": "obra_044",
+      "numero_str": "044",
+      "titulo": "Máscara Terracota Cuadrangular*",
+      "titulo_base": "Máscara Terracota Cuadrangular",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Terracota Cuadrangular* (Obra 044)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Relieve escultórico cuadrangular en cerámica cocida con pátina natural.",
+      "dimensiones": "0'255 x 0'23 m",
+      "paginas_referencia": [
+        30
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 30,
+          "preview": "assets/fichas/ficha_obra_030.jpg",
+          "label": "Lámina de Archivo 030"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_030.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 30,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_030_foto_03.png",
+          "web_image": "assets/obras/obra_030_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2795,
+          "alto_original": 2504,
+          "ratio": 1.116
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 45,
+      "codigo": "obra_045",
+      "numero_str": "045",
+      "titulo": "Máscara de Gres Esmaltado*",
+      "titulo_base": "Máscara de Gres Esmaltado",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de Gres Esmaltado* (Obra 045)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica esmaltada con gradiente superficial vidriado.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        31
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 31,
+          "preview": "assets/fichas/ficha_obra_031.jpg",
+          "label": "Lámina de Archivo 031"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_031.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 31,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_031_foto_01.png",
+          "web_image": "assets/obras/obra_031_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2158,
+          "alto_original": 3329,
+          "ratio": 0.648
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 46,
+      "codigo": "obra_046",
+      "numero_str": "046",
+      "titulo": "Máscara Gris Ceniza*",
+      "titulo_base": "Máscara Gris Ceniza",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Gris Ceniza* (Obra 046)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en gres cerámico modelado en tonos ceniza y azulados.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        31
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 31,
+          "preview": "assets/fichas/ficha_obra_031.jpg",
+          "label": "Lámina de Archivo 031"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_031.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 31,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_031_foto_02.png",
+          "web_image": "assets/obras/obra_031_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2029,
+          "alto_original": 2715,
+          "ratio": 0.747
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 47,
+      "codigo": "obra_047",
+      "numero_str": "047",
+      "titulo": "Máscara de Rostro Óvalo*",
+      "titulo_base": "Máscara de Rostro Óvalo",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de Rostro Óvalo* (Obra 047)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara ovalada en cerámica esmaltada.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        31
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 31,
+          "preview": "assets/fichas/ficha_obra_031.jpg",
+          "label": "Lámina de Archivo 031"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_031.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 31,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_031_foto_03.png",
+          "web_image": "assets/obras/obra_031_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2355,
+          "alto_original": 3013,
+          "ratio": 0.782
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 48,
+      "codigo": "obra_048",
+      "numero_str": "048",
+      "titulo": "Rostro Alargado en Gres*",
+      "titulo_base": "Rostro Alargado en Gres",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro Alargado en Gres* (Obra 048)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara de rostro estilizado en gres cerámico policromado.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        32
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 32,
+          "preview": "assets/fichas/ficha_obra_032.jpg",
+          "label": "Lámina de Archivo 032"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_032.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 32,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_032_foto_01.png",
+          "web_image": "assets/obras/obra_032_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 1919,
+          "alto_original": 2234,
+          "ratio": 0.859
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 49,
+      "codigo": "obra_049",
+      "numero_str": "049",
+      "titulo": "Máscara Ancestral*",
+      "titulo_base": "Máscara Ancestral",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Ancestral* (Obra 049)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica modelada con texturas rugosas y pátinas minerales.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        32
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 32,
+          "preview": "assets/fichas/ficha_obra_032.jpg",
+          "label": "Lámina de Archivo 032"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_032.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 32,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_032_foto_02.png",
+          "web_image": "assets/obras/obra_032_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2085,
+          "alto_original": 2006,
+          "ratio": 1.039
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 50,
+      "codigo": "obra_050",
+      "numero_str": "050",
+      "titulo": "Máscara de Ojos Hendidos*",
+      "titulo_base": "Máscara de Ojos Hendidos",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara de Ojos Hendidos* (Obra 050)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica cocida con pátina de óxido y huecos faciales profundos.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        32
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 32,
+          "preview": "assets/fichas/ficha_obra_032.jpg",
+          "label": "Lámina de Archivo 032"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_032.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 32,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_032_foto_03.png",
+          "web_image": "assets/obras/obra_032_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2365,
+          "alto_original": 2368,
+          "ratio": 0.999
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 51,
+      "codigo": "obra_051",
+      "numero_str": "051",
+      "titulo": "Rostro en Capucha*",
+      "titulo_base": "Rostro en Capucha",
+      "es_titulo_original": false,
+      "nombre_completo": "Rostro en Capucha* (Obra 051)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en gres cerámico vidriado con capucha texturizada.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        35
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 35,
+          "preview": "assets/fichas/ficha_obra_035.jpg",
+          "label": "Lámina de Archivo 035"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_035.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 35,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_035_foto_01.png",
+          "web_image": "assets/obras/obra_035_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2980,
+          "alto_original": 3471,
+          "ratio": 0.859
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 52,
+      "codigo": "obra_052",
+      "numero_str": "052",
+      "titulo": "Máscara del Pensamiento*",
+      "titulo_base": "Máscara del Pensamiento",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara del Pensamiento* (Obra 052)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara de expresión reflexiva modelada en cerámica sobre madera.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        35
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 35,
+          "preview": "assets/fichas/ficha_obra_035.jpg",
+          "label": "Lámina de Archivo 035"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_035.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 35,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_035_foto_02.png",
+          "web_image": "assets/obras/obra_035_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2484,
+          "alto_original": 1889,
+          "ratio": 1.315
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 53,
+      "codigo": "obra_053",
+      "numero_str": "053",
+      "titulo": "Máscara Vegetal con Nervaduras*",
+      "titulo_base": "Máscara Vegetal con Nervaduras",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Vegetal con Nervaduras* (Obra 053)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara antropomorfa en cerámica modelada con textura vegetal y nervaduras botánicas.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        36
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 36,
+          "preview": "assets/fichas/ficha_obra_036.jpg",
+          "label": "Lámina de Archivo 036"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_036.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 36,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_036_foto_01.png",
+          "web_image": "assets/obras/obra_036_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 1996,
+          "alto_original": 2667,
+          "ratio": 0.748
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 54,
+      "codigo": "obra_054",
+      "numero_str": "054",
+      "titulo": "Máscara del Viento*",
+      "titulo_base": "Máscara del Viento",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara del Viento* (Obra 054)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en cerámica modelada con trazos sinuosos y dinámicos.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        36
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 36,
+          "preview": "assets/fichas/ficha_obra_036.jpg",
+          "label": "Lámina de Archivo 036"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_036.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 36,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_036_foto_02.png",
+          "web_image": "assets/obras/obra_036_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 2294,
+          "alto_original": 2119,
+          "ratio": 1.083
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 55,
+      "codigo": "obra_055",
+      "numero_str": "055",
+      "titulo": "Máscara Telúrica*",
+      "titulo_base": "Máscara Telúrica",
+      "es_titulo_original": false,
+      "nombre_completo": "Máscara Telúrica* (Obra 055)",
+      "categoria": "mascaras",
+      "categoria_nombre": "Máscaras",
+      "materiales": "Máscara en relieve de arcilla cocida sobre base de madera rústica.",
+      "dimensiones": "Consultar lámina",
+      "paginas_referencia": [
+        36
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 36,
+          "preview": "assets/fichas/ficha_obra_036.jpg",
+          "label": "Lámina de Archivo 036"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_036.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 36,
+          "de_foto_indice": 3,
+          "archivo_original": "obra_036_foto_03.png",
+          "web_image": "assets/obras/obra_036_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2615,
+          "alto_original": 2016,
+          "ratio": 1.297
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 56,
+      "codigo": "obra_056",
+      "numero_str": "056",
+      "titulo": "Cristo",
+      "titulo_base": "Cristo",
+      "es_titulo_original": true,
+      "nombre_completo": "Cristo (Obra 056)",
+      "categoria": "volumetricas",
+      "categoria_nombre": "Figuras con más volumen",
+      "materiales": "Escultura de Cristo en bulto redondo con anatomía de gran volumen en madera y alambre forrado.",
+      "dimensiones": "1'20 x 1'05 m",
+      "paginas_referencia": [
+        37
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 37,
+          "preview": "assets/fichas/ficha_obra_037.jpg",
+          "label": "Lámina de Archivo 037"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_037.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 37,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_037_foto_01_cristo.png",
+          "web_image": "assets/obras/obra_037_foto_01_cristo.jpg",
+          "deblur_image": null,
+          "ancho_original": 3061,
+          "alto_original": 4361,
+          "ratio": 0.702
+        },
+        {
+          "indice": 2,
+          "de_pagina": 37,
+          "de_foto_indice": 2,
+          "archivo_original": "obra_037_foto_02_cristo.png",
+          "web_image": "assets/obras/obra_037_foto_02_cristo.png",
+          "deblur_image": null,
+          "ancho_original": 3110,
+          "alto_original": 4005,
+          "ratio": 0.777
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 57,
+      "codigo": "obra_057",
+      "numero_str": "057",
+      "titulo": "Esperanza a la depresión",
+      "titulo_base": "Esperanza a la depresión",
+      "es_titulo_original": true,
+      "nombre_completo": "Esperanza a la depresión (Obra 057)",
+      "categoria": "volumetricas",
+      "categoria_nombre": "Figuras con más volumen",
+      "materiales": "Escultura monumental exenta de gran volumen en madera ensamblada y policromada.",
+      "dimensiones": "0'47 x 0'39 x 0'66 m",
+      "paginas_referencia": [
+        38
+      ],
+      "fichas_asociadas": [
+        {
+          "pagina": 38,
+          "preview": "assets/fichas/ficha_obra_038.jpg",
+          "label": "Lámina de Archivo 038"
+        }
+      ],
+      "ficha_preview": "assets/fichas/ficha_obra_038.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": 38,
+          "de_foto_indice": 1,
+          "archivo_original": "obra_038_foto_01_esperanza_a_la_depresion.png",
+          "web_image": "assets/obras/obra_038_foto_01_esperanza_a_la_depresion.jpg",
+          "deblur_image": null,
+          "ancho_original": 2994,
+          "alto_original": 4394,
+          "ratio": 0.681
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    }
+  ],
+  "paginas": [
+    {
+      "id": 1,
+      "numero": 1,
+      "codigo": "pagina_001",
+      "numero_str": "001",
+      "titulo": "Lámina de Archivo 001",
+      "ficha_preview": "assets/fichas/ficha_obra_001.jpg",
+      "obras_ids": [
+        1,
+        1
+      ],
+      "obras_titulos": [
+        "Vuelo en Tensión*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 2,
+      "numero": 2,
+      "codigo": "pagina_002",
+      "numero_str": "002",
+      "titulo": "Lámina de Archivo 002",
+      "ficha_preview": "assets/fichas/ficha_obra_002.jpg",
+      "obras_ids": [
+        2,
+        2
+      ],
+      "obras_titulos": [
+        "Equilibrio Esférico*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": true
+    },
+    {
+      "id": 3,
+      "numero": 3,
+      "codigo": "pagina_003",
+      "numero_str": "003",
+      "titulo": "Lámina de Archivo 003",
+      "ficha_preview": "assets/fichas/ficha_obra_003.jpg",
+      "obras_ids": [
+        2
+      ],
+      "obras_titulos": [
+        "Equilibrio Esférico*"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 4,
+      "numero": 4,
+      "codigo": "pagina_004",
+      "numero_str": "004",
+      "titulo": "Lámina de Archivo 004",
+      "ficha_preview": "assets/fichas/ficha_obra_004.jpg",
+      "obras_ids": [
+        3
+      ],
+      "obras_titulos": [
+        "Ondulación Verde*"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 5,
+      "numero": 5,
+      "codigo": "pagina_005",
+      "numero_str": "005",
+      "titulo": "Lámina de Archivo 005",
+      "ficha_preview": "assets/fichas/ficha_obra_005.jpg",
+      "obras_ids": [
+        3
+      ],
+      "obras_titulos": [
+        "Ondulación Verde*"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 6,
+      "numero": 6,
+      "codigo": "pagina_006",
+      "numero_str": "006",
+      "titulo": "Lámina de Archivo 006",
+      "ficha_preview": "assets/fichas/ficha_obra_006.jpg",
+      "obras_ids": [
+        4,
+        4
+      ],
+      "obras_titulos": [
+        "Planos Cruzados*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 7,
+      "numero": 7,
+      "codigo": "pagina_007",
+      "numero_str": "007",
+      "titulo": "Lámina de Archivo 007",
+      "ficha_preview": "assets/fichas/ficha_obra_007.jpg",
+      "obras_ids": [
+        5
+      ],
+      "obras_titulos": [
+        "Águila Imperial"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 8,
+      "numero": 8,
+      "codigo": "pagina_008",
+      "numero_str": "008",
+      "titulo": "Lámina de Archivo 008",
+      "ficha_preview": "assets/fichas/ficha_obra_008.jpg",
+      "obras_ids": [
+        6,
+        6
+      ],
+      "obras_titulos": [
+        "Ala Metálica*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 9,
+      "numero": 9,
+      "codigo": "pagina_009",
+      "numero_str": "009",
+      "titulo": "Lámina de Archivo 009",
+      "ficha_preview": "assets/fichas/ficha_obra_009.jpg",
+      "obras_ids": [
+        7,
+        8
+      ],
+      "obras_titulos": [
+        "Relieve Cósmico Policromado*",
+        "Oriente"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 10,
+      "numero": 10,
+      "codigo": "pagina_010",
+      "numero_str": "010",
+      "titulo": "Lámina de Archivo 010",
+      "ficha_preview": "assets/fichas/ficha_obra_010.jpg",
+      "obras_ids": [
+        9
+      ],
+      "obras_titulos": [
+        "Envolvente Espacial*"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 11,
+      "numero": 11,
+      "codigo": "pagina_011",
+      "numero_str": "011",
+      "titulo": "Lámina de Archivo 011",
+      "ficha_preview": "assets/fichas/ficha_obra_011.jpg",
+      "obras_ids": [
+        10
+      ],
+      "obras_titulos": [
+        "El Torero"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 12,
+      "numero": 12,
+      "codigo": "pagina_012",
+      "numero_str": "012",
+      "titulo": "Lámina de Archivo 012",
+      "ficha_preview": "assets/fichas/ficha_obra_012.jpg",
+      "obras_ids": [
+        11
+      ],
+      "obras_titulos": [
+        "Ritmo Orgánico*"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 13,
+      "numero": 13,
+      "codigo": "pagina_013",
+      "numero_str": "013",
+      "titulo": "Lámina de Archivo 013",
+      "ficha_preview": "assets/fichas/ficha_obra_013.jpg",
+      "obras_ids": [
+        12,
+        12
+      ],
+      "obras_titulos": [
+        "Nudo Cósmico*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 14,
+      "numero": 14,
+      "codigo": "pagina_014",
+      "numero_str": "014",
+      "titulo": "Lámina de Archivo 014",
+      "ficha_preview": "assets/fichas/ficha_obra_014.jpg",
+      "obras_ids": [
+        10,
+        10
+      ],
+      "obras_titulos": [
+        "El Torero"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": true
+    },
+    {
+      "id": 15,
+      "numero": 15,
+      "codigo": "pagina_015",
+      "numero_str": "015",
+      "titulo": "Lámina de Archivo 015",
+      "ficha_preview": "assets/fichas/ficha_obra_015.jpg",
+      "obras_ids": [
+        13,
+        13
+      ],
+      "obras_titulos": [
+        "Listones Rojos"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 16,
+      "numero": 16,
+      "codigo": "pagina_016",
+      "numero_str": "016",
+      "titulo": "Lámina de Archivo 016",
+      "ficha_preview": "assets/fichas/ficha_obra_016.jpg",
+      "obras_ids": [
+        14,
+        14
+      ],
+      "obras_titulos": [
+        "Relieve en Almagre*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 17,
+      "numero": 17,
+      "codigo": "pagina_017",
+      "numero_str": "017",
+      "titulo": "Lámina de Archivo 017",
+      "ficha_preview": "assets/fichas/ficha_obra_017.jpg",
+      "obras_ids": [
+        15,
+        16,
+        17
+      ],
+      "obras_titulos": [
+        "Órbita y Ritmo*",
+        "Composición Modular Semáforo*",
+        "Cuadrante de Cuerdas y Anillo*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 18,
+      "numero": 18,
+      "codigo": "pagina_018",
+      "numero_str": "018",
+      "titulo": "Lámina de Archivo 018",
+      "ficha_preview": "assets/fichas/ficha_obra_018.jpg",
+      "obras_ids": [
+        18,
+        18
+      ],
+      "obras_titulos": [
+        "Retablo de Arcos*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 19,
+      "numero": 19,
+      "codigo": "pagina_019",
+      "numero_str": "019",
+      "titulo": "Lámina de Archivo 019",
+      "ficha_preview": "assets/fichas/ficha_obra_019.jpg",
+      "obras_ids": [
+        19,
+        20
+      ],
+      "obras_titulos": [
+        "Geometría en Carmín*",
+        "Trazado Cósmico en Alambre*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 20,
+      "numero": 20,
+      "codigo": "pagina_020",
+      "numero_str": "020",
+      "titulo": "Lámina de Archivo 020",
+      "ficha_preview": "assets/fichas/ficha_obra_020.jpg",
+      "obras_ids": [
+        22,
+        23
+      ],
+      "obras_titulos": [
+        "Máscara Industrial*",
+        "Máscara de la Sorpresa*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 21,
+      "numero": 21,
+      "codigo": "pagina_021",
+      "numero_str": "021",
+      "titulo": "Lámina de Archivo 021",
+      "ficha_preview": "assets/fichas/ficha_obra_021.jpg",
+      "obras_ids": [
+        24,
+        24
+      ],
+      "obras_titulos": [
+        "Máscara del Grito*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 22,
+      "numero": 22,
+      "codigo": "pagina_022",
+      "numero_str": "022",
+      "titulo": "Lámina de Archivo 022",
+      "ficha_preview": "assets/fichas/ficha_obra_022.jpg",
+      "obras_ids": [
+        25,
+        25
+      ],
+      "obras_titulos": [
+        "Máscara Espectral*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 23,
+      "numero": 23,
+      "codigo": "pagina_023",
+      "numero_str": "023",
+      "titulo": "Lámina de Archivo 023",
+      "ficha_preview": "assets/fichas/ficha_obra_023.jpg",
+      "obras_ids": [
+        26,
+        27
+      ],
+      "obras_titulos": [
+        "Rostro en Roble*",
+        "Máscara de Facciones Hendidas*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 24,
+      "numero": 24,
+      "codigo": "pagina_024",
+      "numero_str": "024",
+      "titulo": "Lámina de Archivo 024",
+      "ficha_preview": "assets/fichas/ficha_obra_024.jpg",
+      "obras_ids": [
+        28,
+        29,
+        30
+      ],
+      "obras_titulos": [
+        "Máscara de la Memoria*",
+        "Rostro Primitivo*",
+        "Máscara Sagrada*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 25,
+      "numero": 25,
+      "codigo": "pagina_025",
+      "numero_str": "025",
+      "titulo": "Lámina de Archivo 025",
+      "ficha_preview": "assets/fichas/ficha_obra_025.jpg",
+      "obras_ids": [
+        31,
+        32
+      ],
+      "obras_titulos": [
+        "Mirada Primitiva*",
+        "Máscara del Silencio*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 26,
+      "numero": 26,
+      "codigo": "pagina_026",
+      "numero_str": "026",
+      "titulo": "Lámina de Archivo 026",
+      "ficha_preview": "assets/fichas/ficha_obra_026.jpg",
+      "obras_ids": [
+        33,
+        34
+      ],
+      "obras_titulos": [
+        "Cabeza Zoomorfa*",
+        "Rostro Alado*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 27,
+      "numero": 27,
+      "codigo": "pagina_027",
+      "numero_str": "027",
+      "titulo": "Lámina de Archivo 027",
+      "ficha_preview": "assets/fichas/ficha_obra_027.jpg",
+      "obras_ids": [
+        35,
+        36
+      ],
+      "obras_titulos": [
+        "Corona de Espinas*",
+        "Máscara de la Serenidad*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 28,
+      "numero": 28,
+      "codigo": "pagina_028",
+      "numero_str": "028",
+      "titulo": "Lámina de Archivo 028",
+      "ficha_preview": "assets/fichas/ficha_obra_028.jpg",
+      "obras_ids": [
+        37,
+        38
+      ],
+      "obras_titulos": [
+        "Máscara Barbada*",
+        "Rostro Espiritual*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 29,
+      "numero": 29,
+      "codigo": "pagina_029",
+      "numero_str": "029",
+      "titulo": "Lámina de Archivo 029",
+      "ficha_preview": "assets/fichas/ficha_obra_029.jpg",
+      "obras_ids": [
+        39,
+        40,
+        41
+      ],
+      "obras_titulos": [
+        "Rostro Arcaico*",
+        "Máscara de la Meditación*",
+        "Máscara Mística*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 30,
+      "numero": 30,
+      "codigo": "pagina_030",
+      "numero_str": "030",
+      "titulo": "Lámina de Archivo 030",
+      "ficha_preview": "assets/fichas/ficha_obra_030.jpg",
+      "obras_ids": [
+        42,
+        43,
+        44
+      ],
+      "obras_titulos": [
+        "Pequeña Máscara Ocre*",
+        "Máscara Terracota en Relieve*",
+        "Máscara Terracota Cuadrangular*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 31,
+      "numero": 31,
+      "codigo": "pagina_031",
+      "numero_str": "031",
+      "titulo": "Lámina de Archivo 031",
+      "ficha_preview": "assets/fichas/ficha_obra_031.jpg",
+      "obras_ids": [
+        45,
+        46,
+        47
+      ],
+      "obras_titulos": [
+        "Máscara de Gres Esmaltado*",
+        "Máscara Gris Ceniza*",
+        "Máscara de Rostro Óvalo*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 32,
+      "numero": 32,
+      "codigo": "pagina_032",
+      "numero_str": "032",
+      "titulo": "Lámina de Archivo 032",
+      "ficha_preview": "assets/fichas/ficha_obra_032.jpg",
+      "obras_ids": [
+        48,
+        49,
+        50
+      ],
+      "obras_titulos": [
+        "Rostro Alargado en Gres*",
+        "Máscara Ancestral*",
+        "Máscara de Ojos Hendidos*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 33,
+      "numero": 33,
+      "codigo": "pagina_033",
+      "numero_str": "033",
+      "titulo": "Lámina de Archivo 033",
+      "ficha_preview": "assets/fichas/ficha_obra_033.jpg",
+      "obras_ids": [
+        21,
+        21
+      ],
+      "obras_titulos": [
+        "Neptuno con Tridente*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": true
+    },
+    {
+      "id": 34,
+      "numero": 34,
+      "codigo": "pagina_034",
+      "numero_str": "034",
+      "titulo": "Lámina de Archivo 034",
+      "ficha_preview": "assets/fichas/ficha_obra_034.jpg",
+      "obras_ids": [
+        21
+      ],
+      "obras_titulos": [
+        "Neptuno con Tridente*"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true
+    },
+    {
+      "id": 35,
+      "numero": 35,
+      "codigo": "pagina_035",
+      "numero_str": "035",
+      "titulo": "Lámina de Archivo 035",
+      "ficha_preview": "assets/fichas/ficha_obra_035.jpg",
+      "obras_ids": [
+        51,
+        52
+      ],
+      "obras_titulos": [
+        "Rostro en Capucha*",
+        "Máscara del Pensamiento*"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 36,
+      "numero": 36,
+      "codigo": "pagina_036",
+      "numero_str": "036",
+      "titulo": "Lámina de Archivo 036",
+      "ficha_preview": "assets/fichas/ficha_obra_036.jpg",
+      "obras_ids": [
+        53,
+        54,
+        55
+      ],
+      "obras_titulos": [
+        "Máscara Vegetal con Nervaduras*",
+        "Máscara del Viento*",
+        "Máscara Telúrica*"
+      ],
+      "num_obras": 3,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 37,
+      "numero": 37,
+      "codigo": "pagina_037",
+      "numero_str": "037",
+      "titulo": "Lámina de Archivo 037",
+      "ficha_preview": "assets/fichas/ficha_obra_037.jpg",
+      "obras_ids": [
+        56,
+        56
+      ],
+      "obras_titulos": [
+        "Cristo"
+      ],
+      "num_obras": 2,
+      "es_multiobra": true,
+      "es_multilamina": false
+    },
+    {
+      "id": 38,
+      "numero": 38,
+      "codigo": "pagina_038",
+      "numero_str": "038",
+      "titulo": "Lámina de Archivo 038",
+      "ficha_preview": "assets/fichas/ficha_obra_038.jpg",
+      "obras_ids": [
+        57
+      ],
+      "obras_titulos": [
+        "Esperanza a la depresión"
+      ],
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false
+    }
+  ],
+  "totales": {
+    "obras_totales": 57,
+    "esculturas": 21,
+    "mascaras": 34,
+    "volumetricas": 2,
+    "paginas_archivo": 38
+  }
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Luis Gutiérrez — Escultor · Archivo & Catálogo Razonado</title>
+  <meta name="description" content="Catálogo razonado y archivo escultórico del artista José Luis Gutiérrez. 38 obras maestras recuperadas y digitalizadas a 600 DPI.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text x='50' y='65' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23F5F3F0' text-anchor='middle'>JLG</text></svg>">
+</head>
+<body>
+
+  <!-- =======================================================================
+       CABECERA FIJA Y NAVEGACIÓN
+       ======================================================================= -->
+  <header class="c-header">
+    <div class="c-header__brand">
+      <a href="#" data-nav-target="obras" class="c-header__title">José Luis<br>Gutiérrez</a>
+      <span class="c-header__subtitle">Archivo y Catálogo</span>
+    </div>
+
+    <nav class="c-header__nav-quick">
+      <a href="#" data-nav-target="obras" class="c-header__link is-active">Obras</a>
+      <a href="#" data-nav-target="artist" class="c-header__link">El Artista</a>
+      <a href="#" data-nav-target="archive" class="c-header__link">El Archivo</a>
+      <a href="#" data-nav-target="contact" class="c-header__link">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- =======================================================================
+       MENÚ ENVOLVENTE A PANTALLA COMPLETA (c-navscreen)
+       ======================================================================= -->
+  <div id="navscreen" class="c-navscreen">
+    <ul class="c-navscreen__menu">
+      <li><a href="#" data-nav-target="obras">01. Obras</a></li>
+      <li><a href="#" data-nav-target="artist">02. El Artista & Trayectoria</a></li>
+      <li><a href="#" data-nav-target="archive">03. El Archivo de Cartulinas</a></li>
+      <li><a href="#" data-nav-target="contact">04. Contacto & Derechos</a></li>
+    </ul>
+
+    <div class="c-navscreen__bottom">
+      <div class="c-navscreen__about">
+        <strong>José Luis Gutiérrez</strong> es un artista escultor cuyo legado material dialoga con la madera tallada, ensamblada y curvada, el alambre forrado, la cerámica modelada y la pureza volumétrica en el espacio. Este archivo custodia y divulga las 38 láminas fotográficas originales preservadas por el artista, digitalizadas con máxima fidelidad.
+      </div>
+      <div class="c-navscreen__links">
+        <a href="/editor" class="c-navscreen__editor-btn" title="Herramienta curatorial de recorte y calibración">Acceso Curatorial: Editor</a>
+        <span class="site-footer__legal">&copy; 2026 Archivo José Luis Gutiérrez</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       CONTENEDOR DE VISTAS PRINCIPALES
+       ======================================================================= -->
+  <main class="main-view-container">
+
+    <!-- SECCIÓN 1: OVERVIEW (Muro Escalonado 5 Columnas — Gregor Collienne Style) -->
+    <section id="view-obras" class="view-section is-active">
+      <div class="overview-intro">
+        <h1 class="overview-intro__title">Obras</h1>
+        <p class="overview-intro__subtitle">Catálogo Razonado · Fondo Patrimonial de 57 Obras Escultóricas en 38 Láminas Históricas</p>
+
+        <!-- Filtro por categorías curatoriales -->
+        <div class="overview-categories">
+          <button class="cat-pill is-active" data-cat="todas">Todas (57)</button>
+          <button class="cat-pill" data-cat="esculturas">Esculturas (21)</button>
+          <button class="cat-pill" data-cat="mascaras">Máscaras (34)</button>
+          <button class="cat-pill" data-cat="volumetricas">Figuras Volumétricas (2)</button>
+        </div>
+
+        <p class="overview-footnote">* Título atribuido para catalogación al no constar nombre original manuscrito en la cartulina.</p>
+      </div>
+
+      <div id="overviewGrid" class="c-element-overviewgrid">
+        <!-- Renderizado dinámico vía JavaScript -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: EL ARTISTA & TRAYECTORIA -->
+    <section id="view-artist" class="view-section">
+      <article class="artist-section">
+        <header class="artist-header">
+          <h1 class="artist-header__title">José Luis Gutiérrez</h1>
+          <div class="artist-header__role">Escultor · 1928–2020 · Lenguaje y Materia</div>
+        </header>
+
+        <div class="artist-grid">
+          <div class="artist-prose">
+            <p>La obra de <strong>José Luis Gutiérrez</strong> representa una exploración rigurosa y poética de la forma, la línea y el equilibrio en el espacio. A través de la madera en sus múltiples lenguajes —tallada, curvada bajo tensión, ensamblada en listones y policromada—, así como de la cerámica modelada y el alambre forrado, sus esculturas capturan la ligereza dentro de la densidad y la presencia dramática del volumen en suspensión.</p>
+
+            <blockquote class="artist-quote">
+              "La escultura no ocupa el espacio: lo convoca, lo tensiona y lo hace visible."
+            </blockquote>
+
+            <p>Sus creaciones abarcan desde composiciones de escala monumental —como la icónica <em>Águila Imperial</em> (1'20 × 0'80 m) y la pieza de listones carmesí (1'50 × 0'65 m)— hasta estudios íntimos de alambre forrado donde la figura humana y animal se disuelve en una caligrafía aérea tridimensional, como se aprecia en la escultura de <em>El Torero</em> o el dramático <em>Cristo</em>.</p>
+          </div>
+
+          <div class="artist-prose">
+            <h3 class="font-heading" style="margin-bottom: var(--space-2); font-size: var(--fs-h4);">Series y Ejes de Trabajo</h3>
+            <p>El corpus artístico de Gutiérrez se estructura en torno a tres grandes investigaciones formales desarrolladas a lo largo de décadas de labor en taller:</p>
+            <p><strong>1. Madera, Talla y Ensamblaje Constructivista:</strong> Volúmenes abstractos y figurativos en madera noble, listones modulados y ensamblajes con policromías vivas, explorando la alternancia entre planos opacos y vacíos interiores.</p>
+            <p><strong>2. Máscaras y Expresión Plástica:</strong> Rostros y cabezas modeladas en cerámica, terracota, gres vidriado y madera hendida con honda carga expresiva y arcaica.</p>
+            <p><strong>3. Figuras Volumétricas y Caligrafía de Alambre:</strong> Obras donde el alambre forrado y la tela dibujan en el aire siluetas esenciales, junto a piezas de gran masa y rotunda presencia anatómica.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- SECCIÓN 4: EL ARCHIVO HISTÓRICO DE CARTULINAS -->
+    <section id="view-archive" class="view-section">
+      <article class="archive-section">
+        <header class="artist-header">
+          <h1 class="artist-header__title">El Archivo Histórico</h1>
+          <div class="artist-header__role">Las 38 Láminas de Cartulina Originales · Fondo Histórico</div>
+        </header>
+
+        <div class="artist-grid">
+          <div class="artist-prose">
+            <h3 class="font-heading" style="margin-bottom: var(--space-2); font-size: var(--fs-h4);">Fondo Documental y Metodología</h3>
+            <p>El escultor José Luis Gutiérrez preservó su legado mediante un meticuloso sistema de catalogación en <strong>38 láminas de cartulina</strong>. Sobre cada lámina, el artista montó personalmente las fotografías de época de sus esculturas y anotó a mano las dimensiones físicas originales y títulos de las piezas.</p>
+
+            <p>El presente proyecto patrimonial ha llevado a cabo la recuperación digital de este fondo mediante estándares de preservación museística:</p>
+            <p><strong>Digitalización sin compresión destructiva:</strong> Captura en color real de las copias fotográficas de época y del soporte original.</p>
+            <p><strong>Calibración Ortogonal y Nivelación:</strong> Corrección de inclinación y fijación de la base de cada escultura a 0.0° estrictos con respecto a la horizontal.</p>
+            <p><strong>Metadatos Incrustados:</strong> Cada imagen digital preserva de forma permanente la atribución de autoría al artista.</p>
+          </div>
+
+          <div>
+            <div class="archive-stats-box" style="margin-top: 0;">
+              <div class="archive-stats-title">Fondo Documental Activo</div>
+              <div class="archive-stats-grid">
+                <div class="stat-item">
+                  <div class="stat-item__num">57</div>
+                  <div class="stat-item__label">Obras Escultóricas</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-item__num">38</div>
+                  <div class="stat-item__label">Láminas de Archivo</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-item__num">74</div>
+                  <div class="stat-item__label">Fotografías Históricas</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-item__num">100%</div>
+                  <div class="stat-item__label">Catalogado y Preservado</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Galería de las 38 Cartulinas Originales -->
+        <div class="archive-fichas-intro">
+          <div>
+            <h2 class="font-heading" style="font-size: var(--fs-h3);">Catálogo Visual de las 38 Cartulinas</h2>
+            <p style="color: var(--color-muted); font-size: var(--fs-small); margin-top: 4px;">
+              Haz clic en cualquier cartulina para inspeccionar la obra y sus fotografías en alta resolución.
+            </p>
+          </div>
+        </div>
+
+        <div id="archiveFichasGrid" class="archive-fichas-grid">
+          <!-- Renderizado dinámico de las 38 cartulinas vía JavaScript -->
+        </div>
+      </article>
+    </section>
+
+    <!-- SECCIÓN 5: CONTACTO & DERECHOS -->
+    <section id="view-contact" class="view-section">
+      <article class="contact-section">
+        <header class="artist-header">
+          <h1 class="artist-header__title">Contacto & Información</h1>
+          <div class="artist-header__role">Archivo Patrimonial José Luis Gutiérrez</div>
+        </header>
+
+        <div class="artist-prose">
+          <p>Para consultas curatoriales, investigación académica, solicitudes de exposición o documentación sobre las obras y catalogación del escultor José Luis Gutiérrez, puede dirigirse al equipo de conservación del archivo.</p>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-row">
+            <span class="contact-label">Custodia y Archivo</span>
+            <span class="contact-value">Fondo Escultórico José Luis Gutiérrez</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Localización</span>
+            <span class="contact-value">España</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Resolución de Archivo</span>
+            <span class="contact-value">Archivo digital de alta definición (Máxima fidelidad)</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Herramienta Curatorial</span>
+            <span class="contact-value"><a href="/editor" style="text-decoration: underline; font-weight: 700;">Acceder al Editor de Recortes & Calibración</a></span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- =======================================================================
+       VISOR CURATORIAL / MODAL DE OBRA (FULLSCREEN EDITORIAL)
+       ======================================================================= -->
+  <div id="obraModal" class="c-obra-modal" role="dialog" aria-modal="true">
+    <header class="c-modal-header">
+      <div class="c-header__brand">
+        <a href="#" id="modalHomeBtn" class="c-header__brand c-modal-home-brand" title="Ir al inicio del catálogo">
+          <span class="c-header__title">José Luis<br>Gutiérrez</span>
+          <span class="c-header__subtitle">Archivo y Catálogo</span>
+        </a>
+      </div>
+
+      <div class="c-modal-header__actions">
+        <div class="c-modal-header__obra-pill">
+          <span id="modalHeaderObraTitle" class="c-modal-header__obra-name">Nombre de la Obra</span>
+          <span id="modalNumber" class="c-modal-header__number">Obra 001</span>
+          <span id="modalSubtitle" style="display:none;"></span>
+        </div>
+        <button id="modalCloseBtn" class="c-modal-close-btn" aria-label="Cerrar Ficha de Obra" title="Cerrar (Esc)">✕</button>
+      </div>
+    </header>
+
+    <div class="c-modal-body">
+      <!-- Columna Izquierda: Visor de Imagen, Miniaturas y Deblur -->
+      <div class="c-modal-viewer">
+        <div class="c-modal-figure">
+          <img id="modalMainImg" class="c-modal-img" src="" alt="Escultura de José Luis Gutiérrez" />
+        </div>
+
+        <!-- Miniaturas si la lámina incluye más de una toma -->
+        <div id="modalThumbnails" class="c-modal-thumbnails"></div>
+
+        <!-- Comparador Deblur IA (solo visible en obras restauradas) -->
+        <div id="modalDeblurCompare" class="c-modal-deblur-compare" style="display: none;">
+          <div class="c-modal-deblur-toggle">
+            <span class="c-modal-deblur-title">Restauración digital</span>
+            <div class="c-deblur-pill-group">
+              <button id="btnDeblurOrig" class="c-deblur-pill is-active">Original</button>
+              <button id="btnDeblurAI" class="c-deblur-pill">Restaurada</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón para inspeccionar la cartulina histórica de origen -->
+        <button id="btnToggleFicha" class="c-btn-secondary" style="width: 100%;">
+          Ver lámina original
+        </button>
+      </div>
+
+      <!-- Columna Derecha: Ficha Técnica Curatorial y Descarga -->
+      <div class="c-modal-curatorial">
+        <h2 id="modalMetaObra" class="c-modal-title-main">Obra 001</h2>
+        <div id="modalMetaTitulo" class="c-modal-artist-name">Escultura</div>
+
+        <!-- Tarjeta de Referencia a Láminas del Archivo Histórico -->
+        <div id="modalArchiveRefCard" class="c-modal-archive-ref-card" style="display: none;">
+          <div id="modalArchiveRefTitle" class="c-modal-archive-ref-title">Lámina de Archivo Histórico</div>
+          <div id="modalArchiveRefText" class="c-modal-archive-ref-text"></div>
+          <div id="modalArchiveRefButtons" class="c-modal-archive-ref-buttons"></div>
+        </div>
+
+        <table class="c-modal-meta-table">
+          <tbody>
+            <tr>
+              <th>Artista</th>
+              <td>José Luis Gutiérrez</td>
+            </tr>
+            <tr>
+              <th>Materiales</th>
+              <td id="modalMetaMateriales">Escultura original en madera y técnica mixta.</td>
+            </tr>
+            <tr>
+              <th>Dimensiones</th>
+              <td id="modalMetaDims">0'80 x 0'50 m</td>
+            </tr>
+            <tr>
+              <th>Vistas</th>
+              <td id="modalMetaFotosCount">2 fotografías</td>
+            </tr>
+            <tr>
+              <th>Lámina de Archivo</th>
+              <td id="modalMetaLamina">Lámina 001</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="c-modal-download-box">
+          <a id="btnDownloadPng" href="#" class="c-btn-download" download>
+            Descargar fotografía en alta resolución
+          </a>
+        </div>
+
+        <!-- Controles de navegación Anterior / Siguiente -->
+        <div class="c-modal-footer-nav">
+          <button id="btnModalPrev" class="c-modal-nav-btn is-prev">← Anterior</button>
+          <button id="btnModalNext" class="c-modal-nav-btn">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       PIE DE PÁGINA
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <h3 class="font-heading" style="font-size: var(--fs-h4); margin-bottom: 4px;">José Luis Gutiérrez</h3>
+        <p class="site-footer__legal">Archivo y Catálogo Razonado · Colección Patrimonial</p>
+      </div>
+      <div class="site-footer__legal">
+        Fondo Patrimonial · Archivo Artístico José Luis Gutiérrez
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Cursor Flotante (Gregor Collienne Style) -->
+  <div id="customCursor" class="custom-cursor">
+    <span class="custom-cursor__text"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="site.js"></script>
+</body>
+</html>
