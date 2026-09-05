@@ -1848,7 +1848,8 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-bottom: 4px;
+  padding: 6px 4px 8px 4px;
+  align-items: center;
 }
 
 .c-modal-thumbnails::-webkit-scrollbar {
@@ -1858,7 +1859,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 .c-modal-thumb {
   width: 72px;
   height: 72px;
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   background: var(--color-light-alt);
   border-radius: 4px;
   cursor: pointer;
@@ -1866,22 +1867,29 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   align-items: center;
   justify-content: center;
   padding: 4px;
-  transition: border-color 0.3s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
+  box-sizing: border-box;
+  opacity: 0.7;
 }
 
 .c-modal-thumb:hover {
-  transform: translateY(-2px);
+  opacity: 1;
+  border-color: var(--color-muted);
 }
 
 .c-modal-thumb.is-active {
-  border: 2px solid var(--color-dark);
+  border-color: var(--color-dark);
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .c-modal-thumb img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Comparador interactivo Deblur IA (Antes / Después) */
