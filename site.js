@@ -53,10 +53,6 @@
     modalMetaFotosCount: document.getElementById('modalMetaFotosCount'),
     modalMetaLamina: document.getElementById('modalMetaLamina'),
     modalMetaMateriales: document.getElementById('modalMetaMateriales'),
-    modalArchiveRefCard: document.getElementById('modalArchiveRefCard'),
-    modalArchiveRefTitle: document.getElementById('modalArchiveRefTitle'),
-    modalArchiveRefText: document.getElementById('modalArchiveRefText'),
-    modalArchiveRefButtons: document.getElementById('modalArchiveRefButtons'),
     btnDownloadPng: document.getElementById('btnDownloadPng'),
     btnToggleFicha: document.getElementById('btnToggleFicha'),
     btnModalPrev: document.getElementById('btnModalPrev'),
@@ -484,11 +480,7 @@
       history.pushState({ modalOpen: true, obraId: obra.id }, '', '#obra-' + obra.numero_str);
     }
 
-    // Deshacer de cualquier tarjeta redundante de múltiples láminas
-    if (dom.modalArchiveRefCard) {
-      dom.modalArchiveRefCard.style.display = 'none';
-      dom.modalArchiveRefCard.innerHTML = '';
-    }
+
 
     if (dom.btnToggleFicha) {
       dom.btnToggleFicha.style.display = 'block';
@@ -579,35 +571,6 @@
 
     if (dom.modalMetaLamina) {
       dom.modalMetaLamina.textContent = `Lámina ${pagina.numero_str}`;
-    }
-
-    // Tarjeta con las esculturas que contiene esta lámina
-    if (dom.modalArchiveRefCard && dom.modalArchiveRefText && dom.modalArchiveRefButtons) {
-      dom.modalArchiveRefCard.style.display = 'flex';
-      dom.modalArchiveRefTitle.textContent = 'Esculturas en esta lámina';
-      dom.modalArchiveRefButtons.innerHTML = '';
-
-      if (pagina.num_obras > 1) {
-        dom.modalArchiveRefText.innerHTML = `Esta lámina de cartulina contiene fotografías de <strong>${pagina.num_obras} obras distintas</strong> del artista:`;
-      } else {
-        dom.modalArchiveRefText.innerHTML = `Esta lámina de cartulina documenta la siguiente escultura:`;
-      }
-
-      const uniqueObraIds = Array.from(new Set(pagina.obras_ids));
-      uniqueObraIds.forEach((oId) => {
-        const obraObj = state.obras.find(o => o.id === oId);
-        if (obraObj) {
-          const btn = document.createElement('button');
-          btn.className = 'c-modal-archive-ref-btn';
-          if (obraObj.es_titulo_original) {
-            btn.textContent = `Ver Obra ${obraObj.numero_str} · ${obraObj.titulo} →`;
-          } else {
-            btn.textContent = `Ver Obra ${obraObj.numero_str} →`;
-          }
-          btn.addEventListener('click', () => openModal(obraObj));
-          dom.modalArchiveRefButtons.appendChild(btn);
-        }
-      });
     }
 
     if (dom.btnDownloadPng) {
