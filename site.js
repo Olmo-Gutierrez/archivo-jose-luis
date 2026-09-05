@@ -437,6 +437,31 @@
     setupDownloadButton(obra);
   }
 
+  // Bloqueo estricto de scroll en iOS Safari para evitar que se mueva la galería de fondo
+  function lockBodyScroll() {
+    state.lastScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${state.lastScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function unlockBodyScroll() {
+    const scrollY = state.lastScrollY || 0;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo({
+      top: scrollY,
+      behavior: 'instant'
+    });
+  }
+
   // 11. Apertura del Modal de Obra
   function openModal(obra, pushHistory = true) {
     if (!state.activeModalObra && !state.activeModalPagina) {
@@ -495,7 +520,7 @@
 
     // Mostrar modal y bloquear scroll de fondo
     dom.obraModal.classList.add('is-active');
-    dom.body.style.overflow = 'hidden';
+    lockBodyScroll();
   }
 
   // 12. Modal de Lámina de Archivo Histórico (Al pulsar en sección Archivo)
@@ -574,26 +599,20 @@
     }
 
     dom.obraModal.classList.add('is-active');
-    dom.body.style.overflow = 'hidden';
+    lockBodyScroll();
   }
 
   function closeModal(updateHistory = true) {
     state.activeModalObra = null;
     state.activeModalPagina = null;
     dom.obraModal.classList.remove('is-active');
-    dom.body.style.overflow = '';
+    unlockBodyScroll();
 
     if (updateHistory && window.location.hash) {
       try {
         history.pushState(null, '', window.location.pathname + window.location.search);
       } catch (e) {}
     }
-
-    // Restaurar exactamente la posición previa de scroll en la galería
-    window.scrollTo({
-      top: state.lastScrollY || 0,
-      behavior: 'instant'
-    });
   }
 
   function navigateModal(direction) {
