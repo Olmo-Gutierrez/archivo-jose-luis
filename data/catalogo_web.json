@@ -2444,15 +2444,16 @@
       "titulo": "Lámina de Archivo 001",
       "ficha_preview": "assets/fichas/ficha_obra_001.jpg",
       "obras_ids": [
-        1,
         1
       ],
       "obras_titulos": [
-        "Vuelo en Tensión*"
+        "Obra 001"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 001"
     },
     {
       "id": 2,
@@ -2462,15 +2463,16 @@
       "titulo": "Lámina de Archivo 002",
       "ficha_preview": "assets/fichas/ficha_obra_002.jpg",
       "obras_ids": [
-        2,
         2
       ],
       "obras_titulos": [
-        "Equilibrio Esférico*"
+        "Obra 002"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": true
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 002"
     },
     {
       "id": 3,
@@ -2483,11 +2485,13 @@
         2
       ],
       "obras_titulos": [
-        "Equilibrio Esférico*"
+        "Obra 002"
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": true
+      "es_multilamina": true,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Obra 002"
     },
     {
       "id": 4,
@@ -2500,11 +2504,13 @@
         3
       ],
       "obras_titulos": [
-        "Ondulación Verde*"
+        "Obra 003"
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": true
+      "es_multilamina": true,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Obra 003"
     },
     {
       "id": 5,
@@ -2517,11 +2523,13 @@
         3
       ],
       "obras_titulos": [
-        "Ondulación Verde*"
+        "Obra 003"
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": true
+      "es_multilamina": true,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Obra 003"
     },
     {
       "id": 6,
@@ -2531,15 +2539,16 @@
       "titulo": "Lámina de Archivo 006",
       "ficha_preview": "assets/fichas/ficha_obra_006.jpg",
       "obras_ids": [
-        4,
         4
       ],
       "obras_titulos": [
-        "Planos Cruzados*"
+        "Obra 004"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 004"
     },
     {
       "id": 7,
@@ -2556,7 +2565,9 @@
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Águila Imperial"
     },
     {
       "id": 8,
@@ -2566,15 +2577,16 @@
       "titulo": "Lámina de Archivo 008",
       "ficha_preview": "assets/fichas/ficha_obra_008.jpg",
       "obras_ids": [
-        6,
         6
       ],
       "obras_titulos": [
-        "Ala Metálica*"
+        "Obra 006"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 006"
     },
     {
       "id": 9,
@@ -2588,12 +2600,14 @@
         8
       ],
       "obras_titulos": [
-        "Relieve Cósmico Policromado*",
+        "Obra 007",
         "Oriente"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 007, Oriente"
     },
     {
       "id": 10,
@@ -2606,11 +2620,13 @@
         9
       ],
       "obras_titulos": [
-        "Envolvente Espacial*"
+        "Obra 009"
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Obra 009"
     },
     {
       "id": 11,
@@ -2627,7 +2643,9 @@
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": true
+      "es_multilamina": true,
+      "num_fotos": 1,
+      "subtitulo_archivo": "El Torero"
     },
     {
       "id": 12,
@@ -2640,11 +2658,13 @@
         11
       ],
       "obras_titulos": [
-        "Ritmo Orgánico*"
+        "Obra 011"
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Obra 011"
     },
     {
       "id": 13,
@@ -2654,15 +2674,16 @@
       "titulo": "Lámina de Archivo 013",
       "ficha_preview": "assets/fichas/ficha_obra_013.jpg",
       "obras_ids": [
-        12,
         12
       ],
       "obras_titulos": [
-        "Nudo Cósmico*"
+        "Obra 012"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 012"
     },
     {
       "id": 14,
@@ -2672,15 +2693,16 @@
       "titulo": "Lámina de Archivo 014",
       "ficha_preview": "assets/fichas/ficha_obra_014.jpg",
       "obras_ids": [
-        10,
         10
       ],
       "obras_titulos": [
         "El Torero"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": true
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true,
+      "num_fotos": 2,
+      "subtitulo_archivo": "El Torero"
     },
     {
       "id": 15,
@@ -2690,15 +2712,16 @@
       "titulo": "Lámina de Archivo 015",
       "ficha_preview": "assets/fichas/ficha_obra_015.jpg",
       "obras_ids": [
-        13,
         13
       ],
       "obras_titulos": [
         "Listones Rojos"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Listones Rojos"
     },
     {
       "id": 16,
@@ -2708,15 +2731,16 @@
       "titulo": "Lámina de Archivo 016",
       "ficha_preview": "assets/fichas/ficha_obra_016.jpg",
       "obras_ids": [
-        14,
         14
       ],
       "obras_titulos": [
-        "Relieve en Almagre*"
+        "Obra 014"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 014"
     },
     {
       "id": 17,
@@ -2731,13 +2755,15 @@
         17
       ],
       "obras_titulos": [
-        "Órbita y Ritmo*",
-        "Composición Modular Semáforo*",
-        "Cuadrante de Cuerdas y Anillo*"
+        "Obra 015",
+        "Obra 016",
+        "Obra 017"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 015, Obra 016, Obra 017"
     },
     {
       "id": 18,
@@ -2747,15 +2773,16 @@
       "titulo": "Lámina de Archivo 018",
       "ficha_preview": "assets/fichas/ficha_obra_018.jpg",
       "obras_ids": [
-        18,
         18
       ],
       "obras_titulos": [
-        "Retablo de Arcos*"
+        "Obra 018"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 018"
     },
     {
       "id": 19,
@@ -2769,12 +2796,14 @@
         20
       ],
       "obras_titulos": [
-        "Geometría en Carmín*",
-        "Trazado Cósmico en Alambre*"
+        "Obra 019",
+        "Obra 020"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 019, Obra 020"
     },
     {
       "id": 20,
@@ -2788,12 +2817,14 @@
         23
       ],
       "obras_titulos": [
-        "Máscara Industrial*",
-        "Máscara de la Sorpresa*"
+        "Obra 022",
+        "Obra 023"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 022, Obra 023"
     },
     {
       "id": 21,
@@ -2803,15 +2834,16 @@
       "titulo": "Lámina de Archivo 021",
       "ficha_preview": "assets/fichas/ficha_obra_021.jpg",
       "obras_ids": [
-        24,
         24
       ],
       "obras_titulos": [
-        "Máscara del Grito*"
+        "Obra 024"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 024"
     },
     {
       "id": 22,
@@ -2821,15 +2853,16 @@
       "titulo": "Lámina de Archivo 022",
       "ficha_preview": "assets/fichas/ficha_obra_022.jpg",
       "obras_ids": [
-        25,
         25
       ],
       "obras_titulos": [
-        "Máscara Espectral*"
+        "Obra 025"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 025"
     },
     {
       "id": 23,
@@ -2843,12 +2876,14 @@
         27
       ],
       "obras_titulos": [
-        "Rostro en Roble*",
-        "Máscara de Facciones Hendidas*"
+        "Obra 026",
+        "Obra 027"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 026, Obra 027"
     },
     {
       "id": 24,
@@ -2863,13 +2898,15 @@
         30
       ],
       "obras_titulos": [
-        "Máscara de la Memoria*",
-        "Rostro Primitivo*",
-        "Máscara Sagrada*"
+        "Obra 028",
+        "Obra 029",
+        "Obra 030"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 028, Obra 029, Obra 030"
     },
     {
       "id": 25,
@@ -2883,12 +2920,14 @@
         32
       ],
       "obras_titulos": [
-        "Mirada Primitiva*",
-        "Máscara del Silencio*"
+        "Obra 031",
+        "Obra 032"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 031, Obra 032"
     },
     {
       "id": 26,
@@ -2902,12 +2941,14 @@
         34
       ],
       "obras_titulos": [
-        "Cabeza Zoomorfa*",
-        "Rostro Alado*"
+        "Obra 033",
+        "Obra 034"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 033, Obra 034"
     },
     {
       "id": 27,
@@ -2921,12 +2962,14 @@
         36
       ],
       "obras_titulos": [
-        "Corona de Espinas*",
-        "Máscara de la Serenidad*"
+        "Obra 035",
+        "Obra 036"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 035, Obra 036"
     },
     {
       "id": 28,
@@ -2940,12 +2983,14 @@
         38
       ],
       "obras_titulos": [
-        "Máscara Barbada*",
-        "Rostro Espiritual*"
+        "Obra 037",
+        "Obra 038"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 037, Obra 038"
     },
     {
       "id": 29,
@@ -2960,13 +3005,15 @@
         41
       ],
       "obras_titulos": [
-        "Rostro Arcaico*",
-        "Máscara de la Meditación*",
-        "Máscara Mística*"
+        "Obra 039",
+        "Obra 040",
+        "Obra 041"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 039, Obra 040, Obra 041"
     },
     {
       "id": 30,
@@ -2981,13 +3028,15 @@
         44
       ],
       "obras_titulos": [
-        "Pequeña Máscara Ocre*",
-        "Máscara Terracota en Relieve*",
-        "Máscara Terracota Cuadrangular*"
+        "Obra 042",
+        "Obra 043",
+        "Obra 044"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 042, Obra 043, Obra 044"
     },
     {
       "id": 31,
@@ -3002,13 +3051,15 @@
         47
       ],
       "obras_titulos": [
-        "Máscara de Gres Esmaltado*",
-        "Máscara Gris Ceniza*",
-        "Máscara de Rostro Óvalo*"
+        "Obra 045",
+        "Obra 046",
+        "Obra 047"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 045, Obra 046, Obra 047"
     },
     {
       "id": 32,
@@ -3023,13 +3074,15 @@
         50
       ],
       "obras_titulos": [
-        "Rostro Alargado en Gres*",
-        "Máscara Ancestral*",
-        "Máscara de Ojos Hendidos*"
+        "Obra 048",
+        "Obra 049",
+        "Obra 050"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 048, Obra 049, Obra 050"
     },
     {
       "id": 33,
@@ -3039,15 +3092,16 @@
       "titulo": "Lámina de Archivo 033",
       "ficha_preview": "assets/fichas/ficha_obra_033.jpg",
       "obras_ids": [
-        21,
         21
       ],
       "obras_titulos": [
-        "Neptuno con Tridente*"
+        "Obra 021"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": true
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": true,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 021"
     },
     {
       "id": 34,
@@ -3060,11 +3114,13 @@
         21
       ],
       "obras_titulos": [
-        "Neptuno con Tridente*"
+        "Obra 021"
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": true
+      "es_multilamina": true,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Obra 021"
     },
     {
       "id": 35,
@@ -3078,12 +3134,14 @@
         52
       ],
       "obras_titulos": [
-        "Rostro en Capucha*",
-        "Máscara del Pensamiento*"
+        "Obra 051",
+        "Obra 052"
       ],
       "num_obras": 2,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Obra 051, Obra 052"
     },
     {
       "id": 36,
@@ -3098,13 +3156,15 @@
         55
       ],
       "obras_titulos": [
-        "Máscara Vegetal con Nervaduras*",
-        "Máscara del Viento*",
-        "Máscara Telúrica*"
+        "Obra 053",
+        "Obra 054",
+        "Obra 055"
       ],
       "num_obras": 3,
       "es_multiobra": true,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 3,
+      "subtitulo_archivo": "Obra 053, Obra 054, Obra 055"
     },
     {
       "id": 37,
@@ -3114,15 +3174,16 @@
       "titulo": "Lámina de Archivo 037",
       "ficha_preview": "assets/fichas/ficha_obra_037.jpg",
       "obras_ids": [
-        56,
         56
       ],
       "obras_titulos": [
         "Cristo"
       ],
-      "num_obras": 2,
-      "es_multiobra": true,
-      "es_multilamina": false
+      "num_obras": 1,
+      "es_multiobra": false,
+      "es_multilamina": false,
+      "num_fotos": 2,
+      "subtitulo_archivo": "Cristo"
     },
     {
       "id": 38,
@@ -3139,7 +3200,9 @@
       ],
       "num_obras": 1,
       "es_multiobra": false,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "num_fotos": 1,
+      "subtitulo_archivo": "Esperanza a la depresión"
     }
   ],
   "totales": {

@@ -298,7 +298,7 @@
         ? `<span class="archive-ficha-badge-multiobra">${pagina.num_obras} Obras</span>`
         : '';
 
-      const titulosResumen = pagina.obras_titulos.join(', ');
+      const titulosResumen = pagina.subtitulo_archivo || (pagina.obras_titulos && pagina.obras_titulos.length > 0 ? pagina.obras_titulos.join(', ') : `Obra ${pagina.numero_str}`);
 
       card.innerHTML = `
         <div class="archive-ficha-card__figure">
@@ -573,7 +573,8 @@
     dom.modalMetaTitulo.innerHTML = `Soporte histórico de cartulina con fotografías de época <br><span class="curatorial-badge-orig">Documento de Archivo</span>`;
 
     dom.modalMetaDims.textContent = '38 x 28 cm aprox. (Soporte Cartulina)';
-    dom.modalMetaFotosCount.textContent = `${pagina.num_obras} ${pagina.num_obras === 1 ? 'obra catalogada' : 'obras catalogadas'}`;
+    const numFotos = pagina.num_fotos || (pagina.obras_ids ? pagina.obras_ids.length : 1);
+    dom.modalMetaFotosCount.textContent = `${numFotos} ${numFotos === 1 ? 'fotografía de época' : 'fotografías de época'}`;
     dom.modalMetaMateriales.textContent = 'Cartulina histórica de archivo, fotografías montadas por el artista y anotaciones autógrafas.';
 
     if (dom.modalMetaLamina) {
@@ -592,12 +593,17 @@
         dom.modalArchiveRefText.innerHTML = `Esta lámina de cartulina documenta la siguiente escultura:`;
       }
 
-      pagina.obras_ids.forEach((oId) => {
+      const uniqueObraIds = Array.from(new Set(pagina.obras_ids));
+      uniqueObraIds.forEach((oId) => {
         const obraObj = state.obras.find(o => o.id === oId);
         if (obraObj) {
           const btn = document.createElement('button');
           btn.className = 'c-modal-archive-ref-btn';
-          btn.textContent = `Ver Obra ${obraObj.numero_str} (${obraObj.titulo}) →`;
+          if (obraObj.es_titulo_original) {
+            btn.textContent = `Ver Obra ${obraObj.numero_str} · ${obraObj.titulo} →`;
+          } else {
+            btn.textContent = `Ver Obra ${obraObj.numero_str} →`;
+          }
           btn.addEventListener('click', () => openModal(obraObj));
           dom.modalArchiveRefButtons.appendChild(btn);
         }
