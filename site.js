@@ -706,14 +706,26 @@
 
   // 13. Cursor personalizado interactivo (Gregor Collienne Style)
   
-  // 14. Funcionalidad de Zoom Interactivo al hacer Clic en la Imagen
+  // 14. Funcionalidad de Zoom Interactivo (Escritorio en Marco + Móvil Pantalla Completa con Pinch & Doble Toque)
   function setupImageZoom() {
     const figure = dom.modalFigure || document.querySelector('.c-modal-figure');
     const img = dom.modalMainImg;
     const hint = dom.modalZoomHint || document.getElementById('modalZoomHint');
+
+    // Elementos del visor táctil a pantalla completa
+    const touchModal = document.getElementById('touchZoomModal');
+    const touchImg = document.getElementById('touchZoomImg');
+    const touchStage = document.getElementById('touchZoomStage');
+    const touchTitle = document.getElementById('touchZoomTitle');
+    const touchClose = document.getElementById('touchZoomCloseBtn');
+    const touchHint = document.getElementById('touchZoomHint');
+
     if (!figure || !img) return;
 
-    function resetZoom() {
+    const isTouchDevice = () => window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768;
+
+    // --- A. ESCRITORIO: Zoom en marco con paneo dinámico ---
+    function resetDesktopZoom() {
       state.isImageZoomed = false;
       figure.classList.remove('is-zoomed');
       img.style.transform = '';
@@ -728,7 +740,7 @@
       }
     }
 
-    function toggleZoom(e) {
+    function toggleDesktopZoom(e) {
       if (!img.src) return;
       state.isImageZoomed = !state.isImageZoomed;
 
@@ -738,8 +750,8 @@
       if (state.isImageZoomed) {
         figure.classList.add('is-zoomed');
         const rect = figure.getBoundingClientRect();
-        const clientX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : rect.left + rect.width / 2);
-        const clientY = (e.clientY !== undefined) ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : rect.top + rect.height / 2);
+        const clientX = (e.clientX !== undefined) ? e.clientX : rect.left + rect.width / 2;
+        const clientY = (e.clientY !== undefined) ? e.clientY : rect.top + rect.height / 2;
 
         const xPercent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
         const yPercent = Math.max(0, Math.min(100, ((clientY - rect.top) / rect.height) * 100));
@@ -754,33 +766,230 @@
           cursorText.textContent = 'ALEJAR';
         }
       } else {
-        resetZoom();
+        resetDesktopZoom();
       }
     }
 
-    figure.addEventListener('click', (e) => {
-      toggleZoom(e);
-    });
-
     figure.addEventListener('mousemove', (e) => {
-      if (!state.isImageZoomed) return;
+      if (!state.isImageZoomed || isTouchDevice()) return;
       const rect = figure.getBoundingClientRect();
       const xPercent = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
       const yPercent = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
       img.style.transformOrigin = `${xPercent.toFixed(1)}% ${yPercent.toFixed(1)}%`;
     });
 
-    // Soporte táctil móvil
-    figure.addEventListener('touchmove', (e) => {
-      if (state.isImageZoomed && e.touches.length === 1) {
-        const rect = figure.getBoundingClientRect();
-        const xPercent = Math.max(0, Math.min(100, ((e.touches[0].clientX - rect.left) / rect.width) * 100));
-        const yPercent = Math.max(0, Math.min(100, ((e.touches[0].clientY - rect.top) / rect.height) * 100));
-        img.style.transformOrigin = `${xPercent.toFixed(1)}% ${yPercent.toFixed(1)}%`;
-      }
-    }, { passive: true });
+    // --- B. MÓVIL: Visor Pantalla Completa con Pinch-to-zoom y Doble Toque ---
+    let touchState = {
+      scale: 1,
+      currentX: 0,
+      currentY: 0,
+      startX: 0,
+      startY: 0,
+      startScale: 1,
+      startDistance: 0,
+      lastTap: 0,
+      isPanning: false,
+      isPinching: false,
+      pullY: 0
+    };
 
-    window._resetModalZoom = resetZoom;
+    function applyTouchTransform(animate = false) {
+      if (!touchImg) return;
+      touchImg.style.transition = animate ? 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+      touchImg.style.transform = `translate(${touchState.currentX}px, ${touchState.currentY}px) scale(${touchState.scale})`;
+      if (touchModal) {
+        if (touchState.scale > 1.05) {
+          touchModal.classList.add('is-zoomed');
+        } else {
+          touchModal.classList.remove('is-zoomed');
+        }
+      }
+    }
+
+    function clampTouchOffsets() {
+      if (!touchStage || !touchImg) return;
+      const stageRect = touchStage.getBoundingClientRect();
+      const imgW = touchImg.offsetWidth * touchState.scale;
+      const imgH = touchImg.offsetHeight * touchState.scale;
+
+      const maxPanX = Math.max(0, (imgW - stageRect.width) / 2);
+      const maxPanY = Math.max(0, (imgH - stageRect.height) / 2);
+
+      touchState.currentX = Math.min(maxPanX, Math.max(-maxPanX, touchState.currentX));
+      touchState.currentY = Math.min(maxPanY, Math.max(-maxPanY, touchState.currentY));
+    }
+
+    function openTouchZoomViewer() {
+      if (!touchModal || !touchImg || !img.src) return;
+      touchImg.src = img.src;
+
+      let titleText = 'Detalle de Archivo';
+      if (state.activeModalObra) {
+        titleText = `Obra ${state.activeModalObra.numero_str} · ${state.activeModalObra.titulo}`;
+      } else if (state.activeModalPagina) {
+        titleText = `Lámina de Archivo ${state.activeModalPagina.numero_str}`;
+      }
+      if (touchTitle) touchTitle.textContent = titleText;
+
+      touchState.scale = 1;
+      touchState.currentX = 0;
+      touchState.currentY = 0;
+      applyTouchTransform(false);
+
+      touchModal.classList.add('is-active');
+      touchModal.setAttribute('aria-hidden', 'false');
+
+      if (touchHint) {
+        touchHint.style.opacity = '1';
+        setTimeout(() => {
+          if (touchHint && touchState.scale <= 1) {
+            touchHint.style.opacity = '0';
+          }
+        }, 3200);
+      }
+    }
+
+    function closeTouchZoomViewer() {
+      if (!touchModal) return;
+      touchModal.classList.remove('is-active');
+      touchModal.setAttribute('aria-hidden', 'true');
+      touchState.scale = 1;
+      touchState.currentX = 0;
+      touchState.currentY = 0;
+      applyTouchTransform(false);
+    }
+
+    // Eventos táctiles en el visor a pantalla completa
+    if (touchStage) {
+      touchStage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+          // Inicio de pellizco (Pinch)
+          touchState.isPinching = true;
+          touchState.isPanning = false;
+          touchState.startDistance = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          touchState.startScale = touchState.scale;
+        } else if (e.touches.length === 1) {
+          // Comprobar doble toque
+          const now = Date.now();
+          const dist = Math.hypot(e.touches[0].clientX - touchState.startX, e.touches[0].clientY - touchState.startY);
+
+          if (now - touchState.lastTap < 320 && dist < 40) {
+            // Doble toque detectado
+            if (touchState.scale > 1.2) {
+              touchState.scale = 1;
+              touchState.currentX = 0;
+              touchState.currentY = 0;
+            } else {
+              touchState.scale = 2.5;
+              const rect = touchStage.getBoundingClientRect();
+              const touchX = e.touches[0].clientX - rect.left - rect.width / 2;
+              const touchY = e.touches[0].clientY - rect.top - rect.height / 2;
+              touchState.currentX = -touchX * 1.5;
+              touchState.currentY = -touchY * 1.5;
+              clampTouchOffsets();
+            }
+            applyTouchTransform(true);
+            touchState.lastTap = 0;
+            return;
+          }
+          touchState.lastTap = now;
+
+          touchState.isPanning = true;
+          touchState.isPinching = false;
+          touchState.startX = e.touches[0].clientX;
+          touchState.startY = e.touches[0].clientY;
+          touchState.pullY = 0;
+        }
+      }, { passive: false });
+
+      touchStage.addEventListener('touchmove', (e) => {
+        e.preventDefault(); // Evitar scroll o comportamiento nativo del navegador
+
+        if (touchState.isPinching && e.touches.length === 2) {
+          const dist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          if (touchState.startDistance > 0) {
+            touchState.scale = Math.min(4.5, Math.max(0.9, touchState.startScale * (dist / touchState.startDistance)));
+            applyTouchTransform(false);
+          }
+        } else if (touchState.isPanning && e.touches.length === 1) {
+          const dx = e.touches[0].clientX - touchState.startX;
+          const dy = e.touches[0].clientY - touchState.startY;
+          touchState.startX = e.touches[0].clientX;
+          touchState.startY = e.touches[0].clientY;
+
+          if (touchState.scale > 1.05) {
+            touchState.currentX += dx;
+            touchState.currentY += dy;
+            clampTouchOffsets();
+            applyTouchTransform(false);
+          } else {
+            // Arrastre hacia abajo para cerrar (Pull-down to dismiss)
+            touchState.pullY += dy;
+            if (touchState.pullY > 0) {
+              touchImg.style.transform = `translateY(${touchState.pullY}px) scale(${Math.max(0.7, 1 - touchState.pullY / 800)})`;
+              touchModal.style.opacity = Math.max(0.3, 1 - touchState.pullY / 300);
+            }
+          }
+        }
+      }, { passive: false });
+
+      touchStage.addEventListener('touchend', (e) => {
+        if (touchState.isPinching && e.touches.length < 2) {
+          touchState.isPinching = false;
+          if (touchState.scale < 1) {
+            touchState.scale = 1;
+            touchState.currentX = 0;
+            touchState.currentY = 0;
+          }
+          clampTouchOffsets();
+          applyTouchTransform(true);
+        } else if (touchState.isPanning && e.touches.length === 0) {
+          touchState.isPanning = false;
+          if (touchState.scale <= 1.05) {
+            if (touchState.pullY > 90) {
+              closeTouchZoomViewer();
+              touchModal.style.opacity = '';
+              return;
+            } else {
+              touchState.scale = 1;
+              touchState.currentX = 0;
+              touchState.currentY = 0;
+              touchModal.style.opacity = '';
+              applyTouchTransform(true);
+            }
+          } else {
+            clampTouchOffsets();
+            applyTouchTransform(true);
+          }
+        }
+      }, { passive: true });
+    }
+
+    if (touchClose) {
+      touchClose.addEventListener('click', () => closeTouchZoomViewer());
+    }
+
+    // Al hacer clic en la figura de la imagen principal:
+    figure.addEventListener('click', (e) => {
+      if (isTouchDevice()) {
+        // En móvil/táctil: abre inmediatamente el visor inmersivo de pantalla completa con gestos intuitivos
+        openTouchZoomViewer();
+      } else {
+        // En escritorio con ratón: zoom de aumento con seguimiento del cursor
+        toggleDesktopZoom(e);
+      }
+    });
+
+    window._resetModalZoom = () => {
+      resetDesktopZoom();
+      closeTouchZoomViewer();
+    };
   }
 
   function setupCustomCursor() {
