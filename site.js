@@ -745,19 +745,42 @@
       cursor.classList.remove('is-visible');
     });
 
+    document.addEventListener('mouseenter', () => {
+      cursor.classList.add('is-visible');
+    });
+
+    document.addEventListener('mousedown', () => {
+      cursor.classList.add('is-clicked');
+    });
+
+    document.addEventListener('mouseup', () => {
+      cursor.classList.remove('is-clicked');
+    });
+
     document.addEventListener('mouseover', (e) => {
-      const target = e.target.closest('.overview-item, .archive-ficha-card');
-      if (target) {
+      const artwork = e.target.closest('.overview-item, .archive-ficha-card');
+      if (artwork) {
         cursor.classList.add('is-hovering-artwork');
         if (cursorText) cursorText.textContent = 'VER';
+        return;
+      }
+
+      const interactive = e.target.closest('a, button, [role="button"], .c-custom-dropdown__option, .c-custom-dropdown__trigger');
+      if (interactive) {
+        cursor.classList.add('is-hovering-link');
       }
     });
 
     document.addEventListener('mouseout', (e) => {
-      const target = e.target.closest('.overview-item, .archive-ficha-card');
-      if (target) {
+      const artwork = e.target.closest('.overview-item, .archive-ficha-card');
+      if (artwork) {
         cursor.classList.remove('is-hovering-artwork');
         if (cursorText) cursorText.textContent = '';
+      }
+
+      const interactive = e.target.closest('a, button, [role="button"], .c-custom-dropdown__option, .c-custom-dropdown__trigger');
+      if (interactive) {
+        cursor.classList.remove('is-hovering-link');
       }
     });
   }

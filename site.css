@@ -2071,20 +2071,25 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 
 /* ==========================================================================
    CURSOR PERSONALIZADO DINÁMICO (Gregor Collienne Style)
+   Oculta el cursor nativo del ratón en escritorio y deja solo el puntito integrado
    ========================================================================== */
 @media (pointer: fine) {
+  html, body, *, *::before, *::after {
+    cursor: none !important;
+  }
+
   .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background: var(--color-dark);
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
+    pointer-events: none !important;
+    z-index: 99999;
     transform: translate(-50%, -50%);
-    transition: width 0.3s var(--cubic), height 0.3s var(--cubic), background 0.3s ease, border 0.3s ease, opacity 0.3s ease;
+    transition: width 0.25s var(--cubic), height 0.25s var(--cubic), background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2095,22 +2100,34 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
     opacity: 1;
   }
 
+  .custom-cursor.is-clicked {
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+
+  .custom-cursor.is-hovering-link {
+    width: 22px;
+    height: 22px;
+    background: rgba(12, 12, 12, 0.12);
+    border: 1px solid var(--color-dark);
+  }
+
   .custom-cursor.is-hovering-artwork {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     background: var(--color-dark);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   }
 
   .custom-cursor__text {
     font-family: var(--font-family-heading);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.12em;
     color: var(--color-light);
     display: none;
     text-transform: uppercase;
     pointer-events: none;
+    user-select: none;
   }
 
   .custom-cursor.is-hovering-artwork .custom-cursor__text {
