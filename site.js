@@ -19,6 +19,7 @@
     activePhotoIndex: 0,
     isDeblurSelected: false,
     showingFicha: false,
+    isImageZoomed: false,
     lastScrollY: 0
   };
 
@@ -42,6 +43,8 @@
     modalCloseBtn: document.getElementById('modalCloseBtn'),
     modalNumber: document.getElementById('modalNumber'),
     modalSubtitle: document.getElementById('modalSubtitle'),
+    modalFigure: document.getElementById('modalFigure'),
+    modalZoomHint: document.getElementById('modalZoomHint'),
     modalMainImg: document.getElementById('modalMainImg'),
     modalThumbnails: document.getElementById('modalThumbnails'),
     modalDeblurCompare: document.getElementById('modalDeblurCompare'),
@@ -64,6 +67,7 @@
     setupNavEvents();
     setupCategoryFilters();
     setupModalEvents();
+    setupImageZoom();
     await loadCatalogData();
     updateCategorySelectCounts();
     renderOverview();
@@ -404,6 +408,7 @@
 
   // 10. Actualización Dinámica del Visor Modal (Foto activa o Lámina de esa foto)
   function updateModalDisplay() {
+    if (window._resetModalZoom) window._resetModalZoom();
     if (!state.activeModalObra) return;
     const obra = state.activeModalObra;
     const currentFoto = obra.fotos[state.activePhotoIndex];
@@ -584,6 +589,7 @@
   }
 
   function closeModal(updateHistory = true) {
+    if (window._resetModalZoom) window._resetModalZoom();
     state.activeModalObra = null;
     state.activeModalPagina = null;
     dom.obraModal.classList.remove('is-active');
@@ -600,6 +606,7 @@
   }
 
   function navigateModal(direction) {
+    if (window._resetModalZoom) window._resetModalZoom();
     if (dom.obraModal) {
       dom.obraModal.scrollTop = 0;
     }
@@ -698,6 +705,84 @@
   }
 
   // 13. Cursor personalizado interactivo (Gregor Collienne Style)
+  
+  // 14. Funcionalidad de Zoom Interactivo al hacer Clic en la Imagen
+  function setupImageZoom() {
+    const figure = dom.modalFigure || document.querySelector('.c-modal-figure');
+    const img = dom.modalMainImg;
+    const hint = dom.modalZoomHint || document.getElementById('modalZoomHint');
+    if (!figure || !img) return;
+
+    function resetZoom() {
+      state.isImageZoomed = false;
+      figure.classList.remove('is-zoomed');
+      img.style.transform = '';
+      img.style.transformOrigin = '';
+      if (hint) {
+        hint.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg><span>Zoom</span>`;
+      }
+      const cursor = document.getElementById('customCursor');
+      const cursorText = cursor ? cursor.querySelector('.custom-cursor__text') : null;
+      if (cursorText && figure.matches(':hover')) {
+        cursorText.textContent = 'ZOOM';
+      }
+    }
+
+    function toggleZoom(e) {
+      if (!img.src) return;
+      state.isImageZoomed = !state.isImageZoomed;
+
+      const cursor = document.getElementById('customCursor');
+      const cursorText = cursor ? cursor.querySelector('.custom-cursor__text') : null;
+
+      if (state.isImageZoomed) {
+        figure.classList.add('is-zoomed');
+        const rect = figure.getBoundingClientRect();
+        const clientX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : rect.left + rect.width / 2);
+        const clientY = (e.clientY !== undefined) ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : rect.top + rect.height / 2);
+
+        const xPercent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+        const yPercent = Math.max(0, Math.min(100, ((clientY - rect.top) / rect.height) * 100));
+
+        img.style.transformOrigin = `${xPercent.toFixed(1)}% ${yPercent.toFixed(1)}%`;
+        img.style.transform = 'scale(2.6)';
+
+        if (hint) {
+          hint.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg><span>Alejar</span>`;
+        }
+        if (cursorText) {
+          cursorText.textContent = 'ALEJAR';
+        }
+      } else {
+        resetZoom();
+      }
+    }
+
+    figure.addEventListener('click', (e) => {
+      toggleZoom(e);
+    });
+
+    figure.addEventListener('mousemove', (e) => {
+      if (!state.isImageZoomed) return;
+      const rect = figure.getBoundingClientRect();
+      const xPercent = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+      const yPercent = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+      img.style.transformOrigin = `${xPercent.toFixed(1)}% ${yPercent.toFixed(1)}%`;
+    });
+
+    // Soporte táctil móvil
+    figure.addEventListener('touchmove', (e) => {
+      if (state.isImageZoomed && e.touches.length === 1) {
+        const rect = figure.getBoundingClientRect();
+        const xPercent = Math.max(0, Math.min(100, ((e.touches[0].clientX - rect.left) / rect.width) * 100));
+        const yPercent = Math.max(0, Math.min(100, ((e.touches[0].clientY - rect.top) / rect.height) * 100));
+        img.style.transformOrigin = `${xPercent.toFixed(1)}% ${yPercent.toFixed(1)}%`;
+      }
+    }, { passive: true });
+
+    window._resetModalZoom = resetZoom;
+  }
+
   function setupCustomCursor() {
     const cursor = document.getElementById('customCursor');
     if (!cursor || !window.matchMedia('(pointer: fine)').matches) return;
@@ -727,6 +812,15 @@
     });
 
     document.addEventListener('mouseover', (e) => {
+      const zoomFig = e.target.closest('.c-modal-figure');
+      if (zoomFig) {
+        cursor.classList.add('is-hovering-artwork');
+        if (cursorText) {
+          cursorText.textContent = zoomFig.classList.contains('is-zoomed') ? 'ALEJAR' : 'ZOOM';
+        }
+        return;
+      }
+
       const artwork = e.target.closest('.overview-item, .archive-ficha-card');
       if (artwork) {
         cursor.classList.add('is-hovering-artwork');
@@ -741,6 +835,12 @@
     });
 
     document.addEventListener('mouseout', (e) => {
+      const zoomFig = e.target.closest('.c-modal-figure');
+      if (zoomFig) {
+        cursor.classList.remove('is-hovering-artwork');
+        if (cursorText) cursorText.textContent = '';
+      }
+
       const artwork = e.target.closest('.overview-item, .archive-ficha-card');
       if (artwork) {
         cursor.classList.remove('is-hovering-artwork');

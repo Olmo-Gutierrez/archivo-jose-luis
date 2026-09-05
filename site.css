@@ -1763,7 +1763,13 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   position: relative;
   border-radius: 4px;
   box-sizing: border-box;
-  overflow: visible;
+  overflow: hidden;
+  cursor: zoom-in;
+  user-select: none;
+}
+
+.c-modal-figure.is-zoomed {
+  cursor: zoom-out;
 }
 
 .c-modal-img {
@@ -1774,9 +1780,50 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.12));
-  transition: transform 0.4s ease;
+  transition: transform 0.3s var(--cubic-out);
   display: block;
   margin: auto;
+  transform-origin: center center;
+  will-change: transform, transform-origin;
+}
+
+.c-modal-figure.is-zoomed .c-modal-img {
+  transition: transform 0.25s var(--cubic-out), transform-origin 0.05s ease-out;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.22));
+}
+
+.c-modal-zoom-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(245, 243, 240, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(12, 12, 12, 0.12);
+  color: var(--color-dark);
+  font-family: var(--font-family-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
+  z-index: 5;
+}
+
+.c-modal-figure:hover .c-modal-zoom-hint {
+  opacity: 1;
+}
+
+.c-modal-figure.is-zoomed .c-modal-zoom-hint {
+  background: var(--color-dark);
+  color: var(--color-light);
+  border-color: var(--color-dark);
 }
 
 @media (max-width: 768px) {
