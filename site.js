@@ -69,6 +69,7 @@
     setupCategoryFilters();
     setupModalEvents();
     await loadCatalogData();
+    updateCategorySelectCounts();
     renderOverview();
     renderArchiveFichas();
     checkInitialHash();
@@ -156,11 +157,20 @@
 
   // 5. Filtros por Categoría Curatorial
   function setupCategoryFilters() {
+    const select = document.getElementById('categorySelect');
+    if (select) {
+      select.addEventListener('change', (e) => {
+        state.activeCategory = e.target.value;
+        renderOverview();
+      });
+    }
+
     const pills = document.querySelectorAll('.cat-pill');
     pills.forEach((pill) => {
       pill.addEventListener('click', () => {
         const cat = pill.getAttribute('data-cat');
         state.activeCategory = cat;
+        if (select) select.value = cat;
 
         pills.forEach((p) => {
           if (p.getAttribute('data-cat') === cat) {
@@ -173,6 +183,25 @@
         renderOverview();
       });
     });
+  }
+
+  function updateCategorySelectCounts() {
+    const select = document.getElementById('categorySelect');
+    if (!select || !state.obras.length) return;
+    const total = state.obras.length;
+    const esculturas = state.obras.filter(o => o.categoria === 'esculturas').length;
+    const mascaras = state.obras.filter(o => o.categoria === 'mascaras').length;
+    const volumetricas = state.obras.filter(o => o.categoria === 'volumetricas').length;
+
+    const optTodas = select.querySelector('option[value="todas"]');
+    const optEsc = select.querySelector('option[value="esculturas"]');
+    const optMasc = select.querySelector('option[value="mascaras"]');
+    const optVol = select.querySelector('option[value="volumetricas"]');
+
+    if (optTodas) optTodas.textContent = `Todas las obras (${total})`;
+    if (optEsc) optEsc.textContent = `Esculturas en madera (${esculturas})`;
+    if (optMasc) optMasc.textContent = `Colección de Máscaras (${mascaras})`;
+    if (optVol) optVol.textContent = `Figuras Volumétricas (${volumetricas})`;
   }
 
   // 6. Obtener obras filtradas por la categoría activa

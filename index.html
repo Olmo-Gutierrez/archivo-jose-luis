@@ -55,12 +55,22 @@
     <!-- SECCIÓN 1: OVERVIEW (Muro Escalonado 5 Columnas — Gregor Collienne Style) -->
     <section id="view-obras" class="view-section is-active">
       <div class="overview-intro">
-        <!-- Filtro por categorías curatoriales compacto -->
-        <div class="overview-categories">
-          <button class="cat-pill is-active" data-cat="todas">Todas (57)</button>
-          <button class="cat-pill" data-cat="esculturas">Esculturas (21)</button>
-          <button class="cat-pill" data-cat="mascaras">Máscaras (34)</button>
-          <button class="cat-pill" data-cat="volumetricas">Figuras Volumétricas (2)</button>
+        <!-- Selector desplegable minimalista de colección -->
+        <div class="overview-filter-dropdown-wrap">
+          <label for="categorySelect" class="overview-filter-label">Colección</label>
+          <div class="overview-select-custom">
+            <select id="categorySelect" class="overview-filter-select" aria-label="Filtrar colección de obras">
+              <option value="todas">Todas las obras (57)</option>
+              <option value="esculturas">Esculturas en madera (21)</option>
+              <option value="mascaras">Colección de Máscaras (34)</option>
+              <option value="volumetricas">Figuras Volumétricas (2)</option>
+            </select>
+            <span class="overview-select-arrow" aria-hidden="true">
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
 

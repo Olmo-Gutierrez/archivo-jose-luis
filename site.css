@@ -656,33 +656,92 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   font-weight: 500;
 }
 
-.overview-categories {
+/* Dropdown minimalista para colecciones */
+.overview-intro {
+  text-align: center;
+  padding: var(--space-2) var(--space-4) var(--space-3);
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: flex-start;
 }
 
-.overview-categories::-webkit-scrollbar {
-  display: none;
+.overview-filter-dropdown-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
 }
 
-@media (min-width: 769px) {
-  .overview-categories {
-    justify-content: center;
-    padding: 6px 0;
-  }
+.overview-filter-label {
+  font-family: var(--font-family-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+  cursor: pointer;
+  user-select: none;
 }
 
+.overview-select-custom {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.overview-filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: rgba(245, 243, 240, 0.95);
+  border: 1px solid rgba(12, 12, 12, 0.22);
+  border-radius: 20px;
+  padding: 6px 32px 6px 14px;
+  font-family: var(--font-family-heading);
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s var(--cubic);
+  line-height: 1.4;
+}
+
+.overview-filter-select:hover,
+.overview-filter-select:focus {
+  border-color: var(--color-dark);
+  background: var(--color-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.overview-filter-select option {
+  background: #F5F3F0;
+  color: #0C0C0C;
+  font-family: sans-serif;
+  font-size: 13px;
+  padding: 8px;
+}
+
+.overview-select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark);
+  transition: transform 0.2s ease;
+}
+
+.overview-select-custom:focus-within .overview-select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Compatibilidad cat-pill en caso de reutilización */
 .cat-pill {
   font-family: var(--font-family-heading);
   font-size: var(--fs-micro);
