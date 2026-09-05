@@ -1734,24 +1734,30 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   top: 88px;
 }
 
-/* En el modal de obra se mantiene el mismo contenedor estable (4:3) para que al conmutar lámina no salte el botón */
+/* En el modal de obra se mantiene el contenedor estable (4:3) con ajuste estricto contain (sin recortes en iPhone/iOS) */
 .c-modal-figure {
   width: 100%;
   aspect-ratio: 4 / 3;
   background: transparent;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .c-modal-img {
-  max-width: 92%;
-  max-height: 92%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
+  object-position: center;
+  padding: 10px;
+  box-sizing: border-box;
   filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.12));
   transition: transform 0.4s ease;
 }
@@ -1759,12 +1765,10 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 @media (max-width: 768px) {
   .c-modal-figure {
     aspect-ratio: 4 / 3;
-    padding: 0;
   }
 
   .c-modal-img {
-    max-width: 90%;
-    max-height: 90%;
+    padding: 6px;
   }
 }
 
@@ -2216,9 +2220,17 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 }
 
 .modal-dual-card .c-modal-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  object-position: center;
+  padding: 6px;
+  box-sizing: border-box;
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.12));
 }
 
