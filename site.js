@@ -648,7 +648,7 @@
     if (obra.modelo_3d) {
       if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'inline-flex';
       if (dom.sculptureModelViewer) {
-        dom.sculptureModelViewer.setAttribute('src', obra.modelo_3d);
+        dom.sculptureModelViewer.setAttribute('src', obra.modelo_3d + '?v=20260906_v15');
         dom.sculptureModelViewer.setAttribute('alt', `Modelo 3D y Realidad Aumentada de ${obra.titulo}`);
         dom.sculptureModelViewer.autoRotate = state.is3DAutoRotating;
       }
