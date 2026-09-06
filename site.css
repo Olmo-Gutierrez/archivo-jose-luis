@@ -2512,7 +2512,23 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   display: block;
   outline: none;
   --poster-color: transparent;
+  --progress-bar-color: transparent;
+  --progress-bar-height: 0px;
+  --progress-mask: transparent;
   cursor: grab;
+}
+
+/* Suprimir por completo la barra de carga / scrollbar temporal de model-viewer */
+.c-sculpture-model-viewer::part(default-progress-bar),
+.c-sculpture-model-viewer::part(default-progress-mask),
+model-viewer::part(default-progress-bar),
+model-viewer::part(default-progress-mask) {
+  display: none !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .c-sculpture-model-viewer:active {

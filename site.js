@@ -675,7 +675,7 @@
     if (obra.modelo_3d) {
       if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'inline-flex';
 
-      const glbUrl = obra.modelo_3d + '?v=20260906_v17';
+      const glbUrl = obra.modelo_3d + '?v=20260906_v18';
       // URL absoluta y limpia a USDZ para Apple Quick Look (sin parámetros de consulta antes de .usdz)
       const usdzUrl = obra.modelo_usdz
         ? new URL(obra.modelo_usdz, window.location.href).href + '#allowsContentScaling=0'
