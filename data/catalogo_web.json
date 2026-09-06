@@ -633,10 +633,7 @@
         }
       ],
       "tiene_deblur": false,
-      "es_multilamina": false,
-      "modelo_3d": "assets/models/obra_013_listones_rojos.glb",
-      "dimensiones_3d": "1'50 × 1'06 × 0'14 m",
-      "modelo_usdz": "assets/models/obra_013_listones_rojos.usdz"
+      "es_multilamina": false
     },
     {
       "id": 14,

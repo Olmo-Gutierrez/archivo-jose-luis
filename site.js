@@ -97,12 +97,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json');
+      let resp = await fetch('data/catalogo_web.json?v=20260906_v19');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json');
+        resp = await fetch('./data/catalogo_web.json?v=20260906_v19');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260906_v19');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -675,7 +675,7 @@
     if (obra.modelo_3d) {
       if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'inline-flex';
 
-      const glbUrl = obra.modelo_3d + '?v=20260906_v18';
+      const glbUrl = obra.modelo_3d + '?v=20260906_v19';
       // URL absoluta y limpia a USDZ para Apple Quick Look (sin parámetros de consulta antes de .usdz)
       const usdzUrl = obra.modelo_usdz
         ? new URL(obra.modelo_usdz, window.location.href).href + '#allowsContentScaling=0'
