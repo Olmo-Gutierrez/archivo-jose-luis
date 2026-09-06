@@ -68,6 +68,8 @@
     arQrModalClose: document.getElementById('arQrModalClose'),
     arQrTitle: document.getElementById('arQrTitle'),
     arQrImg: document.getElementById('arQrImg'),
+    nativeAppleArLink: document.getElementById('nativeAppleArLink'),
+    nativeAppleArImg: document.getElementById('nativeAppleArImg'),
     modalMetaObra: document.getElementById('modalMetaObra'),
     modalMetaTitulo: document.getElementById('modalMetaTitulo'),
     modalMetaDims: document.getElementById('modalMetaDims'),
@@ -435,11 +437,37 @@
     // Disparador de Realidad Aumentada (AR)
     if (dom.btnTriggerAR) {
       dom.btnTriggerAR.addEventListener('click', (e) => {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
-                         (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
-        
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const obra = state.activeModalObra;
+
+        // En iPhone / iPad: Lanzar Apple AR Quick Look nativo directamente
+        if (isIOS && obra && obra.modelo_usdz) {
+          e.preventDefault();
+          e.stopPropagation();
+          const arLink = dom.nativeAppleArLink || document.getElementById('nativeAppleArLink');
+          const arImg = dom.nativeAppleArImg || document.getElementById('nativeAppleArImg');
+          if (arLink) {
+            arLink.setAttribute('href', obra.modelo_usdz + '?v=20260906_v16#allowsContentScaling=0');
+            if (arImg && obra.fotos && obra.fotos[0]) {
+              arImg.setAttribute('src', obra.fotos[0].web_image);
+            }
+            arLink.click();
+            return;
+          }
+        }
+
+        // En Android: Activar Scene Viewer / WebXR
+        if (isAndroid) {
+          if (dom.sculptureModelViewer && typeof dom.sculptureModelViewer.activateAR === 'function') {
+            dom.sculptureModelViewer.activateAR();
+            return;
+          }
+        }
+
         // Si no es un dispositivo móvil (escritorio/laptop), abrir modal QR para escanear con el móvil
-        if (!isMobile) {
+        if (!isIOS && !isAndroid) {
           e.preventDefault();
           e.stopPropagation();
           openArQrModal();
@@ -648,9 +676,20 @@
     if (obra.modelo_3d) {
       if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'inline-flex';
       if (dom.sculptureModelViewer) {
-        dom.sculptureModelViewer.setAttribute('src', obra.modelo_3d + '?v=20260906_v15');
+        dom.sculptureModelViewer.setAttribute('src', obra.modelo_3d + '?v=20260906_v16');
+        if (obra.modelo_usdz) {
+          dom.sculptureModelViewer.setAttribute('ios-src', obra.modelo_usdz + '?v=20260906_v16');
+        } else {
+          dom.sculptureModelViewer.removeAttribute('ios-src');
+        }
         dom.sculptureModelViewer.setAttribute('alt', `Modelo 3D y Realidad Aumentada de ${obra.titulo}`);
         dom.sculptureModelViewer.autoRotate = state.is3DAutoRotating;
+      }
+      if (dom.nativeAppleArLink && obra.modelo_usdz) {
+        dom.nativeAppleArLink.setAttribute('href', obra.modelo_usdz + '?v=20260906_v16#allowsContentScaling=0');
+        if (dom.nativeAppleArImg && obra.fotos && obra.fotos[0]) {
+          dom.nativeAppleArImg.setAttribute('src', obra.fotos[0].web_image);
+        }
       }
       if (dom.badge3DScaleText) {
         dom.badge3DScaleText.textContent = obra.dimensiones_3d ? `Escala 1:1 · ${obra.dimensiones_3d}` : (obra.dimensiones ? `Escala 1:1 · ${obra.dimensiones}` : 'Escala 1:1 real');

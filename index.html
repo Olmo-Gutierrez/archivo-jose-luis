@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>José Luis Gutiérrez — Escultor · Archivo & Catálogo Razonado</title>
   <meta name="description" content="Catálogo razonado y archivo escultórico del artista José Luis Gutiérrez. 38 obras maestras recuperadas y digitalizadas a 600 DPI.">
-  <link rel="stylesheet" href="site.css?v=20260906_v15">
+  <link rel="stylesheet" href="site.css?v=20260906_v16">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text x='50' y='65' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23F5F3F0' text-anchor='middle'>JLG</text></svg>">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
@@ -226,29 +226,25 @@
           <model-viewer
             id="sculptureModelViewer"
             src=""
+            ios-src=""
             ar
-            ar-modes="webxr scene-viewer quick-look"
+            ar-modes="quick-look scene-viewer webxr"
+            ar-placement="wall"
+            ar-scale="fixed"
             camera-controls
             touch-action="pan-y"
             auto-rotate
             rotation-per-second="18deg"
-            shadow-intensity="1.4"
-            shadow-softness="0.75"
-            exposure="1.05"
+            shadow-intensity="1.2"
+            shadow-softness="0.8"
+            exposure="1.0"
             environment-image="neutral"
             interaction-prompt="none"
             class="c-sculpture-model-viewer"
             alt="Modelo 3D interactivo de escultura de José Luis Gutiérrez"
           >
-            <!-- Botón AR nativo sobrepuesto -->
-            <button slot="ar-button" id="btnTriggerAR" class="c-ar-badge-btn" aria-label="Ver escultura en tu espacio con Realidad Aumentada">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-              <span>Ver en tu espacio (AR)</span>
-            </button>
+            <!-- Slot interno para suprimir botón default de model-viewer -->
+            <button slot="ar-button" id="hiddenModelViewerArButton" style="display: none;"></button>
 
             <!-- Controles orbitales auxiliares -->
             <div class="c-model-overlay-controls">
@@ -268,7 +264,20 @@
               <span id="badge3DScaleText">Escala 1:1 real</span>
             </div>
           </model-viewer>
+
+          <!-- Botón AR nativo sobrepuesto (siempre visible sobre el visor 3D) -->
+          <button id="btnTriggerAR" class="c-ar-badge-btn" aria-label="Ver escultura en tu espacio con Realidad Aumentada">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span>Ver en tu pared / Espacio (AR)</span>
+          </button>
         </div>
+
+        <!-- Enlace nativo directo Apple AR Quick Look para iOS -->
+        <a id="nativeAppleArLink" rel="ar" href="#" style="display: none;"><img id="nativeAppleArImg" src="" alt="Apple AR Quick Look"></a>
 
         <!-- Miniaturas si la lámina incluye más de una toma -->
         <div id="modalThumbnails" class="c-modal-thumbnails"></div>
@@ -393,6 +402,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="site.js?v=20260906_v15"></script>
+  <script src="site.js?v=20260906_v16"></script>
 </body>
 </html>
