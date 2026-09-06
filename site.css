@@ -2520,11 +2520,12 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 }
 
 /* Botón flotante AR sobre el lienzo 3D */
-.c-ar-badge-btn {
+.c-ar-badge-btn,
+.c-sculpture-model-viewer [slot="ar-button"] {
   position: absolute;
   top: 14px;
   right: 14px;
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 8px;
   background: var(--color-dark);
@@ -2536,6 +2537,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   font-size: var(--fs-small);
   font-weight: 700;
   letter-spacing: 0.02em;
+  text-decoration: none;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;

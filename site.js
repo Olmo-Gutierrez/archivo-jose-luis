@@ -68,7 +68,6 @@
     arQrModalClose: document.getElementById('arQrModalClose'),
     arQrTitle: document.getElementById('arQrTitle'),
     arQrImg: document.getElementById('arQrImg'),
-    nativeAppleArLink: document.getElementById('nativeAppleArLink'),
     nativeAppleArImg: document.getElementById('nativeAppleArImg'),
     modalMetaObra: document.getElementById('modalMetaObra'),
     modalMetaTitulo: document.getElementById('modalMetaTitulo'),
@@ -442,36 +441,36 @@
         const isAndroid = /Android/i.test(navigator.userAgent);
         const obra = state.activeModalObra;
 
-        // En iPhone / iPad: Lanzar Apple AR Quick Look nativo directamente
-        if (isIOS && obra && obra.modelo_usdz) {
-          e.preventDefault();
-          e.stopPropagation();
-          const arLink = dom.nativeAppleArLink || document.getElementById('nativeAppleArLink');
-          const arImg = dom.nativeAppleArImg || document.getElementById('nativeAppleArImg');
-          if (arLink) {
-            arLink.setAttribute('href', obra.modelo_usdz + '?v=20260906_v16#allowsContentScaling=0');
-            if (arImg && obra.fotos && obra.fotos[0]) {
-              arImg.setAttribute('src', obra.fotos[0].web_image);
+        if (!obra) return;
+
+        // En iOS: El enlace <a rel="ar" href="..."> es manejado nativamente por Safari Quick Look.
+        // Si el href aún no estuviese disponible, recurrimos a activateAR() de model-viewer.
+        if (isIOS) {
+          const href = dom.btnTriggerAR.getAttribute('href');
+          if (!href || href === '#') {
+            e.preventDefault();
+            if (dom.sculptureModelViewer && typeof dom.sculptureModelViewer.activateAR === 'function') {
+              dom.sculptureModelViewer.activateAR();
             }
-            arLink.click();
-            return;
           }
+          // Si el href está asignado al archivo .usdz#allowsContentScaling=0,
+          // permitimos que el navegador ejecute la navegación nativa de Apple Quick Look.
+          return;
         }
 
-        // En Android: Activar Scene Viewer / WebXR
+        // En Android: Activar Scene Viewer / WebXR a través de model-viewer
         if (isAndroid) {
+          e.preventDefault();
           if (dom.sculptureModelViewer && typeof dom.sculptureModelViewer.activateAR === 'function') {
             dom.sculptureModelViewer.activateAR();
-            return;
           }
+          return;
         }
 
-        // Si no es un dispositivo móvil (escritorio/laptop), abrir modal QR para escanear con el móvil
-        if (!isIOS && !isAndroid) {
-          e.preventDefault();
-          e.stopPropagation();
-          openArQrModal();
-        }
+        // Si es escritorio / ordenador: Abrir modal con código QR para escanear con móvil
+        e.preventDefault();
+        e.stopPropagation();
+        openArQrModal();
       });
     }
 
@@ -675,22 +674,36 @@
     // Configuración de visualización 3D y Realidad Aumentada si la obra dispone de modelo
     if (obra.modelo_3d) {
       if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'inline-flex';
+
+      const glbUrl = obra.modelo_3d + '?v=20260906_v17';
+      // URL absoluta y limpia a USDZ para Apple Quick Look (sin parámetros de consulta antes de .usdz)
+      const usdzUrl = obra.modelo_usdz
+        ? new URL(obra.modelo_usdz, window.location.href).href + '#allowsContentScaling=0'
+        : '';
+
       if (dom.sculptureModelViewer) {
-        dom.sculptureModelViewer.setAttribute('src', obra.modelo_3d + '?v=20260906_v16');
-        if (obra.modelo_usdz) {
-          dom.sculptureModelViewer.setAttribute('ios-src', obra.modelo_usdz + '?v=20260906_v16');
+        dom.sculptureModelViewer.setAttribute('src', glbUrl);
+        if (usdzUrl) {
+          dom.sculptureModelViewer.setAttribute('ios-src', usdzUrl);
         } else {
           dom.sculptureModelViewer.removeAttribute('ios-src');
         }
         dom.sculptureModelViewer.setAttribute('alt', `Modelo 3D y Realidad Aumentada de ${obra.titulo}`);
         dom.sculptureModelViewer.autoRotate = state.is3DAutoRotating;
       }
-      if (dom.nativeAppleArLink && obra.modelo_usdz) {
-        dom.nativeAppleArLink.setAttribute('href', obra.modelo_usdz + '?v=20260906_v16#allowsContentScaling=0');
-        if (dom.nativeAppleArImg && obra.fotos && obra.fotos[0]) {
-          dom.nativeAppleArImg.setAttribute('src', obra.fotos[0].web_image);
+
+      if (dom.btnTriggerAR) {
+        if (usdzUrl) {
+          dom.btnTriggerAR.setAttribute('href', usdzUrl);
+        } else {
+          dom.btnTriggerAR.setAttribute('href', '#');
         }
       }
+
+      if (dom.nativeAppleArImg && obra.fotos && obra.fotos[0]) {
+        dom.nativeAppleArImg.setAttribute('src', obra.fotos[0].web_image);
+      }
+
       if (dom.badge3DScaleText) {
         dom.badge3DScaleText.textContent = obra.dimensiones_3d ? `Escala 1:1 · ${obra.dimensiones_3d}` : (obra.dimensiones ? `Escala 1:1 · ${obra.dimensiones}` : 'Escala 1:1 real');
       }
