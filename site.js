@@ -20,7 +20,9 @@
     isDeblurSelected: false,
     showingFicha: false,
     isImageZoomed: false,
-    lastScrollY: 0
+    lastScrollY: 0,
+    viewMode: '2d',
+    is3DAutoRotating: true
   };
 
   // Elementos del DOM
@@ -50,6 +52,22 @@
     modalDeblurCompare: document.getElementById('modalDeblurCompare'),
     btnDeblurOrig: document.getElementById('btnDeblurOrig'),
     btnDeblurAI: document.getElementById('btnDeblurAI'),
+    // 3D y Realidad Aumentada (AR)
+    modalViewModeToggle: document.getElementById('modalViewModeToggle'),
+    btnViewMode2D: document.getElementById('btnViewMode2D'),
+    btnViewMode3D: document.getElementById('btnViewMode3D'),
+    modal3DFigure: document.getElementById('modal3DFigure'),
+    sculptureModelViewer: document.getElementById('sculptureModelViewer'),
+    btnTriggerAR: document.getElementById('btnTriggerAR'),
+    btn3DRotateToggle: document.getElementById('btn3DRotateToggle'),
+    btn3DResetCamera: document.getElementById('btn3DResetCamera'),
+    badge3DScale: document.getElementById('badge3DScale'),
+    badge3DScaleText: document.getElementById('badge3DScaleText'),
+    arQrModal: document.getElementById('arQrModal'),
+    arQrModalOverlay: document.getElementById('arQrModalOverlay'),
+    arQrModalClose: document.getElementById('arQrModalClose'),
+    arQrTitle: document.getElementById('arQrTitle'),
+    arQrImg: document.getElementById('arQrImg'),
     modalMetaObra: document.getElementById('modalMetaObra'),
     modalMetaTitulo: document.getElementById('modalMetaTitulo'),
     modalMetaDims: document.getElementById('modalMetaDims'),
@@ -272,7 +290,7 @@
           <img class="overview-item__img" src="${imgPath}" alt="${obra.nombre_completo}" loading="lazy" />
         </div>
         <div class="overview-item__caption">
-          <span class="overview-item__title">${obra.titulo}</span>
+          <span class="overview-item__title">${obra.titulo}${obra.modelo_3d ? ' <span class="overview-item__3d-tag">3D · AR</span>' : ''}</span>
           <span class="overview-item__number">${obra.numero_str}</span>
         </div>
       `;
@@ -386,12 +404,117 @@
       });
     }
 
+    // Toggle 2D / 3D y Realidad Aumentada
+    if (dom.btnViewMode2D) {
+      dom.btnViewMode2D.addEventListener('click', () => setViewMode('2d'));
+    }
+    if (dom.btnViewMode3D) {
+      dom.btnViewMode3D.addEventListener('click', () => setViewMode('3d'));
+    }
+
+    // Controles del visor 3D
+    if (dom.btn3DRotateToggle) {
+      dom.btn3DRotateToggle.addEventListener('click', () => {
+        if (!dom.sculptureModelViewer) return;
+        state.is3DAutoRotating = !state.is3DAutoRotating;
+        dom.sculptureModelViewer.autoRotate = state.is3DAutoRotating;
+        dom.btn3DRotateToggle.classList.toggle('is-active', state.is3DAutoRotating);
+      });
+    }
+
+    if (dom.btn3DResetCamera) {
+      dom.btn3DResetCamera.addEventListener('click', () => {
+        if (!dom.sculptureModelViewer) return;
+        dom.sculptureModelViewer.cameraOrbit = '0deg 75deg 105%';
+        if (typeof dom.sculptureModelViewer.resetTurntableRotation === 'function') {
+          dom.sculptureModelViewer.resetTurntableRotation();
+        }
+      });
+    }
+
+    // Disparador de Realidad Aumentada (AR)
+    if (dom.btnTriggerAR) {
+      dom.btnTriggerAR.addEventListener('click', (e) => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+                         (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+        
+        // Si no es un dispositivo móvil (escritorio/laptop), abrir modal QR para escanear con el móvil
+        if (!isMobile) {
+          e.preventDefault();
+          e.stopPropagation();
+          openArQrModal();
+        }
+      });
+    }
+
+    // Modal QR para Realidad Aumentada
+    if (dom.arQrModalClose) {
+      dom.arQrModalClose.addEventListener('click', closeArQrModal);
+    }
+    if (dom.arQrModalOverlay) {
+      dom.arQrModalOverlay.addEventListener('click', closeArQrModal);
+    }
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (dom.arQrModal && dom.arQrModal.classList.contains('is-active')) {
+          closeArQrModal();
+        }
+      }
+    });
+
     // Navegación con Historial (Atrás del navegador y gesto móvil)
     window.addEventListener('popstate', () => {
       if (state.activeModalObra || state.activeModalPagina) {
         closeModal(false);
       }
     });
+  }
+
+  // Alternar entre Vista 2D (Foto de época) y Vista 3D / Realidad Aumentada
+  function setViewMode(mode) {
+    state.viewMode = mode;
+    if (mode === '3d') {
+      if (dom.modalFigure) dom.modalFigure.style.display = 'none';
+      if (dom.modal3DFigure) dom.modal3DFigure.style.display = 'block';
+      if (dom.btnViewMode3D) dom.btnViewMode3D.classList.add('is-active');
+      if (dom.btnViewMode2D) dom.btnViewMode2D.classList.remove('is-active');
+      if (dom.modalThumbnails) dom.modalThumbnails.style.display = 'none';
+      if (dom.modalDeblurCompare) dom.modalDeblurCompare.style.display = 'none';
+      if (dom.btnToggleFicha) dom.btnToggleFicha.style.display = 'none';
+    } else {
+      if (dom.modal3DFigure) dom.modal3DFigure.style.display = 'none';
+      if (dom.modalFigure) dom.modalFigure.style.display = 'flex';
+      if (dom.btnViewMode2D) dom.btnViewMode2D.classList.add('is-active');
+      if (dom.btnViewMode3D) dom.btnViewMode3D.classList.remove('is-active');
+      if (dom.btnToggleFicha) dom.btnToggleFicha.style.display = 'block';
+      if (state.activeModalObra) {
+        if (state.activeModalObra.fotos.length > 1 && dom.modalThumbnails) {
+          dom.modalThumbnails.style.display = 'flex';
+        }
+        checkDeblurAvailability(state.activeModalObra);
+      }
+    }
+  }
+
+  // Modal con Código QR para experimentar AR en iPhone / Android desde el ordenador
+  function openArQrModal() {
+    if (!state.activeModalObra || !dom.arQrModal) return;
+    const obra = state.activeModalObra;
+    if (dom.arQrTitle) {
+      dom.arQrTitle.textContent = `${obra.titulo} · AR 1:1`;
+    }
+    const baseUrl = 'https://olmo-gutierrez.github.io/archivo-jose-luis/';
+    const targetUrl = `${baseUrl}#obra-${obra.numero_str}-3d`;
+    if (dom.arQrImg) {
+      dom.arQrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=0&data=${encodeURIComponent(targetUrl)}`;
+    }
+    dom.arQrModal.classList.add('is-active');
+  }
+
+  function closeArQrModal() {
+    if (dom.arQrModal) {
+      dom.arQrModal.classList.remove('is-active');
+    }
   }
 
   // Helpers para obtener la lámina de origen de la foto activa
@@ -521,6 +644,27 @@
     // Actualizar imagen principal, botón de lámina y metadato de lámina
     updateModalDisplay();
 
+    // Configuración de visualización 3D y Realidad Aumentada si la obra dispone de modelo
+    if (obra.modelo_3d) {
+      if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'inline-flex';
+      if (dom.sculptureModelViewer) {
+        dom.sculptureModelViewer.setAttribute('src', obra.modelo_3d);
+        dom.sculptureModelViewer.setAttribute('alt', `Modelo 3D y Realidad Aumentada de ${obra.titulo}`);
+        dom.sculptureModelViewer.autoRotate = state.is3DAutoRotating;
+      }
+      if (dom.badge3DScaleText) {
+        dom.badge3DScaleText.textContent = obra.dimensiones_3d ? `Escala 1:1 · ${obra.dimensiones_3d}` : (obra.dimensiones ? `Escala 1:1 · ${obra.dimensiones}` : 'Escala 1:1 real');
+      }
+      if (window.location.hash && window.location.hash.endsWith('-3d')) {
+        setViewMode('3d');
+      } else {
+        setViewMode('2d');
+      }
+    } else {
+      if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'none';
+      setViewMode('2d');
+    }
+
     // Mostrar modal y bloquear scroll de fondo
     dom.obraModal.classList.add('is-active');
     lockBodyScroll();
@@ -528,6 +672,8 @@
 
   // 12. Modal de Lámina de Archivo Histórico (Al pulsar en sección Archivo)
   function openFichaModal(pagina, pushHistory = true) {
+    if (dom.modalViewModeToggle) dom.modalViewModeToggle.style.display = 'none';
+    setViewMode('2d');
     if (!state.activeModalObra && !state.activeModalPagina) {
       state.lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
     }
@@ -590,6 +736,8 @@
 
   function closeModal(updateHistory = true) {
     if (window._resetModalZoom) window._resetModalZoom();
+    closeArQrModal();
+    setViewMode('2d');
     state.activeModalObra = null;
     state.activeModalPagina = null;
     dom.obraModal.classList.remove('is-active');
@@ -694,9 +842,19 @@
     const hash = window.location.hash;
     if (!hash) return;
     if (hash.startsWith('#obra-')) {
-      const numStr = hash.replace('#obra-', '');
+      let is3D = false;
+      let numStr = hash.replace('#obra-', '');
+      if (numStr.endsWith('-3d')) {
+        is3D = true;
+        numStr = numStr.replace('-3d', '');
+      }
       const obra = state.obras.find((o) => o.numero_str === numStr);
-      if (obra) openModal(obra, false);
+      if (obra) {
+        openModal(obra, false);
+        if (is3D && obra.modelo_3d) {
+          setViewMode('3d');
+        }
+      }
     } else if (hash.startsWith('#lamina-')) {
       const numStr = hash.replace('#lamina-', '');
       const pag = state.paginas.find((p) => p.numero_str === numStr);

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>José Luis Gutiérrez — Escultor · Archivo & Catálogo Razonado</title>
   <meta name="description" content="Catálogo razonado y archivo escultórico del artista José Luis Gutiérrez. 38 obras maestras recuperadas y digitalizadas a 600 DPI.">
-  <link rel="stylesheet" href="site.css?v=20260906_v13">
+  <link rel="stylesheet" href="site.css?v=20260906_v14">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text x='50' y='65' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23F5F3F0' text-anchor='middle'>JLG</text></svg>">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -191,12 +192,82 @@
     <div class="c-modal-body">
       <!-- Columna Izquierda: Visor de Imagen, Miniaturas y Deblur -->
       <div class="c-modal-viewer">
+        <!-- Selector de Modo de Vista: 2D Foto vs 3D / Realidad Aumentada -->
+        <div id="modalViewModeToggle" class="c-modal-viewmode-toggle" style="display: none;">
+          <button id="btnViewMode2D" class="c-viewmode-btn is-active" title="Fotografía de época 2D">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Fotografía 2D</span>
+          </button>
+          <button id="btnViewMode3D" class="c-viewmode-btn" title="Modelo 3D y Realidad Aumentada">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span>Modelo 3D · AR</span>
+            <span class="c-viewmode-tag">Escaneo 3D</span>
+          </button>
+        </div>
+
         <div class="c-modal-figure" id="modalFigure" title="Haz clic para ampliar o alejar">
           <img id="modalMainImg" class="c-modal-img" src="" alt="Escultura de José Luis Gutiérrez" />
           <span id="modalZoomHint" class="c-modal-zoom-hint" aria-hidden="true">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
             <span>Zoom</span>
           </span>
+        </div>
+
+        <!-- Visor 3D Interactivo y Realidad Aumentada -->
+        <div id="modal3DFigure" class="c-modal-3d-figure" style="display: none;">
+          <model-viewer
+            id="sculptureModelViewer"
+            src=""
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            camera-controls
+            touch-action="pan-y"
+            auto-rotate
+            rotation-per-second="18deg"
+            shadow-intensity="1.4"
+            shadow-softness="0.75"
+            exposure="1.05"
+            environment-image="neutral"
+            interaction-prompt="none"
+            class="c-sculpture-model-viewer"
+            alt="Modelo 3D interactivo de escultura de José Luis Gutiérrez"
+          >
+            <!-- Botón AR nativo sobrepuesto -->
+            <button slot="ar-button" id="btnTriggerAR" class="c-ar-badge-btn" aria-label="Ver escultura en tu espacio con Realidad Aumentada">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+              <span>Ver en tu espacio (AR)</span>
+            </button>
+
+            <!-- Controles orbitales auxiliares -->
+            <div class="c-model-overlay-controls">
+              <button id="btn3DRotateToggle" class="c-model-control-btn is-active" title="Activar o pausar rotación automática" aria-label="Rotación 360 grados">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>360°</span>
+              </button>
+              <button id="btn3DResetCamera" class="c-model-control-btn" title="Restablecer encuadre y cámara" aria-label="Centrar vista">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/></svg>
+                <span>Centrar</span>
+              </button>
+            </div>
+
+            <!-- Etiqueta de escala real 1:1 -->
+            <div id="badge3DScale" class="c-model-scale-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span id="badge3DScaleText">Escala 1:1 real</span>
+            </div>
+          </model-viewer>
         </div>
 
         <!-- Miniaturas si la lámina incluye más de una toma -->
@@ -299,12 +370,29 @@
     </div>
   </div>
 
+  <!-- Modal QR para Realidad Aumentada en Móvil (Escritorio) -->
+  <div id="arQrModal" class="c-ar-qr-modal" aria-hidden="true" role="dialog">
+    <div class="c-ar-qr-overlay" id="arQrModalOverlay"></div>
+    <div class="c-ar-qr-dialog">
+      <button id="arQrModalClose" class="c-ar-qr-close" aria-label="Cerrar modal">&times;</button>
+      <span class="c-ar-qr-pretitle">Realidad Aumentada · AR</span>
+      <h3 class="c-ar-qr-title" id="arQrTitle">Proyecta la obra en tu espacio</h3>
+      <p class="c-ar-qr-desc">Escanea este código con la cámara de tu iPhone o Android para situar la escultura a escala real 1:1 en tu habitación o pared.</p>
+      <div class="c-ar-qr-code-box">
+        <img id="arQrImg" src="" alt="Código QR para Realidad Aumentada" width="200" height="200" />
+      </div>
+      <div class="c-ar-qr-footer">
+        <span class="c-ar-qr-tag">Compatible con Apple Quick Look (iOS) y Google Scene Viewer (Android)</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Custom Cursor Flotante (Gregor Collienne Style) -->
   <div id="customCursor" class="custom-cursor">
     <span class="custom-cursor__text"></span>
   </div>
 
   <!-- Scripts -->
-  <script src="site.js?v=20260906_v13"></script>
+  <script src="site.js?v=20260906_v14"></script>
 </body>
 </html>

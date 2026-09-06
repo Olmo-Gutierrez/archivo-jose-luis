@@ -633,7 +633,9 @@
         }
       ],
       "tiene_deblur": false,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "modelo_3d": "assets/models/obra_013_listones_rojos.glb",
+      "dimensiones_3d": "1'50 × 1'06 × 0'14 m"
     },
     {
       "id": 14,
@@ -2393,7 +2395,9 @@
         }
       ],
       "tiene_deblur": false,
-      "es_multilamina": false
+      "es_multilamina": false,
+      "modelo_3d": "assets/models/obra_056_cristo.glb",
+      "dimensiones_3d": "1'20 × 0'84 × 0'12 m"
     },
     {
       "id": 57,
