@@ -589,13 +589,13 @@
       "id": 13,
       "codigo": "obra_013",
       "numero_str": "013",
-      "titulo": "Listones Rojos",
-      "titulo_base": "Listones Rojos",
-      "es_titulo_original": true,
-      "nombre_completo": "Listones Rojos (Obra 013)",
+      "titulo": "Sin nombre 13",
+      "titulo_base": "Sin nombre 13",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 013 — Sin nombre 13",
       "categoria": "esculturas",
       "categoria_nombre": "Cuadros con relieve",
-      "materiales": "Escultura de gran formato en listones de madera lacada en rojo carmín.",
+      "materiales": "Cuadro con relieve de gran formato en listones de madera lacada en rojo carmín.",
       "dimensiones": "1'50 x 0'65 m",
       "paginas_referencia": [
         15
@@ -2718,13 +2718,13 @@
         13
       ],
       "obras_titulos": [
-        "Listones Rojos"
+        "Obra 013"
       ],
       "num_obras": 1,
       "es_multiobra": false,
       "es_multilamina": false,
       "num_fotos": 2,
-      "subtitulo_archivo": "Listones Rojos"
+      "subtitulo_archivo": "Obra 013"
     },
     {
       "id": 16,
