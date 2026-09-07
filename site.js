@@ -103,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260907_v27');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v28');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260907_v27');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v28');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v27');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v28');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -1465,7 +1465,7 @@
     }
 
     // Acción directa: Subir Obra (Envío a Google Drive + Google Sheets + Notificación Email)
-    const GOOGLE_APPS_SCRIPT_URL = ''; // Pega aquí la URL Web App de Google Apps Script
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnTzAsyqfjKR41dFWI6xCOhqyOHN4iAOiMjfrlvHoeUe3GG-DOdmc-pn-aRSSWiCxj/exec';
 
     if (form) {
       form.addEventListener('submit', async (e) => {
@@ -1521,11 +1521,12 @@
           if (GOOGLE_APPS_SCRIPT_URL) {
             await fetch(GOOGLE_APPS_SCRIPT_URL, {
               method: 'POST',
+              mode: 'no-cors',
+              headers: {
+                'Content-Type': 'text/plain;charset=utf-8'
+              },
               body: JSON.stringify(payload)
             });
-          } else {
-            // Simulación rápida si aún no se ha pegado la URL desplegada
-            await new Promise((r) => setTimeout(r, 800));
           }
 
           if (successMsg) {
