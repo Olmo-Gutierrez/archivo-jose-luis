@@ -103,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260907_v24');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v25');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260907_v24');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v25');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v24');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v25');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -1338,29 +1338,106 @@
       }
     });
 
-    // Gestión interactiva de subida de archivos
+    // Gestión interactiva de subida de archivos con vista previa visual
     let selectedFiles = [];
+    let previewUrls = [];
+
+    function revokePreviewUrls() {
+      previewUrls.forEach((url) => {
+        try {
+          URL.revokeObjectURL(url);
+        } catch (err) {}
+      });
+      previewUrls = [];
+    }
 
     function updateFilesPreview() {
       if (!filesList) return;
+      revokePreviewUrls();
       filesList.innerHTML = '';
-      selectedFiles.forEach((file) => {
-        const chip = document.createElement('div');
-        chip.className = 'c-file-chip';
+
+      if (selectedFiles.length === 0) {
+        return;
+      }
+
+      const counter = document.createElement('div');
+      counter.className = 'c-upload-counter';
+      counter.textContent = `${selectedFiles.length} foto${selectedFiles.length > 1 ? 's' : ''} preparada${selectedFiles.length > 1 ? 's' : ''} para incorporar:`;
+      filesList.appendChild(counter);
+
+      const grid = document.createElement('div');
+      grid.className = 'c-upload-preview-grid';
+
+      selectedFiles.forEach((file, index) => {
+        const card = document.createElement('div');
+        card.className = 'c-preview-card';
+
+        const isImage = file.type && file.type.startsWith('image/');
         const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
-        chip.innerHTML = `
-          <span class="c-file-chip__name" title="${file.name}">${file.name}</span>
-          <span class="c-file-chip__size">${sizeMb} MB</span>
+
+        if (isImage) {
+          const blobUrl = URL.createObjectURL(file);
+          previewUrls.push(blobUrl);
+
+          const img = document.createElement('img');
+          img.className = 'c-preview-card__img';
+          img.src = blobUrl;
+          img.alt = file.name;
+          card.appendChild(img);
+        } else {
+          const icon = document.createElement('div');
+          icon.className = 'c-preview-card__icon';
+          icon.textContent = '📄';
+          card.appendChild(icon);
+        }
+
+        // Botón para eliminar foto individual
+        const removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.className = 'c-preview-card__remove';
+        removeBtn.title = 'Quitar foto';
+        removeBtn.setAttribute('aria-label', `Quitar ${file.name}`);
+        removeBtn.innerHTML = '&times;';
+        removeBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          selectedFiles.splice(index, 1);
+          updateFilesPreview();
+        });
+        card.appendChild(removeBtn);
+
+        // Banda informativa con nombre y tamaño
+        const info = document.createElement('div');
+        info.className = 'c-preview-card__info';
+        info.innerHTML = `
+          <span class="c-preview-card__name" title="${file.name}">${file.name}</span>
+          <span class="c-preview-card__size">${sizeMb} MB</span>
         `;
-        filesList.appendChild(chip);
+        card.appendChild(info);
+
+        grid.appendChild(card);
       });
+
+      filesList.appendChild(grid);
+    }
+
+    function addSelectedFiles(fileList) {
+      if (!fileList || fileList.length === 0) return;
+      const incoming = Array.from(fileList);
+      incoming.forEach((newF) => {
+        const exists = selectedFiles.some((f) => f.name === newF.name && f.size === newF.size);
+        if (!exists) {
+          selectedFiles.push(newF);
+        }
+      });
+      updateFilesPreview();
     }
 
     if (fileInput) {
       fileInput.addEventListener('change', () => {
         if (fileInput.files) {
-          selectedFiles = Array.from(fileInput.files);
-          updateFilesPreview();
+          addSelectedFiles(fileInput.files);
+          fileInput.value = '';
         }
       });
     }
@@ -1382,8 +1459,7 @@
       });
       dropzone.addEventListener('drop', (e) => {
         if (e.dataTransfer && e.dataTransfer.files) {
-          selectedFiles = Array.from(e.dataTransfer.files);
-          updateFilesPreview();
+          addSelectedFiles(e.dataTransfer.files);
         }
       });
     }
