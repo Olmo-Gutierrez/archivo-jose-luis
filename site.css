@@ -158,14 +158,16 @@ button {
   margin-top: 4px;
 }
 
-/* Píldoras de vista rápida central / derecha */
+/* Píldoras de navegación rápida: centradas con espaciado uniforme */
 .c-header__nav-quick {
   pointer-events: all;
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  order: 2;
-  margin-left: auto;
+  gap: var(--space-4);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
 @media (max-width: 860px) and (min-width: 681px) {
@@ -174,8 +176,11 @@ button {
     height: 68px;
   }
   .c-header__nav-quick {
+    position: static;
+    transform: none;
     display: flex;
-    gap: var(--space-2);
+    gap: var(--space-3);
+    margin: 0 auto;
   }
   .c-header__link {
     font-size: 12px;
@@ -183,7 +188,7 @@ button {
     padding: 4px;
   }
   .c-header__btn-colaborar {
-    margin-left: var(--space-2);
+    margin-left: 0;
     padding: 5px 11px;
     font-size: 10.5px;
   }
@@ -200,6 +205,8 @@ button {
     align-items: center;
     gap: 6px 12px;
     box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
   }
 
   .c-header__brand {
@@ -232,23 +239,29 @@ button {
   }
 
   .c-header__nav-quick {
+    position: static;
+    transform: none;
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
-    margin-left: 0;
+    margin: 0;
     order: initial;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    justify-content: flex-start;
-    gap: 22px;
-    padding-top: 6px;
+    justify-items: center;
+    gap: 0;
+    padding-top: 7px;
+    padding-bottom: 2px;
     border-top: 1px solid rgba(12, 12, 12, 0.08);
   }
 
   .c-header__link {
     font-size: 12px;
     letter-spacing: 0.08em;
-    padding: 2px 0;
+    padding: 3px 0;
+    display: inline-block;
+    text-align: center;
   }
 
   .main-view-container {
@@ -2872,7 +2885,7 @@ model-viewer::part(default-progress-mask) {
    ========================================================================== */
 .c-header__btn-colaborar {
   order: 3;
-  margin-left: var(--space-3);
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
   gap: 6px;
