@@ -103,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260907_v22');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v23');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260907_v22');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v23');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v22');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v23');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -1388,51 +1388,14 @@
       });
     }
 
-    // Acción WhatsApp
-    if (btnWhatsApp) {
-      btnWhatsApp.addEventListener('click', () => {
-        const nombre = (document.getElementById('colabNombre')?.value || '').trim();
-        const titulo = (document.getElementById('colabTitulo')?.value || '').trim();
-        const ubicacion = (document.getElementById('colabUbicacion')?.value || '').trim();
-        const dimensiones = (document.getElementById('colabDimensiones')?.value || '').trim();
-        const historia = (document.getElementById('colabHistoria')?.value || '').trim();
-
-        if (!nombre) {
-          alert('Por favor, cuéntanos al menos quién eres.');
-          document.getElementById('colabNombre')?.focus();
-          return;
-        }
-
-        const lineas = [
-          '¡Hola Olmo! Te paso los datos de una obra de José Luis para el archivo:',
-          '',
-          `• De parte de: ${nombre}`,
-          titulo ? `• Obra / Título: ${titulo}` : '',
-          ubicacion ? `• Dónde está: ${ubicacion}` : '',
-          dimensiones ? `• Medidas aprox: ${dimensiones}` : '',
-          historia ? `• Recuerdos / Historia: ${historia}` : '',
-          selectedFiles.length > 0 ? `• Fotos elegidas: ${selectedFiles.length} foto(s)` : '',
-          '',
-          'Te paso ahora las fotos por aquí (como documento para que no pierdan calidad).'
-        ].filter(Boolean).join('\n');
-
-        const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(lineas)}`;
-        window.open(waUrl, '_blank');
-
-        if (successMsg) {
-          successMsg.style.display = 'block';
-        }
-      });
-    }
-
-    // Envío Directo Web
+    // Acción directa: Subir Obra
     if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const nombre = (document.getElementById('colabNombre')?.value || '').trim();
 
         if (!nombre) {
-          alert('Por favor, dinos al menos quién eres.');
+          alert('Por favor, indica tu nombre.');
           document.getElementById('colabNombre')?.focus();
           return;
         }
@@ -1444,7 +1407,7 @@
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.style.opacity = '0.6';
-          submitBtn.textContent = '¡Guardado con éxito!';
+          submitBtn.textContent = 'Obra Subida ✓';
         }
       });
     }

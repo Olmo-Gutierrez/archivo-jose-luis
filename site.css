@@ -3099,18 +3099,10 @@ model-viewer::part(default-progress-mask) {
   font-size: 10px;
 }
 
-/* Botones de acción del formulario */
+/* Botón de acción del formulario */
 .c-colaborar-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 8px;
-}
-
-@media (max-width: 600px) {
-  .c-colaborar-actions {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  margin-top: 12px;
 }
 
 .c-btn-colab {
@@ -3118,28 +3110,17 @@ model-viewer::part(default-progress-mask) {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 18px;
+  width: 100%;
+  padding: 14px 20px;
   font-family: var(--font-family-heading);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border-radius: 3px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.25s var(--cubic);
   line-height: 1;
-}
-
-.c-btn-colab.is-whatsapp {
-  background: #128C7E;
-  color: #FFF;
-  border: 1px solid #075E54;
-}
-
-.c-btn-colab.is-whatsapp:hover {
-  background: #075E54;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(18, 140, 126, 0.3);
 }
 
 .c-btn-colab.is-submit {

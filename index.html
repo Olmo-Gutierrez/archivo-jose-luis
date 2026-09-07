@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>José Luis Gutiérrez — Escultor · Archivo & Catálogo Razonado</title>
   <meta name="description" content="Catálogo razonado y archivo escultórico del artista José Luis Gutiérrez. 38 obras maestras recuperadas y digitalizadas a 600 DPI.">
-  <link rel="stylesheet" href="site.css?v=20260907_v22">
+  <link rel="stylesheet" href="site.css?v=20260907_v23">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text x='50' y='65' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23F5F3F0' text-anchor='middle'>JLG</text></svg>">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
@@ -24,7 +24,7 @@
       <a href="#" data-nav-target="obras" class="c-header__link is-active">Obras</a>
       <a href="#" data-nav-target="artist" class="c-header__link">Artista</a>
       <a href="#" data-nav-target="archive" class="c-header__link">Archivo</a>
-      <button type="button" id="btnHeaderColaborar" class="c-header__btn-colaborar">¿Tienes una obra?</button>
+      <button type="button" id="btnHeaderColaborar" class="c-header__btn-colaborar">Subir Obra</button>
     </nav>
   </header>
 
@@ -36,7 +36,7 @@
       <li><a href="#" data-nav-target="obras">01. Obras</a></li>
       <li><a href="#" data-nav-target="artist">02. Artista</a></li>
       <li><a href="#" data-nav-target="archive">03. Archivo</a></li>
-      <li><a href="#" id="navscreenColaborar">04. ¿Tienes alguna obra en casa?</a></li>
+      <li><a href="#" id="navscreenColaborar">04. Subir Obra</a></li>
     </ul>
 
     <div class="c-navscreen__bottom">
@@ -403,7 +403,7 @@
        MODAL DE PARTICIPACIÓN FAMILIAR Y RECEPCIÓN DE OBRAS EN ALTA CALIDAD
        ======================================================================= -->
   <!-- =======================================================================
-       MODAL FAMILIAR: ¿TIENES ALGUNA OBRA DE JOSÉ LUIS EN CASA?
+       MODAL: SUBIR OBRA AL CATÁLOGO
        ======================================================================= -->
   <div id="colaborarModal" class="c-colaborar-modal" aria-hidden="true" role="dialog" aria-labelledby="colaborarModalTitle">
     <div class="c-colaborar-overlay" id="colaborarOverlay"></div>
@@ -411,92 +411,84 @@
       <button id="colaborarModalClose" class="c-colaborar-close" aria-label="Cerrar">&times;</button>
       
       <div class="c-colaborar-header">
-        <span class="c-colaborar-pretitle">Espacio Familiar</span>
-        <h2 id="colaborarModalTitle" class="c-colaborar-title">¿Tienes alguna obra de José Luis en casa?</h2>
+        <h2 id="colaborarModalTitle" class="c-colaborar-title">Subir Obra al Catálogo</h2>
         <p class="c-colaborar-desc">
-          Queremos reunir y conservar todas sus esculturas, cuadros y recuerdos en este archivo. Si tienes alguna pieza por casa, cuéntanos sobre ella y compártenos unas fotos para sumarla al catálogo.
+          Añade las fotografías y los datos de una obra para incorporarla al catálogo de José Luis Gutiérrez.
         </p>
       </div>
 
-      <!-- Consejos sencillos para las fotos -->
+      <!-- Consejos para las fotos -->
       <div class="c-colaborar-guide">
         <div class="c-colaborar-guide__title">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
           </svg>
-          <span>Un par de consejos para que las fotos queden bien:</span>
+          <span>Recomendaciones para las fotos:</span>
         </div>
         <ul class="c-colaborar-guide__list">
-          <li><strong>Con buena luz de día:</strong> Cerca de una ventana y sin flash, para que los colores de la madera o el relieve se vean naturales.</li>
-          <li><strong>De frente y recta:</strong> Para que se aprecie la forma completa de la pieza.</li>
-          <li><strong>Detalles o trasera:</strong> Si tiene firma («JL»), fecha, o alguna anotación por detrás, ¡hazle también una fotito de cerca!</li>
+          <li><strong>Buena luz natural:</strong> Cerca de una ventana y sin flash directo para que los colores sean reales.</li>
+          <li><strong>Foto frontal y perpendicular:</strong> Centrada para ver bien la pieza completa.</li>
+          <li><strong>Detalles y trasera:</strong> Si tiene firma («JL»), fecha o notas por detrás, añade fotos de cerca.</li>
         </ul>
       </div>
 
-      <!-- Formulario Cercano -->
+      <!-- Formulario Directo -->
       <form id="colaborarForm" class="c-colaborar-form" autocomplete="off">
         <div class="c-form-row">
           <div class="c-form-group">
-            <label for="colabNombre" class="c-form-label">¿Quién eres?</label>
-            <input type="text" id="colabNombre" name="nombre" class="c-form-input" placeholder="Ej. Rosa, Amapola, Cuco, Violeta..." required />
+            <label for="colabNombre" class="c-form-label">Tu nombre</label>
+            <input type="text" id="colabNombre" name="nombre" class="c-form-input" placeholder="Ej. Rosa, Amapola, Cuco..." required />
           </div>
           <div class="c-form-group">
-            <label for="colabUbicacion" class="c-form-label">¿Dónde está la obra?</label>
-            <input type="text" id="colabUbicacion" name="ubicacion" class="c-form-input" placeholder="Ej. En casa en Madrid, en Muelas, en Valladolid..." />
+            <label for="colabUbicacion" class="c-form-label">Ubicación de la obra</label>
+            <input type="text" id="colabUbicacion" name="ubicacion" class="c-form-input" placeholder="Ej. Madrid, Valladolid, Muelas del Pan..." />
           </div>
         </div>
 
         <div class="c-form-row">
           <div class="c-form-group">
-            <label for="colabTitulo" class="c-form-label">¿Tiene algún nombre o cómo la llamáis?</label>
-            <input type="text" id="colabTitulo" name="titulo" class="c-form-input" placeholder="Ej. Ramo de amapolas, Paloma, o si no tiene título..." />
+            <label for="colabTitulo" class="c-form-label">Título o nombre de la obra</label>
+            <input type="text" id="colabTitulo" name="titulo" class="c-form-input" placeholder="Ej. Ramo de amapolas, Paloma... (o en blanco si no tiene)" />
           </div>
           <div class="c-form-group">
-            <label for="colabDimensiones" class="c-form-label">Medidas aproximadas (si tienes un metro a mano)</label>
-            <input type="text" id="colabDimensiones" name="dimensiones" class="c-form-input" placeholder="Alto y ancho aprox. en cm" />
+            <label for="colabDimensiones" class="c-form-label">Medidas aproximadas</label>
+            <input type="text" id="colabDimensiones" name="dimensiones" class="c-form-input" placeholder="Alto × ancho en cm" />
           </div>
         </div>
 
         <!-- Subida de Fotos -->
         <div class="c-form-group">
-          <label class="c-form-label">Fotos de la obra</label>
+          <label class="c-form-label">Fotografías de la obra</label>
           <div class="c-upload-dropzone" id="colabDropzone">
             <input type="file" id="colabFotos" name="fotos" class="c-upload-file-input" multiple accept="image/*" />
             <div class="c-upload-prompt">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
               </svg>
-              <span class="c-upload-text-main">Toca aquí para elegir las fotos de tu móvil o cámara</span>
-              <span class="c-upload-text-sub">Puedes seleccionar varias (de frente, detalles, de lado...)</span>
+              <span class="c-upload-text-main">Toca aquí para seleccionar fotos de la obra</span>
+              <span class="c-upload-text-sub">Admite múltiples fotos (frontal, detalles, firma...)</span>
             </div>
           </div>
           <div id="colabFilesList" class="c-upload-files-list"></div>
         </div>
 
-        <!-- Recuerdos y Anécdotas -->
+        <!-- Anécdotas o notas -->
         <div class="c-form-group">
-          <label for="colabHistoria" class="c-form-label">¿Te acuerdas de alguna historia o anécdota de esta obra?</label>
-          <textarea id="colabHistoria" name="historia" class="c-form-textarea" rows="3" placeholder="¿Cuándo la hizo? ¿Fue un regalo especial? ¿Qué decía él sobre la pieza? Cualquier recuerdo que quieras compartir..."></textarea>
+          <label for="colabHistoria" class="c-form-label">Detalles o recuerdos sobre la obra (opcional)</label>
+          <textarea id="colabHistoria" name="historia" class="c-form-textarea" rows="3" placeholder="Año aproximado, si fue un regalo, anécdota o cualquier detalle..."></textarea>
         </div>
 
-        <!-- Acciones Claras y Directas -->
-        <div class="c-colaborar-actions">
-          <button type="button" id="btnColabWhatsApp" class="c-btn-colab is-whatsapp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.18-.548-1.785-.733-2.924-2.55-3.013-2.668-.088-.118-.72-1.02-.72-1.944 0-.924.48-1.378.65-1.564.17-.186.372-.232.496-.232.124 0 .248.001.356.006.114.006.267-.043.418.321.156.374.53 1.293.576 1.386.046.093.078.202.016.326-.062.124-.093.202-.186.311-.093.109-.196.244-.28.327-.093.093-.19.194-.082.38.109.186.483.797 1.036 1.29 1.109.988 2.044 1.293 2.333 1.437.289.144.458.12.627-.074.17-.194.726-.844.92-1.133.193-.288.386-.24.646-.144.26.096 1.65.778 1.933.919.283.141.472.211.541.33.069.119.069.69-.075 1.095z"/>
-            </svg>
-            <span>Enviar a Olmo por WhatsApp</span>
-          </button>
-          <button type="submit" id="btnColabDirect" class="c-btn-colab is-submit">
-            <span>Guardar en la web</span>
+        <!-- Acción Principal Directa: Subir Obra -->
+        <div class="c-colaborar-actions" style="grid-template-columns: 1fr;">
+          <button type="submit" id="btnColabDirect" class="c-btn-colab is-submit" style="width: 100%;">
+            <span>Subir Obra</span>
           </button>
         </div>
 
         <div id="colabSuccessMessage" class="c-colab-success" style="display: none;">
-          <div class="c-colab-success__icon">♥</div>
-          <h3>¡Muchísimas gracias!</h3>
-          <p>La información queda guardada para sumarla con cariño al archivo familiar de José Luis.</p>
-          <p class="c-colab-success__note">Si vas a enviar las fotos por WhatsApp, recuerda enviarlas con el icono del clip como <strong>«Documento»</strong> para que no pierdan nada de calidad.</p>
+          <div class="c-colab-success__icon">✓</div>
+          <h3>Obra subida con éxito</h3>
+          <p>La información y las fotografías se han registrado correctamente para incorporarlas al catálogo.</p>
         </div>
       </form>
     </div>
@@ -508,6 +500,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="site.js?v=20260907_v22"></script>
+  <script src="site.js?v=20260907_v23"></script>
 </body>
 </html>
