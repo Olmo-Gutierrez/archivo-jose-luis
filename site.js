@@ -103,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260907_v28');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v29');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260907_v28');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v29');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v28');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v29');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -267,7 +267,7 @@
 
     const selectedText = document.getElementById('dropdownSelectedText');
     if (selectedText && state.activeCategory === 'todas') {
-      selectedText.textContent = `Todas las obras (${total})`;
+      selectedText.textContent = `Todo (${total})`;
     }
   }
 

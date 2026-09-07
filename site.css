@@ -55,7 +55,9 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   font-size: 16px;
   background-color: var(--color-light);
   color: var(--color-dark);
@@ -63,16 +65,24 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  overflow-x: clip;
+}
+
+@media (min-width: 992px) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: var(--color-light);
   color: var(--color-dark);
   min-height: 100vh;
   position: relative;
-  overflow-x: clip;
   text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Tipografía de catálogo */
@@ -243,14 +253,25 @@ button {
 
   .main-view-container {
     padding-top: 92px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .overview-intro {
-    padding: var(--space-1) var(--space-2) 0 !important;
+    padding: var(--space-1) 14px 0 !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .c-element-overviewgrid {
-    padding-top: var(--space-2) !important;
+    padding: var(--space-2) 14px clamp(120px, 16vh, 200px) !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 
@@ -469,6 +490,10 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 .main-view-container {
   padding-top: calc(var(--header-height) + var(--space-2));
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Ocultar secciones inactivas */
@@ -515,7 +540,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   grid-template-columns: repeat(5, minmax(0, 1fr));
   column-gap: var(--col-gap);
   row-gap: var(--row-gap);
-  overflow-x: clip;
+  overflow-x: hidden;
   align-items: start;
 }
 
@@ -538,8 +563,13 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 @media (max-width: 660px) {
   .c-element-overviewgrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    --col-gap: 3.5vw;
+    --col-gap: 12px;
     --row-gap: 3vh;
+    padding: var(--space-2) 14px clamp(120px, 16vh, 200px) !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 
@@ -720,6 +750,9 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   align-items: center;
   position: relative;
   z-index: 80;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .c-custom-dropdown {
@@ -727,6 +760,8 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  max-width: 100%;
+  flex-wrap: nowrap;
 }
 
 .c-custom-dropdown__label {
@@ -737,12 +772,13 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   letter-spacing: 0.14em;
   color: var(--color-muted);
   user-select: none;
+  white-space: nowrap;
 }
 
 .c-custom-dropdown__trigger {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 8px 18px;
   background: rgba(245, 243, 240, 0.95);
   border: 1px solid rgba(12, 12, 12, 0.22);
@@ -751,6 +787,9 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   outline: none;
   transition: all 0.25s var(--cubic);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .c-custom-dropdown__trigger:hover {
@@ -773,6 +812,9 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   letter-spacing: 0.08em;
   color: var(--color-dark);
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .c-custom-dropdown__arrow {
@@ -781,6 +823,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   justify-content: center;
   color: var(--color-dark);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
 }
 
 .c-custom-dropdown.is-open .c-custom-dropdown__arrow {
@@ -793,7 +836,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
-  min-width: 290px;
+  min-width: 260px;
   background: rgba(245, 243, 240, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -809,6 +852,7 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
   display: flex;
   flex-direction: column;
   gap: 4px;
+  box-sizing: border-box;
 }
 
 .c-custom-dropdown.is-open .c-custom-dropdown__menu {
@@ -866,15 +910,37 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
 }
 
 @media (max-width: 680px) {
+  .overview-intro {
+    padding: var(--space-2) 14px var(--space-2) !important;
+  }
+
   .c-custom-dropdown {
+    gap: 0;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .c-custom-dropdown__label {
+    display: none; /* Simplifica en móvil: el botón ya indica la selección y evita el salto de línea */
+  }
+
+  .c-custom-dropdown__trigger {
+    padding: 7px 16px;
+    font-size: 11px;
     gap: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .c-custom-dropdown__selected {
+    font-size: 11px;
   }
 
   .c-custom-dropdown__menu {
     left: 50%;
     transform: translateX(-50%) translateY(-6px);
-    width: calc(100vw - 32px);
-    max-width: 320px;
+    width: min(280px, calc(100vw - 28px));
+    max-width: calc(100vw - 28px);
+    min-width: 0;
   }
 
   .c-custom-dropdown.is-open .c-custom-dropdown__menu {
@@ -2182,12 +2248,17 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
    CURSOR PERSONALIZADO DINÁMICO (Gregor Collienne Style)
    Oculta el cursor nativo del ratón en escritorio y deja solo el puntito integrado
    ========================================================================== */
+.custom-cursor {
+  display: none !important;
+}
+
 @media (pointer: fine) {
   html, body, *, *::before, *::after {
     cursor: none !important;
   }
 
   .custom-cursor {
+    display: flex !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -2199,7 +2270,6 @@ body.menu-is-open .c-navscreen__menu li:nth-child(5) a { transition-delay: 0.33s
     z-index: 99999;
     transform: translate(-50%, -50%);
     transition: width 0.25s var(--cubic), height 0.25s var(--cubic), background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
-    display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
