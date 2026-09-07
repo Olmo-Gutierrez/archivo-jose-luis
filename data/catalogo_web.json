@@ -856,14 +856,15 @@
       "id": 19,
       "codigo": "obra_019",
       "numero_str": "019",
-      "titulo": "Sin nombre 19",
-      "titulo_base": "Geometría en Carmín",
-      "es_titulo_original": false,
-      "nombre_completo": "Obra 019 — Sin nombre 19",
+      "titulo": "Ramo de amapolas",
+      "titulo_base": "Ramo de amapolas",
+      "es_titulo_original": true,
+      "nombre_completo": "Ramo de amapolas (Obra 019)",
       "categoria": "esculturas",
       "categoria_nombre": "Cuadros con relieve",
       "materiales": "Relieve vertical de prismas tallados en madera lacada carmesí (firmado 'JL 98 J.Gtiez').",
       "dimensiones": "0'80 x 0'70 m",
+      "ubicacion": "Colección Rosa Gutiérrez",
       "paginas_referencia": [
         19
       ],
@@ -2799,14 +2800,14 @@
         20
       ],
       "obras_titulos": [
-        "Obra 019",
+        "Ramo de amapolas",
         "Obra 020"
       ],
       "num_obras": 2,
       "es_multiobra": true,
       "es_multilamina": false,
       "num_fotos": 2,
-      "subtitulo_archivo": "Obra 019, Obra 020"
+      "subtitulo_archivo": "Ramo de amapolas, Obra 020"
     },
     {
       "id": 20,

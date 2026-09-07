@@ -75,6 +75,11 @@
     modalMetaFotosCount: document.getElementById('modalMetaFotosCount'),
     modalMetaLamina: document.getElementById('modalMetaLamina'),
     modalMetaMateriales: document.getElementById('modalMetaMateriales'),
+    modalMetaUbicacionRow: document.getElementById('modalMetaUbicacionRow'),
+    modalMetaUbicacion: document.getElementById('modalMetaUbicacion'),
+    btnHeaderColaborar: document.getElementById('btnHeaderColaborar'),
+    navscreenColaborar: document.getElementById('navscreenColaborar'),
+    colaborarModal: document.getElementById('colaborarModal'),
     btnDownloadPng: document.getElementById('btnDownloadPng'),
     btnToggleFicha: document.getElementById('btnToggleFicha'),
     btnModalPrev: document.getElementById('btnModalPrev'),
@@ -86,6 +91,7 @@
     setupNavEvents();
     setupCategoryFilters();
     setupModalEvents();
+    setupColaborarModal();
     setupImageZoom();
     await loadCatalogData();
     updateCategorySelectCounts();
@@ -97,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260906_v20');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v21');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260906_v20');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v21');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260906_v20');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v21');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -659,6 +665,14 @@
     }
 
     dom.modalMetaDims.textContent = obra.dimensiones || 'Consultar lámina';
+    if (dom.modalMetaUbicacionRow && dom.modalMetaUbicacion) {
+      if (obra.ubicacion) {
+        dom.modalMetaUbicacion.textContent = obra.ubicacion;
+        dom.modalMetaUbicacionRow.style.display = '';
+      } else {
+        dom.modalMetaUbicacionRow.style.display = 'none';
+      }
+    }
     dom.modalMetaFotosCount.textContent = `${obra.fotos.length} ${obra.fotos.length === 1 ? 'fotografía' : 'fotografías'}`;
     dom.modalMetaMateriales.textContent = obra.materiales;
 
@@ -1271,6 +1285,173 @@
         cursor.classList.remove('is-hovering-link');
       }
     });
+  }
+
+  // 17. Modal de Participación Familiar y Recepción de Obras
+  function setupColaborarModal() {
+    const modal = document.getElementById('colaborarModal');
+    const overlay = document.getElementById('colaborarOverlay');
+    const closeBtn = document.getElementById('colaborarModalClose');
+    const btnHeader = document.getElementById('btnHeaderColaborar');
+    const btnNavscreen = document.getElementById('navscreenColaborar');
+    const form = document.getElementById('colaborarForm');
+    const dropzone = document.getElementById('colabDropzone');
+    const fileInput = document.getElementById('colabFotos');
+    const filesList = document.getElementById('colabFilesList');
+    const btnWhatsApp = document.getElementById('btnColabWhatsApp');
+    const successMsg = document.getElementById('colabSuccessMessage');
+
+    if (!modal) return;
+
+    function openColaborar() {
+      const navscreen = document.getElementById('navscreen');
+      if (navscreen) navscreen.classList.remove('is-active');
+      modal.classList.add('is-active');
+      lockBodyScroll();
+    }
+
+    function closeColaborar() {
+      modal.classList.remove('is-active');
+      unlockBodyScroll();
+    }
+
+    if (btnHeader) {
+      btnHeader.addEventListener('click', (e) => {
+        e.preventDefault();
+        openColaborar();
+      });
+    }
+
+    if (btnNavscreen) {
+      btnNavscreen.addEventListener('click', (e) => {
+        e.preventDefault();
+        openColaborar();
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeColaborar);
+    if (overlay) overlay.addEventListener('click', closeColaborar);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+        closeColaborar();
+      }
+    });
+
+    // Gestión interactiva de subida de archivos
+    let selectedFiles = [];
+
+    function updateFilesPreview() {
+      if (!filesList) return;
+      filesList.innerHTML = '';
+      selectedFiles.forEach((file) => {
+        const chip = document.createElement('div');
+        chip.className = 'c-file-chip';
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
+        chip.innerHTML = `
+          <span class="c-file-chip__name" title="${file.name}">${file.name}</span>
+          <span class="c-file-chip__size">${sizeMb} MB</span>
+        `;
+        filesList.appendChild(chip);
+      });
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files) {
+          selectedFiles = Array.from(fileInput.files);
+          updateFilesPreview();
+        }
+      });
+    }
+
+    if (dropzone) {
+      ['dragenter', 'dragover'].forEach((ev) => {
+        dropzone.addEventListener(ev, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.add('is-dragover');
+        });
+      });
+      ['dragleave', 'drop'].forEach((ev) => {
+        dropzone.addEventListener(ev, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.remove('is-dragover');
+        });
+      });
+      dropzone.addEventListener('drop', (e) => {
+        if (e.dataTransfer && e.dataTransfer.files) {
+          selectedFiles = Array.from(e.dataTransfer.files);
+          updateFilesPreview();
+        }
+      });
+    }
+
+    // Acción WhatsApp
+    if (btnWhatsApp) {
+      btnWhatsApp.addEventListener('click', () => {
+        const nombre = (document.getElementById('colabNombre')?.value || '').trim();
+        const contacto = (document.getElementById('colabContacto')?.value || '').trim();
+        const titulo = (document.getElementById('colabTitulo')?.value || '').trim();
+        const ubicacion = (document.getElementById('colabUbicacion')?.value || '').trim();
+        const dimensiones = (document.getElementById('colabDimensiones')?.value || '').trim();
+        const materiales = (document.getElementById('colabMateriales')?.value || '').trim();
+        const historia = (document.getElementById('colabHistoria')?.value || '').trim();
+
+        if (!nombre || !contacto || !ubicacion) {
+          alert('Por favor, indica al menos tu nombre, teléfono y dónde está la obra.');
+          return;
+        }
+
+        const lineas = [
+          '*ARCHIVO JOSÉ LUIS GUTIÉRREZ — NUEVA APORTACIÓN*',
+          '',
+          `• *Aportado por:* ${nombre}`,
+          `• *Contacto:* ${contacto}`,
+          `• *Título / Nombre:* ${titulo || 'Sin título conocido'}`,
+          `• *Ubicación actual:* ${ubicacion}`,
+          `• *Medidas aprox:* ${dimensiones || 'Por determinar'}`,
+          `• *Técnica / Materiales:* ${materiales || 'Por determinar'}`,
+          historia ? `• *Recuerdos / Historia:* ${historia}` : '',
+          `• *Fotos preparadas:* ${selectedFiles.length > 0 ? selectedFiles.length + ' foto(s)' : 'Adjuntar a continuación'}`,
+          '',
+          '*(Nota: Envía las fotos aquí usando el clip -> Documento para que mantengan la máxima resolución original sin comprimir)*'
+        ].filter(Boolean).join('\n');
+
+        const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(lineas)}`;
+        window.open(waUrl, '_blank');
+
+        if (successMsg) {
+          successMsg.style.display = 'block';
+        }
+      });
+    }
+
+    // Envío Directo Web
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nombre = (document.getElementById('colabNombre')?.value || '').trim();
+        const contacto = (document.getElementById('colabContacto')?.value || '').trim();
+        const ubicacion = (document.getElementById('colabUbicacion')?.value || '').trim();
+
+        if (!nombre || !contacto || !ubicacion) {
+          alert('Por favor, completa los campos obligatorios (*).');
+          return;
+        }
+
+        if (successMsg) {
+          successMsg.style.display = 'block';
+        }
+        const submitBtn = document.getElementById('btnColabDirect');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.6';
+          submitBtn.textContent = 'Ficha Registrada ✓';
+        }
+      });
+    }
   }
 
   // Inicializar al cargar el DOM
