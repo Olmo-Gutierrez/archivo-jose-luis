@@ -126,17 +126,14 @@ function doPost(e) {
         `${spreadsheet.getUrl()}\n\n` +
         `---\nArchivo Artístico José Luis Gutiérrez`;
 
-      MailApp.sendEmail({
-        to: emailDestino,
-        subject: asunto,
-        body: cuerpoTexto
-      });
+      GmailApp.sendEmail(emailDestino, asunto, cuerpoTexto);
     }
 
     return ContentService.createTextOutput(JSON.stringify({
       status: "success",
       message: "Obra y fotos registradas correctamente.",
-      folderUrl: obraFolder.getUrl()
+      folderUrl: obraFolder.getUrl(),
+      notificadoA: emailDestino || "ninguno"
     })).setMimeType(ContentService.MimeType.JSON);
 
   } catch (error) {
@@ -145,6 +142,21 @@ function doPost(e) {
       message: error.toString()
     })).setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+// Función para probar el envío de correo directamente desde el editor
+function probarEnvioCorreo() {
+  const emailDestino = (NOTIFICAR_EMAIL || Session.getEffectiveUser().getEmail()).trim();
+  Logger.log("Destinatario: " + emailDestino);
+  if (!emailDestino) {
+    throw new Error("El correo está vacío. Por favor, escribe tu dirección en NOTIFICAR_EMAIL en la línea 20.");
+  }
+  GmailApp.sendEmail(
+    emailDestino,
+    "🎨 Prueba directa de notificación - Archivo José Luis",
+    "¡Hola Olmo!\n\nSi estás leyendo esto, la notificación por correo funciona perfectamente."
+  );
+  Logger.log("¡Correo enviado con éxito a " + emailDestino + "!");
 }
 
 function doGet(e) {
