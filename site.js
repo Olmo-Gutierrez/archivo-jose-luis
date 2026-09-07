@@ -103,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260907_v21');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v22');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260907_v21');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v22');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v21');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v22');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
@@ -1392,31 +1392,28 @@
     if (btnWhatsApp) {
       btnWhatsApp.addEventListener('click', () => {
         const nombre = (document.getElementById('colabNombre')?.value || '').trim();
-        const contacto = (document.getElementById('colabContacto')?.value || '').trim();
         const titulo = (document.getElementById('colabTitulo')?.value || '').trim();
         const ubicacion = (document.getElementById('colabUbicacion')?.value || '').trim();
         const dimensiones = (document.getElementById('colabDimensiones')?.value || '').trim();
-        const materiales = (document.getElementById('colabMateriales')?.value || '').trim();
         const historia = (document.getElementById('colabHistoria')?.value || '').trim();
 
-        if (!nombre || !contacto || !ubicacion) {
-          alert('Por favor, indica al menos tu nombre, teléfono y dónde está la obra.');
+        if (!nombre) {
+          alert('Por favor, cuéntanos al menos quién eres.');
+          document.getElementById('colabNombre')?.focus();
           return;
         }
 
         const lineas = [
-          '*ARCHIVO JOSÉ LUIS GUTIÉRREZ — NUEVA APORTACIÓN*',
+          '¡Hola Olmo! Te paso los datos de una obra de José Luis para el archivo:',
           '',
-          `• *Aportado por:* ${nombre}`,
-          `• *Contacto:* ${contacto}`,
-          `• *Título / Nombre:* ${titulo || 'Sin título conocido'}`,
-          `• *Ubicación actual:* ${ubicacion}`,
-          `• *Medidas aprox:* ${dimensiones || 'Por determinar'}`,
-          `• *Técnica / Materiales:* ${materiales || 'Por determinar'}`,
-          historia ? `• *Recuerdos / Historia:* ${historia}` : '',
-          `• *Fotos preparadas:* ${selectedFiles.length > 0 ? selectedFiles.length + ' foto(s)' : 'Adjuntar a continuación'}`,
+          `• De parte de: ${nombre}`,
+          titulo ? `• Obra / Título: ${titulo}` : '',
+          ubicacion ? `• Dónde está: ${ubicacion}` : '',
+          dimensiones ? `• Medidas aprox: ${dimensiones}` : '',
+          historia ? `• Recuerdos / Historia: ${historia}` : '',
+          selectedFiles.length > 0 ? `• Fotos elegidas: ${selectedFiles.length} foto(s)` : '',
           '',
-          '*(Nota: Envía las fotos aquí usando el clip -> Documento para que mantengan la máxima resolución original sin comprimir)*'
+          'Te paso ahora las fotos por aquí (como documento para que no pierdan calidad).'
         ].filter(Boolean).join('\n');
 
         const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(lineas)}`;
@@ -1433,11 +1430,10 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const nombre = (document.getElementById('colabNombre')?.value || '').trim();
-        const contacto = (document.getElementById('colabContacto')?.value || '').trim();
-        const ubicacion = (document.getElementById('colabUbicacion')?.value || '').trim();
 
-        if (!nombre || !contacto || !ubicacion) {
-          alert('Por favor, completa los campos obligatorios (*).');
+        if (!nombre) {
+          alert('Por favor, dinos al menos quién eres.');
+          document.getElementById('colabNombre')?.focus();
           return;
         }
 
@@ -1448,7 +1444,7 @@
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.style.opacity = '0.6';
-          submitBtn.textContent = 'Ficha Registrada ✓';
+          submitBtn.textContent = '¡Guardado con éxito!';
         }
       });
     }

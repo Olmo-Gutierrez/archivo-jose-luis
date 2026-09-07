@@ -2776,16 +2776,16 @@ model-viewer::part(default-progress-mask) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--color-dark);
-  color: var(--color-light);
-  border: 1px solid var(--color-dark);
-  padding: 5px 12px;
+  background: var(--color-light-card);
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
   font-family: var(--font-family-heading);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: 2px;
+  letter-spacing: 0.05em;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.25s var(--cubic);
   line-height: 1;
@@ -2796,13 +2796,14 @@ model-viewer::part(default-progress-mask) {
   border-color: var(--color-accent);
   color: #fff;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(178, 58, 34, 0.2);
 }
 
 @media (max-width: 680px) {
   .c-header__btn-colaborar {
     margin-left: auto;
-    padding: 4px 10px;
-    font-size: 10px;
+    padding: 5px 10px;
+    font-size: 10.5px;
   }
 }
 
@@ -2827,26 +2828,26 @@ model-viewer::part(default-progress-mask) {
 .c-colaborar-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(12, 12, 12, 0.78);
+  background: rgba(12, 12, 12, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .c-colaborar-dialog {
   position: relative;
-  background: var(--color-light);
+  background: #FAF8F5;
   color: var(--color-dark);
-  border: 1px solid var(--color-dark);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
-  max-width: 680px;
+  border: 1px solid #DFD9CF;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  max-width: 640px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 36px 32px 32px;
+  padding: 34px 28px 28px;
   z-index: 2;
-  transform: scale(0.96);
+  transform: scale(0.97);
   transition: transform 0.25s var(--cubic-out);
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 .c-colaborar-modal.is-active .c-colaborar-dialog {
@@ -2857,11 +2858,11 @@ model-viewer::part(default-progress-mask) {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--color-border);
-  background: transparent;
-  font-size: 22px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #D8D2C5;
+  background: #FFF;
+  font-size: 20px;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -2879,7 +2880,7 @@ model-viewer::part(default-progress-mask) {
 }
 
 .c-colaborar-header {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .c-colaborar-pretitle {
@@ -2887,44 +2888,45 @@ model-viewer::part(default-progress-mask) {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--color-accent);
   margin-bottom: 6px;
 }
 
 .c-colaborar-title {
   font-family: var(--font-family-heading);
-  font-size: var(--fs-h2);
-  line-height: 1.15;
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.2;
   margin-bottom: 8px;
 }
 
 .c-colaborar-desc {
-  font-size: var(--fs-small);
-  color: var(--color-muted);
+  font-size: 13.5px;
+  color: #63605A;
   line-height: 1.5;
 }
 
 /* Caja de Pautas */
 .c-colaborar-guide {
-  background: var(--color-light-alt);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-accent);
-  padding: 16px 18px;
-  border-radius: 4px;
-  margin-bottom: 24px;
+  background: #F2EEE7;
+  border: 1px solid #E2DCD1;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .c-colaborar-guide__title {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: var(--color-dark);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+.c-colaborar-guide__title svg {
+  color: var(--color-accent);
 }
 
 .c-colaborar-guide__list {
@@ -2938,7 +2940,7 @@ model-viewer::part(default-progress-mask) {
 
 .c-colaborar-guide__list li {
   font-size: 12.5px;
-  color: #3C3A36;
+  color: #55514B;
   line-height: 1.45;
   position: relative;
   padding-left: 14px;
@@ -2956,52 +2958,45 @@ model-viewer::part(default-progress-mask) {
 .c-colaborar-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .c-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 12px;
 }
 
 @media (max-width: 600px) {
   .c-form-row {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
   .c-colaborar-dialog {
-    padding: 24px 18px;
+    padding: 22px 16px;
+    border-radius: 8px;
   }
 }
 
 .c-form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .c-form-label {
   font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-dark);
-}
-
-.c-form-req {
-  color: var(--color-accent);
-  font-weight: bold;
+  color: #3C3A36;
 }
 
 .c-form-input,
-.c-form-textarea,
-.c-form-select {
+.c-form-textarea {
   width: 100%;
   padding: 10px 12px;
   background: #FFF;
-  border: 1px solid var(--color-border);
-  border-radius: 2px;
+  border: 1px solid #D6D0C4;
+  border-radius: 6px;
   font-family: var(--font-family-body);
   font-size: 14px;
   color: var(--color-dark);
@@ -3010,25 +3005,24 @@ model-viewer::part(default-progress-mask) {
 }
 
 .c-form-input:focus,
-.c-form-textarea:focus,
-.c-form-select:focus {
+.c-form-textarea:focus {
   outline: none;
   border-color: var(--color-dark);
-  box-shadow: 0 0 0 2px rgba(12, 12, 12, 0.1);
+  box-shadow: 0 0 0 2px rgba(12, 12, 12, 0.08);
 }
 
 .c-form-textarea {
   resize: vertical;
-  min-height: 70px;
+  min-height: 65px;
 }
 
 /* Zona de Carga de Archivos */
 .c-upload-dropzone {
   position: relative;
-  border: 2px dashed var(--color-border);
-  background: var(--color-light-alt);
-  border-radius: 4px;
-  padding: 22px 16px;
+  border: 2px dashed #D0C9BC;
+  background: #FAF7F2;
+  border-radius: 8px;
+  padding: 20px 16px;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -3036,7 +3030,7 @@ model-viewer::part(default-progress-mask) {
 
 .c-upload-dropzone:hover,
 .c-upload-dropzone.is-dragover {
-  border-color: var(--color-dark);
+  border-color: var(--color-accent);
   background: #FFF;
 }
 
