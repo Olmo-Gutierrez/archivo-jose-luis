@@ -109,7 +109,7 @@ function doPost(e) {
     ]);
 
     // 5. Enviar notificación por correo a Olmo
-    const emailDestino = NOTIFICAR_EMAIL || Session.getActiveUser().getEmail();
+    const emailDestino = (NOTIFICAR_EMAIL || Session.getEffectiveUser().getEmail() || Session.getActiveUser().getEmail()).trim();
     if (emailDestino) {
       const asunto = `🎨 Nueva obra recibida: "${titulo}" (${nombre})`;
       const cuerpoTexto = `¡Hola Olmo!\n\n` +
