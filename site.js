@@ -103,12 +103,12 @@
   // 2. Carga de datos del catálogo
   async function loadCatalogData() {
     try {
-      let resp = await fetch('data/catalogo_web.json?v=20260907_v25');
+      let resp = await fetch('data/catalogo_web.json?v=20260907_v27');
       if (!resp.ok) {
-        resp = await fetch('./data/catalogo_web.json?v=20260907_v25');
+        resp = await fetch('./data/catalogo_web.json?v=20260907_v27');
       }
       if (!resp.ok) {
-        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v25');
+        resp = await fetch('/web/data/catalogo_web.json?v=20260907_v27');
       }
       const data = await resp.json();
       if (Array.isArray(data)) {
