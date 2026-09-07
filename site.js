@@ -1464,26 +1464,94 @@
       });
     }
 
-    // Acción directa: Subir Obra
+    // Acción directa: Subir Obra (Envío a Google Drive + Google Sheets + Notificación Email)
+    const GOOGLE_APPS_SCRIPT_URL = ''; // Pega aquí la URL Web App de Google Apps Script
+
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const nombre = (document.getElementById('colabNombre')?.value || '').trim();
+        const nombreInput = document.getElementById('colabNombre');
+        const nombre = (nombreInput?.value || '').trim();
 
         if (!nombre) {
           alert('Por favor, indica tu nombre.');
-          document.getElementById('colabNombre')?.focus();
+          nombreInput?.focus();
           return;
         }
 
-        if (successMsg) {
-          successMsg.style.display = 'block';
-        }
         const submitBtn = document.getElementById('btnColabDirect');
+        const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Subir Obra';
+
         if (submitBtn) {
           submitBtn.disabled = true;
-          submitBtn.style.opacity = '0.6';
-          submitBtn.textContent = 'Obra Subida ✓';
+          submitBtn.style.opacity = '0.75';
+          const nFotos = selectedFiles.length;
+          submitBtn.innerHTML = `<span>${nFotos > 0 ? `Subiendo ${nFotos} foto${nFotos > 1 ? 's' : ''}...` : 'Guardando obra...'}</span>`;
+        }
+
+        try {
+          // Convertir fotografías a Base64 para guardarlas en Drive
+          const filesEncoded = await Promise.all(
+            selectedFiles.map((file) => {
+              return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                  const b64 = (reader.result || '').split(',')[1] || '';
+                  resolve({
+                    name: file.name,
+                    type: file.type || 'image/jpeg',
+                    base64: b64
+                  });
+                };
+                reader.onerror = () => resolve({ name: file.name, type: file.type, base64: '' });
+                reader.readAsDataURL(file);
+              });
+            })
+          );
+
+          const payload = {
+            nombre,
+            ubicacion: (document.getElementById('colabUbicacion')?.value || '').trim(),
+            titulo: (document.getElementById('colabTitulo')?.value || '').trim(),
+            dimensiones: (document.getElementById('colabDimensiones')?.value || '').trim(),
+            historia: (document.getElementById('colabHistoria')?.value || '').trim(),
+            fotos: filesEncoded
+          };
+
+          if (GOOGLE_APPS_SCRIPT_URL) {
+            await fetch(GOOGLE_APPS_SCRIPT_URL, {
+              method: 'POST',
+              body: JSON.stringify(payload)
+            });
+          } else {
+            // Simulación rápida si aún no se ha pegado la URL desplegada
+            await new Promise((r) => setTimeout(r, 800));
+          }
+
+          if (successMsg) {
+            successMsg.style.display = 'block';
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+
+          if (submitBtn) {
+            submitBtn.style.opacity = '1';
+            submitBtn.style.background = '#2E7D32';
+            submitBtn.innerHTML = '<span>Obra Subida con Éxito ✓</span>';
+          }
+
+          // Limpiar fotos seleccionadas y formulario
+          selectedFiles = [];
+          updateFilesPreview();
+          form.reset();
+
+        } catch (err) {
+          console.error('Error al subir obra:', err);
+          alert('Hubo un error al procesar el envío. Por favor, inténtalo de nuevo.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = originalBtnHtml;
+          }
         }
       });
     }
