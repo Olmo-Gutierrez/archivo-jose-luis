@@ -123,6 +123,7 @@ button {
   pointer-events: all;
   display: flex;
   flex-direction: column;
+  order: 1;
 }
 
 .c-header__title {
@@ -147,12 +148,14 @@ button {
   margin-top: 4px;
 }
 
-/* Píldoras de vista rápida central */
+/* Píldoras de vista rápida central / derecha */
 .c-header__nav-quick {
   pointer-events: all;
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  order: 2;
+  margin-left: auto;
 }
 
 @media (max-width: 860px) and (min-width: 681px) {
@@ -169,23 +172,31 @@ button {
     letter-spacing: 0.05em;
     padding: 4px;
   }
+  .c-header__btn-colaborar {
+    margin-left: var(--space-2);
+    padding: 5px 11px;
+    font-size: 10.5px;
+  }
 }
 
 @media (max-width: 680px) {
   .c-header {
     height: auto;
-    min-height: 80px;
+    min-height: 76px;
     padding: 10px 16px 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 6px 12px;
     box-sizing: border-box;
   }
 
   .c-header__brand {
-    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+    order: initial;
   }
 
   .c-header__subtitle {
@@ -197,12 +208,29 @@ button {
     line-height: 1.05;
   }
 
+  .c-header__btn-colaborar {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    order: initial;
+    margin: 0;
+    padding: 5px 12px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
   .c-header__nav-quick {
+    grid-column: 1 / -1;
+    grid-row: 2;
     width: 100%;
+    margin-left: 0;
+    order: initial;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 22px;
     padding-top: 6px;
     border-top: 1px solid rgba(12, 12, 12, 0.08);
   }
@@ -2773,6 +2801,8 @@ model-viewer::part(default-progress-mask) {
    BOTÓN Y MODAL DE COLABORACIÓN / APORTAR OBRA AL ARCHIVO
    ========================================================================== */
 .c-header__btn-colaborar {
+  order: 3;
+  margin-left: var(--space-3);
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -2789,6 +2819,9 @@ model-viewer::part(default-progress-mask) {
   cursor: pointer;
   transition: all 0.25s var(--cubic);
   line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .c-header__btn-colaborar:hover {
@@ -2799,12 +2832,9 @@ model-viewer::part(default-progress-mask) {
   box-shadow: 0 4px 12px rgba(178, 58, 34, 0.2);
 }
 
-@media (max-width: 680px) {
-  .c-header__btn-colaborar {
-    margin-left: auto;
-    padding: 5px 10px;
-    font-size: 10.5px;
-  }
+.c-header__btn-colaborar:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
 }
 
 .c-colaborar-modal {
