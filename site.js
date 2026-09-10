@@ -269,16 +269,19 @@
     const esculturas = state.obras.filter((o) => o.categoria === 'esculturas').length;
     const mascaras = state.obras.filter((o) => o.categoria === 'mascaras').length;
     const volumetricas = state.obras.filter((o) => o.categoria === 'volumetricas').length;
+    const paisaje = state.obras.filter((o) => o.categoria === 'paisaje').length;
 
     const countTodas = document.getElementById('count-todas');
     const countEsc = document.getElementById('count-esculturas');
     const countMasc = document.getElementById('count-mascaras');
     const countVol = document.getElementById('count-volumetricas');
+    const countPais = document.getElementById('count-paisaje');
 
     if (countTodas) countTodas.textContent = total;
     if (countEsc) countEsc.textContent = esculturas;
     if (countMasc) countMasc.textContent = mascaras;
     if (countVol) countVol.textContent = volumetricas;
+    if (countPais) countPais.textContent = paisaje;
 
     const selectedText = document.getElementById('dropdownSelectedText');
     if (selectedText && state.activeCategory === 'todas') {
