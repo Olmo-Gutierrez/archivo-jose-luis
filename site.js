@@ -573,8 +573,16 @@
   }
 
   function getActivePhotoFichaPreview(obra, photoIndex) {
+    const currentFoto = (obra && obra.fotos && obra.fotos[photoIndex]) || (obra && obra.fotos && obra.fotos[0]);
+    if (currentFoto && currentFoto.ficha_preview) return currentFoto.ficha_preview;
+    if (obra && obra.ficha_preview && !obra.ficha_preview.startsWith('assets/fichas/ficha_obra_')) {
+      return obra.ficha_preview;
+    }
     const pagNum = getActivePhotoPagina(obra, photoIndex);
-    return `assets/fichas/ficha_obra_${String(pagNum).padStart(3, '0')}.jpg`;
+    if (typeof pagNum === 'number' || (!isNaN(parseInt(pagNum)) && parseInt(pagNum) > 0)) {
+      return `assets/fichas/ficha_obra_${String(pagNum).padStart(3, '0')}.jpg`;
+    }
+    return obra && obra.ficha_preview ? obra.ficha_preview : null;
   }
 
   // 10. Actualización Dinámica del Visor Modal (Foto activa o Lámina de esa foto)
@@ -588,8 +596,13 @@
     const pagNum = getActivePhotoPagina(obra, state.activePhotoIndex);
     const pagStr = String(pagNum).padStart(3, '0');
     const fichaPreview = getActivePhotoFichaPreview(obra, state.activePhotoIndex);
+    const hasFicha = !!fichaPreview;
 
-    if (state.showingFicha) {
+    if (dom.btnToggleFicha) {
+      dom.btnToggleFicha.style.display = hasFicha ? 'block' : 'none';
+    }
+
+    if (state.showingFicha && fichaPreview) {
       dom.modalMainImg.src = fichaPreview;
       dom.btnToggleFicha.textContent = 'Ver fotografía de la obra';
     } else {
@@ -598,7 +611,11 @@
       } else {
         dom.modalMainImg.src = currentFoto.web_image;
       }
-      dom.btnToggleFicha.textContent = `Ver lámina original (Lámina ${pagStr})`;
+      if (typeof pagNum === 'number' || (!isNaN(parseInt(pagNum)) && parseInt(pagNum) > 0)) {
+        dom.btnToggleFicha.textContent = `Ver lámina original (Lámina ${pagStr})`;
+      } else {
+        dom.btnToggleFicha.textContent = obra.ficha_label || 'Ver fotografía completa de contexto';
+      }
     }
 
     // Actualizar metadato de lámina en la tabla

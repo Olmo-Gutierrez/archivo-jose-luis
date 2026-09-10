@@ -210,14 +210,22 @@ async function reloadCollection() {
   allConfig = await resp.json();
 
   const keys = Object.keys(allConfig).map(k => parseInt(k)).filter(k => !isNaN(k));
-  totalSheets = keys.length > 0 ? Math.max(...keys) : (currentCollection === "sueltas" ? 49 : 38);
+  totalSheets = keys.length > 0 ? Math.max(...keys) : (currentCollection === "whatsapp" ? 6 : (currentCollection === "sueltas" ? 49 : 38));
 
   sheetSelect.innerHTML = "";
-  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   for (let i = 1; i <= totalSheets; i++) {
     const opt = document.createElement("option");
     opt.value = i;
-    opt.textContent = `${prefix} ${String(i).padStart(3, '0')}`;
+    const sData = allConfig[String(i)] || {};
+    let label = "";
+    if (currentCollection === "whatsapp") {
+      label = `Foto ${i}: ${sData.label || sData.filename || 'WhatsApp'}`;
+    } else if (currentCollection === "sueltas") {
+      label = `Foto Suelta ${String(i).padStart(3, '0')}`;
+    } else {
+      label = `Obra ${String(i).padStart(3, '0')}`;
+    }
+    opt.textContent = label;
     sheetSelect.appendChild(opt);
   }
 
@@ -226,18 +234,21 @@ async function reloadCollection() {
 }
 
 function updateSheetSelectLabels() {
-  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   for (let i = 1; i <= totalSheets; i++) {
     const sKey = String(i);
     const sData = allConfig[sKey];
     const isFlagged = sData && !!sData.needs_review;
     const opt = sheetSelect.querySelector(`option[value="${i}"]`);
     if (opt) {
-      if (isFlagged) {
-        opt.textContent = `${prefix} ${String(i).padStart(3, '0')} ⚠️ [Repetir]`;
+      let baseLabel = "";
+      if (currentCollection === "whatsapp") {
+        baseLabel = `Foto ${i}: ${(sData && sData.label) || (sData && sData.filename) || 'WhatsApp'}`;
+      } else if (currentCollection === "sueltas") {
+        baseLabel = `Foto Suelta ${String(i).padStart(3, '0')}`;
       } else {
-        opt.textContent = `${prefix} ${String(i).padStart(3, '0')}`;
+        baseLabel = `Obra ${String(i).padStart(3, '0')}`;
       }
+      opt.textContent = isFlagged ? `${baseLabel} ⚠️ [Repetir]` : baseLabel;
     }
   }
 }
@@ -302,21 +313,34 @@ async function saveCurrentSheet() {
 
 function updateSidebarTitle() {
   const sKey = String(currentSheet);
-  const isFlagged = allConfig[sKey] ? !!allConfig[sKey].needs_review : false;
-  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
-  sidebarTitle.textContent = isFlagged
-    ? `${prefix} ${String(currentSheet).padStart(3, '0')} ⚠️ (Repetir)`
-    : `${prefix} ${String(currentSheet).padStart(3, '0')}`;
+  const sData = allConfig[sKey] || {};
+  const isFlagged = !!sData.needs_review;
+  let prefix = "";
+  if (currentCollection === "whatsapp") {
+    prefix = `WhatsApp ${currentSheet}: ${sData.label || ''}`;
+  } else if (currentCollection === "sueltas") {
+    prefix = `Foto Suelta ${String(currentSheet).padStart(3, '0')}`;
+  } else {
+    prefix = `Obra ${String(currentSheet).padStart(3, '0')}`;
+  }
+  sidebarTitle.textContent = isFlagged ? `${prefix} ⚠️ (Repetir)` : prefix;
 }
 
 function updateRenderSingleButtonLabels() {
   const sheetStr = String(currentSheet).padStart(3, '0');
-  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
+  let label = "";
+  if (currentCollection === "whatsapp") {
+    label = `Foto ${currentSheet}`;
+  } else if (currentCollection === "sueltas") {
+    label = `Foto ${sheetStr}`;
+  } else {
+    label = `Obra ${sheetStr}`;
+  }
   if (btnRenderSingleSidebar) {
-    btnRenderSingleSidebar.textContent = `⚡ Renderizar ${prefix} ${sheetStr} (Alta Res)`;
+    btnRenderSingleSidebar.textContent = `⚡ Renderizar ${label} (Alta Res)`;
   }
   if (btnRenderSingleHeader) {
-    btnRenderSingleHeader.textContent = `⚡ Renderizar ${prefix} ${sheetStr}`;
+    btnRenderSingleHeader.textContent = `⚡ Renderizar ${label}`;
   }
 }
 
@@ -1757,9 +1781,11 @@ async function pollRenderProgress() {
     progressBar.style.width = "100%";
     progressPercent.textContent = "100%";
     document.getElementById("modalTitle").textContent = "¡Renderizado Completado con Éxito!";
-    const outPath = currentCollection === "sueltas"
-      ? "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Fotos Jose Luis\\Sueltas\\recortadas\\"
-      : "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Archivo Obras Jose Luis\\cartulinas\\recortadas\\";
+    const outPath = currentCollection === "whatsapp"
+      ? "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Fotos Jose Luis\\whatsapp\\recortadas\\"
+      : (currentCollection === "sueltas"
+        ? "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Fotos Jose Luis\\Sueltas\\recortadas\\"
+        : "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Archivo Obras Jose Luis\\cartulinas\\recortadas\\");
     document.getElementById("modalDesc").innerHTML = `Todas las fotos recortadas y el catálogo se han guardado en:<br><code style="color: #63b3ed; word-break: break-all; font-size: 11px; background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 6px;">${outPath}</code>`;
     modalActions.classList.remove("hidden");
   } else if (state.error) {

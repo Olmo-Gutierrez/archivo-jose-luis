@@ -3508,6 +3508,39 @@
       ],
       "tiene_deblur": false,
       "es_multilamina": false
+    },
+    {
+      "id": 84,
+      "codigo": "obra_084",
+      "numero_str": "084",
+      "titulo": "Sin nombre 84",
+      "titulo_base": "Relieve Ondulado con Anillos",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 084 — Sin nombre 84",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Cuadro con relieve en arenas texturizadas, línea ondulada carmín y anillos pétreos en relieve.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "whatsapp"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/obra_084_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "1000093971",
+          "archivo_original": "1000093971 (1).jpg",
+          "web_image": "assets/obras/obra_084_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4096,
+          "alto_original": 2304,
+          "ratio": 1.778
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
     }
   ],
   "paginas": [
@@ -4281,8 +4314,8 @@
     }
   ],
   "totales": {
-    "total_obras": 83,
-    "esculturas": 28,
+    "total_obras": 84,
+    "esculturas": 29,
     "mascaras": 37,
     "volumetricas": 5,
     "paisaje": 13
