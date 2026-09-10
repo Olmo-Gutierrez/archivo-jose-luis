@@ -1320,6 +1320,168 @@
       "portada_index": 0
     },
     {
+      "id": 85,
+      "codigo": "obra_085",
+      "numero_str": "085",
+      "titulo": "Sin nombre 85",
+      "titulo_base": "Árbol tallado sobre madera",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 085 — Sin nombre 85",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Talla escultórica en relieve sobre panel de madera maciza.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "whatsapp"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/obra_085_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "wa_001",
+          "archivo_original": "wa_001_foto_01_arbol_tallado.png",
+          "web_image": "assets/obras/obra_085_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 1764,
+          "alto_original": 3698,
+          "ratio": 0.477
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false,
+      "portada_index": 0
+    },
+    {
+      "id": 86,
+      "codigo": "obra_086",
+      "numero_str": "086",
+      "titulo": "Sin nombre 86",
+      "titulo_base": "Relieve sobre la chimenea",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 086 — Sin nombre 86",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Relieve mural escultórico sobre soporte de obra, integrado en testero de chimenea rústica.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "whatsapp"
+      ],
+      "fichas_asociadas": [
+        "assets/obras/chimenea_completa.jpg"
+      ],
+      "ficha_preview": "assets/obras/chimenea_completa.jpg",
+      "ficha_label": "Ver contexto completo de la chimenea",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "wa_002",
+          "archivo_original": "wa_002_foto_01_relieve_chimenea.png",
+          "web_image": "assets/obras/obra_086_foto_01.jpg",
+          "ficha_preview": "assets/obras/chimenea_completa.jpg",
+          "deblur_image": null,
+          "ancho_original": 795,
+          "alto_original": 758,
+          "ratio": 1.049
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false,
+      "portada_index": 0
+    },
+    {
+      "id": 87,
+      "codigo": "obra_087",
+      "numero_str": "087",
+      "titulo": "Sin nombre 87",
+      "titulo_base": "Escultura de alambre verde",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 087 — Sin nombre 87",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Estructura mural escultórica en alambre de torsión policromado en verde.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "whatsapp"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/obra_087_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "wa_003",
+          "archivo_original": "wa_003_foto_01_escultura_alambre_verde.png",
+          "web_image": "assets/obras/obra_087_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 720,
+          "alto_original": 1600,
+          "ratio": 0.45
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false,
+      "portada_index": 0
+    },
+    {
+      "id": 88,
+      "codigo": "obra_088",
+      "numero_str": "088",
+      "titulo": "Sin nombre 88",
+      "titulo_base": "Pájaro de cerámica sobre madera",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 088 — Sin nombre 88",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Escultura figurativa zoomorfa en cerámica esmaltada policromada, ensamblada sobre base de madera.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "whatsapp"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/obra_088_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "wa_004",
+          "archivo_original": "wa_004_foto_01_pajaro_ceramica_frontal_cerrada.png",
+          "web_image": "assets/obras/obra_088_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 1445,
+          "alto_original": 1448,
+          "ratio": 0.998
+        },
+        {
+          "indice": 2,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "wa_005",
+          "archivo_original": "wa_005_foto_02_pajaro_ceramica_frontal_amplia.png",
+          "web_image": "assets/obras/obra_088_foto_02.jpg",
+          "deblur_image": null,
+          "ancho_original": 1198,
+          "alto_original": 1219,
+          "ratio": 0.983
+        },
+        {
+          "indice": 3,
+          "de_pagina": "whatsapp",
+          "de_foto_indice": "wa_006",
+          "archivo_original": "wa_006_foto_03_pajaro_ceramica_perspectiva.png",
+          "web_image": "assets/obras/obra_088_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 1223,
+          "alto_original": 1464,
+          "ratio": 0.835
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false,
+      "portada_index": 0
+    },
+    {
       "id": 22,
       "codigo": "obra_022",
       "numero_str": "022",
@@ -4021,8 +4183,8 @@
     }
   ],
   "totales": {
-    "total_obras": 68,
-    "esculturas": 25,
+    "total_obras": 72,
+    "esculturas": 29,
     "mascaras": 36,
     "volumetricas": 4,
     "paisaje": 3
