@@ -112,6 +112,18 @@
           "ancho_original": 3565,
           "alto_original": 4895,
           "ratio": 0.728
+        },
+        {
+          "indice": 4,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_020_foto_01.png",
+          "archivo_original": "suelta_020_foto_01.png",
+          "web_image": "assets/obras/suelta_020_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3515,
+          "alto_original": 4825,
+          "ratio": 0.728,
+          "nota": "Vista en estudio de aros concéntricos y cilindro rojo"
         }
       ],
       "tiene_deblur": false,
@@ -168,6 +180,18 @@
           "ancho_original": 2171,
           "alto_original": 2390,
           "ratio": 0.908
+        },
+        {
+          "indice": 3,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_021_foto_01.png",
+          "archivo_original": "suelta_021_foto_01.png",
+          "web_image": "assets/obras/suelta_021_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3324,
+          "alto_original": 2078,
+          "ratio": 1.6,
+          "nota": "Relieve mural con cilindro rojo horizontal y listones curvados"
         }
       ],
       "tiene_deblur": false,
@@ -491,6 +515,30 @@
           "ancho_original": 3334,
           "alto_original": 4645,
           "ratio": 0.718
+        },
+        {
+          "indice": 4,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_002_foto_01.png",
+          "archivo_original": "suelta_002_foto_01.png",
+          "web_image": "assets/obras/suelta_002_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3510,
+          "alto_original": 4785,
+          "ratio": 0.734,
+          "nota": "Vista frontal del Torero en alambre y tela"
+        },
+        {
+          "indice": 5,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_018_foto_01.png",
+          "archivo_original": "suelta_018_foto_01.png",
+          "web_image": "assets/obras/suelta_018_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3598,
+          "alto_original": 4801,
+          "ratio": 0.749,
+          "nota": "Toma vertical completa del Torero"
         }
       ],
       "tiene_deblur": false,
@@ -630,6 +678,18 @@
           "ancho_original": 3132,
           "alto_original": 4449,
           "ratio": 0.704
+        },
+        {
+          "indice": 3,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_007_foto_01.png",
+          "archivo_original": "suelta_007_foto_01.png",
+          "web_image": "assets/obras/suelta_007_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3869,
+          "alto_original": 1675,
+          "ratio": 2.31,
+          "nota": "Foto histórica de época en pared de ladrillo rústico"
         }
       ],
       "tiene_deblur": false,
@@ -993,6 +1053,30 @@
           "ancho_original": 2363,
           "alto_original": 3505,
           "ratio": 0.674
+        },
+        {
+          "indice": 4,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_048_foto_01.png",
+          "archivo_original": "suelta_048_foto_01.png",
+          "web_image": "assets/obras/suelta_048_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2330,
+          "alto_original": 3425,
+          "ratio": 0.68,
+          "nota": "Detalle de torso, rostro y tridente del Neptuno"
+        },
+        {
+          "indice": 5,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_049_foto_01.png",
+          "archivo_original": "suelta_049_foto_01.png",
+          "web_image": "assets/obras/suelta_049_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2325,
+          "alto_original": 3420,
+          "ratio": 0.68,
+          "nota": "Vista de cuerpo entero del Neptuno con tridente"
         }
       ],
       "tiene_deblur": false,
@@ -1032,6 +1116,18 @@
           "ancho_original": 2936,
           "alto_original": 3447,
           "ratio": 0.852
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_010_foto_01.png",
+          "archivo_original": "suelta_010_foto_01.png",
+          "web_image": "assets/obras/suelta_010_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3085,
+          "alto_original": 4420,
+          "ratio": 0.698,
+          "nota": "Toma directa de la máscara sobre soporte rústico"
         }
       ],
       "tiene_deblur": false,
@@ -1071,6 +1167,18 @@
           "ancho_original": 2323,
           "alto_original": 2812,
           "ratio": 0.826
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_011_foto_01.png",
+          "archivo_original": "suelta_011_foto_01.png",
+          "web_image": "assets/obras/suelta_011_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3485,
+          "alto_original": 4795,
+          "ratio": 0.727,
+          "nota": "Toma directa de la máscara sobre tronco"
         }
       ],
       "tiene_deblur": false,
@@ -1121,6 +1229,18 @@
           "ancho_original": 2452,
           "alto_original": 2970,
           "ratio": 0.826
+        },
+        {
+          "indice": 3,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_015_foto_01.png",
+          "archivo_original": "suelta_015_foto_01.png",
+          "web_image": "assets/obras/suelta_015_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2630,
+          "alto_original": 3050,
+          "ratio": 0.862,
+          "nota": "Toma directa de la máscara con tocado sobre tabla"
         }
       ],
       "tiene_deblur": false,
@@ -2391,6 +2511,30 @@
           "ancho_original": 3110,
           "alto_original": 4005,
           "ratio": 0.777
+        },
+        {
+          "indice": 3,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_024_foto_01.png",
+          "archivo_original": "suelta_024_foto_01.png",
+          "web_image": "assets/obras/suelta_024_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3100,
+          "alto_original": 3666,
+          "ratio": 0.846,
+          "nota": "Toma completa del Cristo sobre tela blanca"
+        },
+        {
+          "indice": 4,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_026_foto_01.png",
+          "archivo_original": "suelta_026_foto_01.png",
+          "web_image": "assets/obras/suelta_026_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4050,
+          "alto_original": 2985,
+          "ratio": 1.357,
+          "nota": "Detalle en primer plano del rostro y torso del Cristo"
         }
       ],
       "tiene_deblur": false,
@@ -2433,6 +2577,933 @@
           "ancho_original": 2994,
           "alto_original": 4394,
           "ratio": 0.681
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 58,
+      "codigo": "obra_058",
+      "numero_str": "058",
+      "titulo": "Sin nombre 58",
+      "titulo_base": "Relieve Geométrico Enmarcado",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 058 — Sin nombre 58",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Cuadro con relieve geométrico enmarcado, círculos concéntricos y radios tallados en madera.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_001_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_001_foto_01.png",
+          "archivo_original": "suelta_001_foto_01.png",
+          "web_image": "assets/obras/suelta_001_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3193,
+          "alto_original": 3822,
+          "ratio": 0.835
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 59,
+      "codigo": "obra_059",
+      "numero_str": "059",
+      "titulo": "Sin nombre 59",
+      "titulo_base": "Relieve de Puntas Convergentes",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 059 — Sin nombre 59",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Relieve mural de puntas y listones oscuros convergentes hacia una hendidura central clara.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_003_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_003_foto_01.png",
+          "archivo_original": "suelta_003_foto_01.png",
+          "web_image": "assets/obras/suelta_003_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3511,
+          "alto_original": 4794,
+          "ratio": 0.732
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 60,
+      "codigo": "obra_060",
+      "numero_str": "060",
+      "titulo": "Sin nombre 60",
+      "titulo_base": "Relieve de Listones Curvados Bicolor",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 060 — Sin nombre 60",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Escultura mural dinámica en listones de madera curvada y policromada en negro y ocre.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_005_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_005_foto_01.png",
+          "archivo_original": "suelta_005_foto_01.png",
+          "web_image": "assets/obras/suelta_005_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4636,
+          "alto_original": 3470,
+          "ratio": 1.336
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_004_foto_01.png",
+          "archivo_original": "suelta_004_foto_01.png",
+          "web_image": "assets/obras/suelta_004_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4725,
+          "alto_original": 3251,
+          "ratio": 1.453
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 61,
+      "codigo": "obra_061",
+      "numero_str": "061",
+      "titulo": "Sin nombre 61",
+      "titulo_base": "Forma Mineral Perforada I",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 061 — Sin nombre 61",
+      "categoria": "volumetricas",
+      "categoria_nombre": "Figuras Volumétricas",
+      "materiales": "Pequeña escultura orgánica y alveolar en gres cerámico cocido con huecos modelados.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_006_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_006_foto_01.png",
+          "archivo_original": "suelta_006_foto_01.png",
+          "web_image": "assets/obras/suelta_006_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3510,
+          "alto_original": 4800,
+          "ratio": 0.731
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 62,
+      "codigo": "obra_062",
+      "numero_str": "062",
+      "titulo": "Sin nombre 62",
+      "titulo_base": "Forma Mineral Perforada II",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 062 — Sin nombre 62",
+      "categoria": "volumetricas",
+      "categoria_nombre": "Figuras Volumétricas",
+      "materiales": "Pequeña escultura orgánica en cerámica con texturas y perforaciones naturales.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_008_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_008_foto_01.png",
+          "archivo_original": "suelta_008_foto_01.png",
+          "web_image": "assets/obras/suelta_008_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3500,
+          "alto_original": 4795,
+          "ratio": 0.73
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 63,
+      "codigo": "obra_063",
+      "numero_str": "063",
+      "titulo": "Sin nombre 63",
+      "titulo_base": "Máscara en Textura Volcánica",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 063 — Sin nombre 63",
+      "categoria": "mascaras",
+      "categoria_nombre": "Colección de Máscaras",
+      "materiales": "Máscara de rostro humano emergiendo de un bloque de gres con densa textura volcánica.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_009_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_009_foto_01.png",
+          "archivo_original": "suelta_009_foto_01.png",
+          "web_image": "assets/obras/suelta_009_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3490,
+          "alto_original": 4795,
+          "ratio": 0.728
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 64,
+      "codigo": "obra_064",
+      "numero_str": "064",
+      "titulo": "Sin nombre 64",
+      "titulo_base": "Cabeza del Grito y Asombro",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 064 — Sin nombre 64",
+      "categoria": "mascaras",
+      "categoria_nombre": "Colección de Máscaras",
+      "materiales": "Cabeza escultórica exenta de bulto redondo en gres cerámico con boca abierta en gesto expresionista.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_012_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_012_foto_01.png",
+          "archivo_original": "suelta_012_foto_01.png",
+          "web_image": "assets/obras/suelta_012_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3096,
+          "alto_original": 4332,
+          "ratio": 0.715
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_013_foto_01.png",
+          "archivo_original": "suelta_013_foto_01.png",
+          "web_image": "assets/obras/suelta_013_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3091,
+          "alto_original": 4326,
+          "ratio": 0.715
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 65,
+      "codigo": "obra_065",
+      "numero_str": "065",
+      "titulo": "Sin nombre 65",
+      "titulo_base": "Máscara Barbada en Pátina Oscura",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 065 — Sin nombre 65",
+      "categoria": "mascaras",
+      "categoria_nombre": "Colección de Máscaras",
+      "materiales": "Cabeza y máscara de cerámica oscura con pelo y barba esculpidos con rasgos hieráticos.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_014_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_014_foto_01.png",
+          "archivo_original": "suelta_014_foto_01.png",
+          "web_image": "assets/obras/suelta_014_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2585,
+          "alto_original": 3087,
+          "ratio": 0.837
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 66,
+      "codigo": "obra_066",
+      "numero_str": "066",
+      "titulo": "Sin nombre 66",
+      "titulo_base": "Relieve Alado en Puntas Flamígeras",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 066 — Sin nombre 66",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Relieve mural de gran formato con listones en punta policromados en rojo carmín y amarillo cadmio.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_017_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_017_foto_01.png",
+          "archivo_original": "suelta_017_foto_01.png",
+          "web_image": "assets/obras/suelta_017_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4825,
+          "alto_original": 3465,
+          "ratio": 1.392
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_016_foto_01.png",
+          "archivo_original": "suelta_016_foto_01.png",
+          "web_image": "assets/obras/suelta_016_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4825,
+          "alto_original": 3470,
+          "ratio": 1.39
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 67,
+      "codigo": "obra_067",
+      "numero_str": "067",
+      "titulo": "Sin nombre 67",
+      "titulo_base": "Figura con Flor Roja",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 067 — Sin nombre 67",
+      "categoria": "volumetricas",
+      "categoria_nombre": "Figuras Volumétricas",
+      "materiales": "Escultura figurativa en hilo de alambre estilizado y modelado sobre peana con flor roja elevada.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_022_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_022_foto_01.png",
+          "archivo_original": "suelta_022_foto_01.png",
+          "web_image": "assets/obras/suelta_022_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2856,
+          "alto_original": 4325,
+          "ratio": 0.66
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_023_foto_01.png",
+          "archivo_original": "suelta_023_foto_01.png",
+          "web_image": "assets/obras/suelta_023_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3080,
+          "alto_original": 4180,
+          "ratio": 0.737
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 68,
+      "codigo": "obra_068",
+      "numero_str": "068",
+      "titulo": "Sin nombre 68",
+      "titulo_base": "Relieve del Campesino",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 068 — Sin nombre 68",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Relieve mural figurativo modelado de personaje campesino en labor.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_031_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_031_foto_01.png",
+          "archivo_original": "suelta_031_foto_01.png",
+          "web_image": "assets/obras/suelta_031_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3455,
+          "alto_original": 2290,
+          "ratio": 1.509
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 69,
+      "codigo": "obra_069",
+      "numero_str": "069",
+      "titulo": "Sin nombre 69",
+      "titulo_base": "Relieve del Jinete",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 069 — Sin nombre 69",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Relieve mural figurativo modelado de caballero y jinete a caballo.",
+      "dimensiones": "Consultar fotografía",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_032_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_032_foto_01.png",
+          "archivo_original": "suelta_032_foto_01.png",
+          "web_image": "assets/obras/suelta_032_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 2340,
+          "alto_original": 3405,
+          "ratio": 0.687
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 70,
+      "codigo": "obra_070",
+      "numero_str": "070",
+      "titulo": "Sin nombre 70",
+      "titulo_base": "Conjunto del Taller con Mural y Belén",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 070 — Sin nombre 70",
+      "categoria": "esculturas",
+      "categoria_nombre": "Cuadros con relieve",
+      "materiales": "Vista documental y conjunto de obras en la sala del estudio: mural abstracto con espirales metálicas y diorama monumental.",
+      "dimensiones": "Conjunto de obras",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_046_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "FotosJL046_portada",
+          "archivo_original": "FotosJL046_recortada.png",
+          "web_image": "assets/obras/suelta_046_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3445,
+          "alto_original": 2295,
+          "ratio": 1.501,
+          "nota": "Portada: Vista de la sala con el conjunto de obras"
+        },
+        {
+          "indice": 2,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_046_foto_01",
+          "archivo_original": "suelta_046_foto_01.png",
+          "web_image": "assets/obras/suelta_046_foto_02.png",
+          "deblur_image": null,
+          "ancho_original": 1099,
+          "alto_original": 1056,
+          "ratio": 1.041,
+          "nota": "Detalle: Mural de pared con espirales metálicas"
+        },
+        {
+          "indice": 3,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_046_foto_02",
+          "archivo_original": "suelta_046_foto_02.png",
+          "web_image": "assets/obras/suelta_046_foto_03.jpg",
+          "deblur_image": null,
+          "ancho_original": 2240,
+          "alto_original": 679,
+          "ratio": 3.299,
+          "nota": "Detalle: Belén y diorama monumental"
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 71,
+      "codigo": "obra_071",
+      "numero_str": "071",
+      "titulo": "Sin nombre 71",
+      "titulo_base": "Paisaje desde la ventana del estudio",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 071 — Sin nombre 71",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Campos castellanos observados desde la ventana del estudio.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_033_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_033_foto_01.png",
+          "archivo_original": "suelta_033_foto_01.png",
+          "web_image": "assets/obras/suelta_033_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 4890,
+          "alto_original": 3470,
+          "ratio": 1.409
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 72,
+      "codigo": "obra_072",
+      "numero_str": "072",
+      "titulo": "Sin nombre 72",
+      "titulo_base": "Paisaje de campos ondulados",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 072 — Sin nombre 72",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Llanura y ondulaciones de rastrojos castellanos.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_034_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_034_foto_01.png",
+          "archivo_original": "suelta_034_foto_01.png",
+          "web_image": "assets/obras/suelta_034_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3527,
+          "alto_original": 1840,
+          "ratio": 1.917
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 73,
+      "codigo": "obra_073",
+      "numero_str": "073",
+      "titulo": "Sin nombre 73",
+      "titulo_base": "Paisaje de campos y arboleda",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 073 — Sin nombre 73",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Luz de la meseta sobre campos de cereal y arboledas.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_035_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_035_foto_01.png",
+          "archivo_original": "suelta_035_foto_01.png",
+          "web_image": "assets/obras/suelta_035_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3525,
+          "alto_original": 2250,
+          "ratio": 1.567
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 74,
+      "codigo": "obra_074",
+      "numero_str": "074",
+      "titulo": "Sin nombre 74",
+      "titulo_base": "Inspiración: Roca con textura fósil",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 074 — Sin nombre 74",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Estructura mineral alveolar y poros naturales de roca.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_036_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_036_foto_01.png",
+          "archivo_original": "suelta_036_foto_01.png",
+          "web_image": "assets/obras/suelta_036_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3455,
+          "alto_original": 2285,
+          "ratio": 1.512
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 75,
+      "codigo": "obra_075",
+      "numero_str": "075",
+      "titulo": "Sin nombre 75",
+      "titulo_base": "Inspiración: Roca alveolar (Tafoni)",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 075 — Sin nombre 75",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Erosión geológica en celdillas celulares en piedra.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_037_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_037_foto_01.png",
+          "archivo_original": "suelta_037_foto_01.png",
+          "web_image": "assets/obras/suelta_037_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3460,
+          "alto_original": 2290,
+          "ratio": 1.511
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 76,
+      "codigo": "obra_076",
+      "numero_str": "076",
+      "titulo": "Sin nombre 76",
+      "titulo_base": "Inspiración: Estrato rocoso erosionado",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 076 — Sin nombre 76",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Líneas de fractura y estratos en formación rocosa natural.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_038_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_038_foto_01.png",
+          "archivo_original": "suelta_038_foto_01.png",
+          "web_image": "assets/obras/suelta_038_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3465,
+          "alto_original": 2290,
+          "ratio": 1.513
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 77,
+      "codigo": "obra_077",
+      "numero_str": "077",
+      "titulo": "Sin nombre 77",
+      "titulo_base": "Inspiración: Roca alveolar y huecos",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 077 — Sin nombre 77",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Galerías y cavidades orgánicas en bloque de piedra.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_039_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_039_foto_01.png",
+          "archivo_original": "suelta_039_foto_01.png",
+          "web_image": "assets/obras/suelta_039_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3460,
+          "alto_original": 2290,
+          "ratio": 1.511
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 78,
+      "codigo": "obra_078",
+      "numero_str": "078",
+      "titulo": "Sin nombre 78",
+      "titulo_base": "Inspiración: Textura tipo panal",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 078 — Sin nombre 78",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Primer plano de entramado reticular natural en superficie pétrea.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_040_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_040_foto_01.png",
+          "archivo_original": "suelta_040_foto_01.png",
+          "web_image": "assets/obras/suelta_040_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3465,
+          "alto_original": 2290,
+          "ratio": 1.513
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 79,
+      "codigo": "obra_079",
+      "numero_str": "079",
+      "titulo": "Sin nombre 79",
+      "titulo_base": "Inspiración: Cavidades horizontales",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 079 — Sin nombre 79",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Cavidades y ritmos geológicos horizontales en corte de roca.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_041_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_041_foto_01.png",
+          "archivo_original": "suelta_041_foto_01.png",
+          "web_image": "assets/obras/suelta_041_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3460,
+          "alto_original": 2290,
+          "ratio": 1.511
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 80,
+      "codigo": "obra_080",
+      "numero_str": "080",
+      "titulo": "Sin nombre 80",
+      "titulo_base": "Inspiración: Oquedades y texturas rugosas",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 080 — Sin nombre 80",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Oquedades profundas y superficies rugosas en piedra natural.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_042_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_042_foto_01.png",
+          "archivo_original": "suelta_042_foto_01.png",
+          "web_image": "assets/obras/suelta_042_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3470,
+          "alto_original": 2290,
+          "ratio": 1.515
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 81,
+      "codigo": "obra_081",
+      "numero_str": "081",
+      "titulo": "Sin nombre 81",
+      "titulo_base": "Inspiración: Estratos geológicos inclinados",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 081 — Sin nombre 81",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Afloramiento rocoso en la naturaleza con estratos en ángulo.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_043_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_043_foto_01.png",
+          "archivo_original": "suelta_043_foto_01.png",
+          "web_image": "assets/obras/suelta_043_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3520,
+          "alto_original": 2250,
+          "ratio": 1.564
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 82,
+      "codigo": "obra_082",
+      "numero_str": "082",
+      "titulo": "Sin nombre 82",
+      "titulo_base": "Inspiración: Bloque alveolar y fisuras",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 082 — Sin nombre 82",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Bloque de piedra con entramado alveolar y fisuras naturales.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_044_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_044_foto_01.png",
+          "archivo_original": "suelta_044_foto_01.png",
+          "web_image": "assets/obras/suelta_044_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3470,
+          "alto_original": 2295,
+          "ratio": 1.512
+        }
+      ],
+      "tiene_deblur": false,
+      "es_multilamina": false
+    },
+    {
+      "id": 83,
+      "codigo": "obra_083",
+      "numero_str": "083",
+      "titulo": "Sin nombre 83",
+      "titulo_base": "Inspiración: Piedra con forma ocular",
+      "es_titulo_original": false,
+      "nombre_completo": "Obra 083 — Sin nombre 83",
+      "categoria": "paisaje",
+      "categoria_nombre": "Paisaje e Inspiración",
+      "materiales": "Bloque de piedra con hendidura natural en forma de ojo fósil.",
+      "dimensiones": "Fotografía de inspiración",
+      "paginas_referencia": [
+        "sueltas"
+      ],
+      "fichas_asociadas": [],
+      "ficha_preview": "assets/obras/suelta_045_foto_01.jpg",
+      "fotos": [
+        {
+          "indice": 1,
+          "de_pagina": "sueltas",
+          "de_foto_indice": "suelta_045_foto_01.png",
+          "archivo_original": "suelta_045_foto_01.png",
+          "web_image": "assets/obras/suelta_045_foto_01.jpg",
+          "deblur_image": null,
+          "ancho_original": 3465,
+          "alto_original": 2295,
+          "ratio": 1.51
         }
       ],
       "tiene_deblur": false,
@@ -3210,10 +4281,10 @@
     }
   ],
   "totales": {
-    "obras_totales": 57,
-    "esculturas": 21,
-    "mascaras": 34,
-    "volumetricas": 2,
-    "paginas_archivo": 38
+    "total_obras": 83,
+    "esculturas": 28,
+    "mascaras": 37,
+    "volumetricas": 5,
+    "paisaje": 13
   }
 }

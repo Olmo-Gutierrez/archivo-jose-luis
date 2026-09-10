@@ -119,6 +119,21 @@
         state.paginas = data.paginas || [];
         state.totales = data.totales || {};
       }
+      if (state.totales) {
+        const setCnt = (id, val) => {
+          const el = document.getElementById(id);
+          if (el && val !== undefined) el.textContent = val;
+        };
+        setCnt('count-todas', state.totales.total_obras || state.obras.length);
+        setCnt('count-esculturas', state.totales.esculturas);
+        setCnt('count-mascaras', state.totales.mascaras);
+        setCnt('count-volumetricas', state.totales.volumetricas);
+        setCnt('count-paisaje', state.totales.paisaje);
+        const sel = document.getElementById('dropdownSelectedText');
+        if (sel && state.activeCategory === 'todas') {
+          sel.textContent = `Todo (${state.totales.total_obras || state.obras.length})`;
+        }
+      }
       console.log(`Cargadas ${state.obras.length} obras y ${state.paginas.length} láminas de archivo.`);
     } catch (e) {
       console.warn('Error cargando catálogo dinámico.', e);

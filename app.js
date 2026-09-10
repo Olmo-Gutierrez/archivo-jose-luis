@@ -188,25 +188,45 @@ let initialPointsSnapshot = null;
 const CORNER_RADIUS = 7;
 const EDGE_HANDLE_RADIUS = 5;
 
+const collectionSelect = document.getElementById("collectionSelect");
+let currentCollection = collectionSelect ? collectionSelect.value : "sueltas";
+
 // Inicialización
 async function init() {
+  if (collectionSelect) {
+    currentCollection = collectionSelect.value;
+    collectionSelect.onchange = async () => {
+      currentCollection = collectionSelect.value;
+      await reloadCollection();
+    };
+  }
+
+  await reloadCollection();
+  setupEventListeners();
+}
+
+async function reloadCollection() {
+  const resp = await fetch(`/api/config?collection=${currentCollection}`);
+  allConfig = await resp.json();
+
+  const keys = Object.keys(allConfig).map(k => parseInt(k)).filter(k => !isNaN(k));
+  totalSheets = keys.length > 0 ? Math.max(...keys) : (currentCollection === "sueltas" ? 49 : 38);
+
   sheetSelect.innerHTML = "";
+  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   for (let i = 1; i <= totalSheets; i++) {
     const opt = document.createElement("option");
     opt.value = i;
-    opt.textContent = `Obra ${String(i).padStart(3, '0')}`;
+    opt.textContent = `${prefix} ${String(i).padStart(3, '0')}`;
     sheetSelect.appendChild(opt);
   }
 
-  const resp = await fetch("/api/config");
-  allConfig = await resp.json();
-
   updateSheetSelectLabels();
-  setupEventListeners();
   loadSheet(1);
 }
 
 function updateSheetSelectLabels() {
+  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   for (let i = 1; i <= totalSheets; i++) {
     const sKey = String(i);
     const sData = allConfig[sKey];
@@ -214,9 +234,9 @@ function updateSheetSelectLabels() {
     const opt = sheetSelect.querySelector(`option[value="${i}"]`);
     if (opt) {
       if (isFlagged) {
-        opt.textContent = `Obra ${String(i).padStart(3, '0')} ⚠️ [Repetir lámina]`;
+        opt.textContent = `${prefix} ${String(i).padStart(3, '0')} ⚠️ [Repetir]`;
       } else {
-        opt.textContent = `Obra ${String(i).padStart(3, '0')}`;
+        opt.textContent = `${prefix} ${String(i).padStart(3, '0')}`;
       }
     }
   }
@@ -271,25 +291,32 @@ async function saveCurrentSheet() {
   await fetch("/api/save_sheet", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ sheet: currentSheet, boxes: boxes, needs_review: isFlagged })
+    body: JSON.stringify({
+      collection: currentCollection,
+      sheet: currentSheet,
+      boxes: boxes,
+      needs_review: isFlagged
+    })
   });
 }
 
 function updateSidebarTitle() {
   const sKey = String(currentSheet);
   const isFlagged = allConfig[sKey] ? !!allConfig[sKey].needs_review : false;
+  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   sidebarTitle.textContent = isFlagged
-    ? `Obra ${String(currentSheet).padStart(3, '0')} ⚠️ (Repetir)`
-    : `Obra ${String(currentSheet).padStart(3, '0')}`;
+    ? `${prefix} ${String(currentSheet).padStart(3, '0')} ⚠️ (Repetir)`
+    : `${prefix} ${String(currentSheet).padStart(3, '0')}`;
 }
 
 function updateRenderSingleButtonLabels() {
   const sheetStr = String(currentSheet).padStart(3, '0');
+  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   if (btnRenderSingleSidebar) {
-    btnRenderSingleSidebar.textContent = `⚡ Renderizar Obra ${sheetStr} (Alta Res)`;
+    btnRenderSingleSidebar.textContent = `⚡ Renderizar ${prefix} ${sheetStr} (Alta Res)`;
   }
   if (btnRenderSingleHeader) {
-    btnRenderSingleHeader.textContent = `⚡ Renderizar Obra ${sheetStr}`;
+    btnRenderSingleHeader.textContent = `⚡ Renderizar ${prefix} ${sheetStr}`;
   }
 }
 
@@ -310,6 +337,7 @@ function showToast(message, allowOpenFolder = true) {
 async function renderCurrentSheetSingle() {
   const sheetNum = currentSheet;
   const sheetStr = String(sheetNum).padStart(3, '0');
+  const prefix = currentCollection === "sueltas" ? "Foto" : "Obra";
   await saveCurrentSheet();
 
   const buttons = [btnRenderSingleHeader, btnRenderSingleSidebar, btnLargeRenderSingle].filter(Boolean);
@@ -323,13 +351,16 @@ async function renderCurrentSheetSingle() {
     const resp = await fetch("/api/render_single", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sheet: sheetNum })
+      body: JSON.stringify({
+        collection: currentCollection,
+        sheet: sheetNum
+      })
     });
     const data = await resp.json();
 
     if (data.status === "ok") {
       const count = data.count || (data.files ? data.files.length : 1);
-      showToast(`✔ Obra ${sheetStr} guardada en alta resolución (${count} foto${count > 1 ? 's' : ''})`);
+      showToast(`✔ ${prefix} ${sheetStr} guardada en alta resolución (${count} foto${count > 1 ? 's' : ''})`);
     } else {
       alert("Error al renderizar: " + (data.message || "Error desconocido"));
     }
@@ -338,7 +369,7 @@ async function renderCurrentSheetSingle() {
   } finally {
     buttons.forEach(b => {
       b.disabled = false;
-      b.textContent = b.dataset.origText || `⚡ Renderizar Obra ${sheetStr} (Alta Res)`;
+      b.textContent = b.dataset.origText || `⚡ Renderizar ${prefix} ${sheetStr} (Alta Res)`;
     });
     updateRenderSingleButtonLabels();
   }
@@ -362,7 +393,7 @@ function loadSheet(num) {
 
   imageLoaded = false;
   currentImage = new Image();
-  currentImage.src = `/api/sheet_image/${currentSheet}?t=${Date.now()}`;
+  currentImage.src = `/api/sheet_image/${currentSheet}?collection=${currentCollection}&t=${Date.now()}`;
   currentImage.onload = () => {
     imageLoaded = true;
     resetZoomAndFit();
@@ -1467,7 +1498,11 @@ function setupEventListeners() {
   // Toast Flotante
   if (btnToastOpenFolder) {
     btnToastOpenFolder.onclick = () => {
-      fetch("/api/open_folder", { method: "POST" });
+      fetch("/api/open_folder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ collection: currentCollection })
+      });
     };
   }
   if (btnToastClose) {
@@ -1642,14 +1677,22 @@ function setupEventListeners() {
     renderLog.innerHTML = "";
     modalActions.classList.add("hidden");
 
-    await fetch("/api/render_all", { method: "POST" });
+    await fetch("/api/render_all", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ collection: currentCollection })
+    });
     pollRenderProgress();
   };
 
   const btnOpenFolder = document.getElementById("btnOpenFolder");
   if (btnOpenFolder) {
     btnOpenFolder.onclick = () => {
-      fetch("/api/open_folder", { method: "POST" });
+      fetch("/api/open_folder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ collection: currentCollection })
+      });
     };
   }
 
@@ -1661,7 +1704,11 @@ function setupEventListeners() {
       btnRunDeblur.textContent = "🪄 Procesando...";
       showToast("Iniciando deblur con IA en alta resolución...", false);
       try {
-        await fetch("/api/run_deblur", { method: "POST" });
+        await fetch("/api/run_deblur", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ collection: currentCollection })
+        });
         showToast("Procesando deblur en segundo plano. Guardando en 'deblur/'", true);
       } catch (err) {
         showToast("Error al iniciar deblur: " + err.message, false);
@@ -1677,7 +1724,11 @@ function setupEventListeners() {
   const btnOpenDeblur = document.getElementById("btnOpenDeblur");
   if (btnOpenDeblur) {
     btnOpenDeblur.onclick = () => {
-      fetch("/api/open_deblur_folder", { method: "POST" });
+      fetch("/api/open_deblur_folder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ collection: currentCollection })
+      });
     };
   }
 
@@ -1690,9 +1741,11 @@ async function pollRenderProgress() {
   const resp = await fetch("/api/render_status");
   const state = await resp.json();
 
-  const pct = Math.round((state.current / (state.total || 38)) * 100);
+  const tot = state.total || totalSheets;
+  const pct = Math.round((state.current / tot) * 100);
   progressBar.style.width = `${pct}%`;
-  progressText.textContent = `${state.current} / ${state.total || 38} láminas`;
+  const unitLabel = currentCollection === "sueltas" ? "fotos" : "láminas";
+  progressText.textContent = `${state.current} / ${tot} ${unitLabel}`;
   progressPercent.textContent = `${pct}%`;
 
   if (state.log && state.log.length > 0) {
@@ -1704,7 +1757,10 @@ async function pollRenderProgress() {
     progressBar.style.width = "100%";
     progressPercent.textContent = "100%";
     document.getElementById("modalTitle").textContent = "¡Renderizado Completado con Éxito!";
-    document.getElementById("modalDesc").innerHTML = `Todas las fotos recortadas y el catálogo se han guardado en:<br><code style="color: #63b3ed; word-break: break-all; font-size: 11px; background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 6px;">C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Archivo Obras Jose Luis\\cartulinas\\recortadas\\</code>`;
+    const outPath = currentCollection === "sueltas"
+      ? "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Fotos Jose Luis\\Sueltas\\recortadas\\"
+      : "C:\\Users\\Study\\Documents\\Olmo's organization\\Archive\\Archivo Obras Jose Luis\\cartulinas\\recortadas\\";
+    document.getElementById("modalDesc").innerHTML = `Todas las fotos recortadas y el catálogo se han guardado en:<br><code style="color: #63b3ed; word-break: break-all; font-size: 11px; background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 6px;">${outPath}</code>`;
     modalActions.classList.remove("hidden");
   } else if (state.error) {
     document.getElementById("modalTitle").textContent = "Error durante el renderizado";
